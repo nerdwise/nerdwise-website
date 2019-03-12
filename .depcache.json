@@ -1,0 +1,8 @@
+{
+  "/content/pages/home.yaml": [
+    "/components/nav/nav.html",
+    "/dist/css/main.min.css",
+    "/dist/js/main.min.js",
+    "/static/images/favicon.png"
+  ]
+}
