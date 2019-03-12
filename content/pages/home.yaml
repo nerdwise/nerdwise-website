@@ -1,0 +1,11 @@
+$title: Home
+$path: /{root}/
+$localization:
+  path: /{locale}/{root}/
+$order: -1
+description: A basic Grow demo website.
+
+ng_controller: BaseController
+
+components:
+- component: nav
