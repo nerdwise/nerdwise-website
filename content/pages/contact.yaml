@@ -1,11 +1,8 @@
-$title: Home
-$path: /{root}/
-$localization:
-  path: /{locale}/{root}/
+$title: Contact
 $order: -1
-description: Creating bespoke interactive media.
+description: Get in touch
 
-ng_controller: BaseController
+ng_controller: ContactController
 
 components:
 - component: nav
@@ -21,5 +18,4 @@ components:
       url: /workflow
     - name: Contact
       url: /contact
-- component: hero
 - component: footer
