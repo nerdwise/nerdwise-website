@@ -1,7 +1,7 @@
 .footer
   height: 7vh
   max-width: 100%
-  background: lightgray
+  background: $footer-background-color
   padding: 1rem 5rem
   display: flex
   flex-direction: column
@@ -20,3 +20,11 @@
   align-items: center
   justify-content: space-between
   width: 50%
+
+.footer__link
+  color: $footer-font-color
+  text-decoration: none
+  transition: color 0.3s
+
+.footer__link:hover
+  color: $footer-font-hover-color

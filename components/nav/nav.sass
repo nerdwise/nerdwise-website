@@ -1,7 +1,7 @@
 .nav
   height: 7vh
   max-width: 100%
-  background: lightgray
+  background: $nav-background-color
   padding: 1rem 5rem
   display: flex
   align-items: center
@@ -18,3 +18,11 @@
   align-items: center
   justify-content: space-between
   width: 50%
+
+.nav__link
+  text-decoration: none
+  color: $nav-font-color
+  transition: color 0.3s
+
+.nav__link:hover
+  color: $nav-font-hover-color
