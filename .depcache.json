@@ -6,5 +6,11 @@
     "/dist/css/main.min.css",
     "/dist/js/main.min.js",
     "/static/images/favicon.png"
+  ],
+  "/content/pages/projects.yaml": [
+    "/components/footer/footer.html",
+    "/components/nav/nav.html",
+    "/dist/css/main.min.css",
+    "/static/images/favicon.png"
   ]
 }
