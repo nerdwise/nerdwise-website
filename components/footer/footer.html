@@ -1,1 +1,18 @@
-<footer>I'm the footer!</footer>
+<footer class="footer">
+  <div class="footer__brand">
+    <img
+      class="footer__logo"
+      src="{{ component.logo.url }}"
+      alt="{{ component.logo.alt }}"
+    />
+  </div>
+  <ul class="footer__content">
+    {% for link in component.links %}
+    <a href="{{ link.url }}" class="footer__link">
+      <li class="footer__item">
+        {{ link.name }}
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</footer>
