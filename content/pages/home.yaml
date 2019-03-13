@@ -22,6 +22,7 @@ components:
     - name: Contact
       url: /contact
 - component: hero
+  header: Hero Header
 - component: footer
   logo: 
     url: /static/images/logo.png
