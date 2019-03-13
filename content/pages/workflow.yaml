@@ -7,8 +7,8 @@ ng_controller: WorkflowController
 components:
 - component: nav
   logo:
-    url: 
-    alt:
+    url: /static/images/logo.png
+    alt: Logo
   links:
     - name: About
       url: /about
