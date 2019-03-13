@@ -1,11 +1,8 @@
-$title: Home
-$path: /{root}/
-$localization:
-  path: /{locale}/{root}/
+$title: About
 $order: -1
-description: Creating bespoke interactive media.
+description: About the company
 
-ng_controller: BaseController
+ng_controller: AboutController
 
 components:
 - component: nav
@@ -21,5 +18,4 @@ components:
       url: /workflow
     - name: Contact
       url: /contact
-- component: hero
 - component: footer
