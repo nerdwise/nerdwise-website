@@ -40,3 +40,13 @@ static_dirs:
 
 sitemap:
   enabled: true
+
+deployments:
+  staging:
+    destination: local
+    out_dir: ./build/
+    env:
+      name: staging
+      host: nerdwise-staging.s3-us-west-2.amazonaws.com
+      scheme: https
+
