@@ -1,35 +1,7 @@
 {
-  "/content/pages/about.yaml": [
-    "/components/footer/footer.html",
-    "/components/nav/nav.html",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
-  "/content/pages/contact.yaml": [
-    "/components/footer/footer.html",
-    "/components/nav/nav.html",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
   "/content/pages/home.yaml": [
     "/components/footer/footer.html",
     "/components/hero/hero.html",
-    "/components/nav/nav.html",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
-  "/content/pages/projects.yaml": [
-    "/components/footer/footer.html",
-    "/components/nav/nav.html",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
-  "/content/pages/workflow.yaml": [
-    "/components/footer/footer.html",
     "/components/nav/nav.html",
     "/dist/css/main.min.css",
     "/dist/js/main.min.js",
