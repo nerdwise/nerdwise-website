@@ -5,17 +5,4 @@ description: View some of our work
 ng_controller: ProjectsController
 
 components:
-- component: nav
-  logo:
-    url: /static/images/logo.png
-    alt: Logo
-  links:
-    - name: About
-      url: /about
-    - name: Projects
-      url: /projects
-    - name: Workflow
-      url: /workflow
-    - name: Contact
-      url: /contact
-- component: footer
+- component: projects
