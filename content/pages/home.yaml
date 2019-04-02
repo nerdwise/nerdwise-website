@@ -8,31 +8,5 @@ description: Creating bespoke interactive media.
 ng_controller: BaseController
 
 components:
-- component: nav
-  logo:
-    url: /static/images/logo.png
-    alt: Logo
-  links:
-    - name: About
-      url: /about
-    - name: Projects
-      url: /projects
-    - name: Workflow
-      url: /workflow
-    - name: Contact
-      url: /contact
 - component: hero
   header: Hero Header
-- component: footer
-  logo: 
-    url: /static/images/logo.png
-    alt: Logo
-  links:
-    - name: About
-      url: /about
-    - name: Projects
-      url: /projects
-    - name: Workflow
-      url: /workflow
-    - name: Contact
-      url: /contact
