@@ -9,6 +9,16 @@
     "/dist/js/main.min.js",
     "/static/images/favicon.png"
   ],
+  "/content/pages/colors.yaml": [
+    "/components/colors/colors.html",
+    "/components/footer/footer.html",
+    "/components/nav/nav.html",
+    "/content/data/footer.yaml",
+    "/content/data/nav.yaml",
+    "/dist/css/main.min.css",
+    "/dist/js/main.min.js",
+    "/static/images/favicon.png"
+  ],
   "/content/pages/contact.yaml": [
     "/components/contact/contact.html",
     "/components/footer/footer.html",

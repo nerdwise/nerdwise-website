@@ -1,0 +1,8 @@
+$title: Colors
+$order: -1
+description: Color palette
+
+ng_controller: ColorController
+
+components:
+- component: colors
