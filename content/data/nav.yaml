@@ -1,6 +1,6 @@
 component: nav
 logo:
-  url: /static/images/logo.png
+  url: /static/images/logo.svg
   alt: Logo
 links:
   - name: About
