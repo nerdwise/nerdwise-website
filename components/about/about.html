@@ -1,0 +1,20 @@
+<section class="about">
+  <h1 class="about__header">
+    {{ component.title }}
+  </h1>
+  {% for person in component.staff %}
+  <div class="profile">
+    <img
+      src="{{ person.image.url }}"
+      alt="{{ person.image.alt }}"
+      class="profile__image"
+    />
+    <div class="profile__info">
+      <h2 class="profile__name">{{ person.name }} - {{ person.position }}</h2>
+      <p class="profile__about">
+        {{ person.about }}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</section>

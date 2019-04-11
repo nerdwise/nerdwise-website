@@ -1,0 +1,43 @@
+.about
+  margin-top: 12vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+
+.about__header
+  display: none
+
+.profile
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  margin-bottom: $spacing-60
+
+.profile:nth-of-type(even)
+  flex-direction: row-reverse
+
+  .profile__image
+    margin-left: $spacing-60
+
+.profile__image
+  margin-right: $spacing-60
+
+.profile__info
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: flex-start
+
+.profile__name
+  margin-bottom: $spacing-50
+  +font-primary
+  +font-weight-bold
+  font-size: $profile-name-font-size
+  color: $profile-name-font-color
+
+.profile__about
+  +font-secondary
+  +font-weight-regular
+  $font-size: $profile-about-font-size
+  color: $profile-about-font-color
