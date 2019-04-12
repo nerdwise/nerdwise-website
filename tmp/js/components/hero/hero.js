@@ -1,31 +1,42 @@
-import { ScrollEffect } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base";
-import { Tween } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween";
-import { DistanceFunction } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function";
+import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { NumericRange } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/numeric-range';
+import { CubicBezier } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/cubic-bezier';
 var Hero = (function () {
     function Hero() {
         this.scrollEffect_ = null;
-        this.tween_ = null;
-        this.blocks = Array.from(document.querySelectorAll(".block"));
-        this.num = 0;
+        this.blocksContainer_ = document.querySelector('.blocks');
+        this.blocks_ = Array.from(document.querySelectorAll('.block'));
     }
     Hero.prototype.startScrollEffect = function () {
-        var _this = this;
-        this.blocks.forEach(function (block) {
-            _this.scrollEffect_ = new ScrollEffect(block, {
-                effects: [
-                    new Tween([
-                        [_this.num, "transform: translateY(100%)"],
-                        [1, "transform: translateY(0)"]
-                    ])
-                ],
-                getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
-                startDistance: 0,
-                endDistance: function endDistance() {
-                    return window.innerHeight;
-                }
+        var easingARange = new NumericRange(1, 0);
+        var easingBRange = new NumericRange(.36, 0);
+        var easingCRange = new NumericRange(0, .36);
+        var easingDRange = new NumericRange(0, 1);
+        var blockRange = new NumericRange(0, this.blocks_.length - 1);
+        var blockKeyframes = [
+            [0, 'transform: translateY(0)'],
+            [1, 'transform: translateY(-100vh)']
+        ];
+        var blockTweens = this.blocks_.map(function (block, blockIndex) {
+            var blockPercent = blockRange.getValueAsPercent(blockIndex);
+            var easingAValue = easingARange.getPercentAsValue(blockPercent);
+            var easingBValue = easingBRange.getPercentAsValue(blockPercent);
+            var easingCValue = easingCRange.getPercentAsValue(blockPercent);
+            var easingDValue = easingDRange.getPercentAsValue(blockPercent);
+            return new Tween(blockKeyframes, {
+                styleTarget: block,
+                easingFunction: CubicBezier.getFunction(easingAValue, easingBValue, easingCValue, easingDValue)
             });
-            _this.num += 0.25;
         });
+        this.scrollEffect_ =
+            new ScrollEffect(this.blocksContainer_, {
+                effects: blockTweens,
+                getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+                startDistance: function () { return -window.innerHeight; },
+                endDistance: 0,
+            });
     };
     return Hero;
 }());

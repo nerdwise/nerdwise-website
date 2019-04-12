@@ -1,6 +1,6 @@
 @import ../global/sass-config/_mixins
-  
-.hero 
+
+.hero
   height: 100vh
   max-width: 100vw
   display: flex
@@ -29,19 +29,17 @@
   -webkit-text-fill-color: transparent
   padding: $spacing-20
 
+.blocks
+  display: flex
+  height: 0
+  width: 100%
+  position: relative
+  overflow: visible
+  flex-direction: row-reverse
+
 .block
-  width: 25%
+  width: 100%
   height: 100vh
   background: linear-gradient(to top, $hero-block-start-color, $hero-block-end-color)
-  position: absolute
-  top: 0
-  +box-shadow-regular
 
-.block--1
-  left: 0
-.block--2
-  left: 25%
-.block--3
-  left: 50%
-.block--4
-  left: 75%
+
