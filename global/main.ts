@@ -1,5 +1,4 @@
-import { counter } from "../components/accordion/accordion";
+import { Hero } from "../components/hero/hero";
 
-const foo: Map<number, string> = new Map([[1, "a"], [2, "b"]]);
-console.log(foo.get(22));
-counter();
+const hero = new Hero();
+hero.startScrollEffect();
