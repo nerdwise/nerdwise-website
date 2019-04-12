@@ -14,7 +14,7 @@ class Hero {
       this.scrollEffect_ = new ScrollEffect(block, {
         effects: [
           new Tween([
-            [this.num, "opacity: 0; transform: translateY(100%)"],
+            [this.num, "opacity: 0.5; transform: translateY(100%)"],
             [1, "opacity: 1; transform: translateY(0)"]
           ])
         ],
