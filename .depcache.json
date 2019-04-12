@@ -30,6 +30,7 @@
     "/static/images/favicon.png"
   ],
   "/content/pages/home.yaml": [
+    "/components/about/about.html",
     "/components/footer/footer.html",
     "/components/hero/hero.html",
     "/components/nav/nav.html",
