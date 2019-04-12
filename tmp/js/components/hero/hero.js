@@ -14,8 +14,8 @@ var Hero = (function () {
             _this.scrollEffect_ = new ScrollEffect(block, {
                 effects: [
                     new Tween([
-                        [_this.num, "opacity: 0.5; transform: translateY(100%)"],
-                        [1, "opacity: 1; transform: translateY(0)"]
+                        [_this.num, "transform: translateY(100%)"],
+                        [1, "transform: translateY(0)"]
                     ])
                 ],
                 getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
