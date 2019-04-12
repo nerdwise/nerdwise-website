@@ -10,6 +10,7 @@ ng_controller: BaseController
 components:
 - component: hero
   header: Hero Header
+- component: particles
 - component: about
   title: About
   staff:

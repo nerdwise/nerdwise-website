@@ -4,6 +4,7 @@
     "/components/footer/footer.html",
     "/components/hero/hero.html",
     "/components/nav/nav.html",
+    "/components/particles/particles.html",
     "/content/data/footer.yaml",
     "/content/data/nav.yaml",
     "/dist/css/main.min.css",
