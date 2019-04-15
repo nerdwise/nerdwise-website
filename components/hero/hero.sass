@@ -12,12 +12,18 @@
 .hero__heading
   +font-secondary
   +font-weight-bold
-  font-size: $font-size-70
+  font-size: $font-size-110
   color: $color-neutral-20
   background: -webkit-linear-gradient($hero-gradient-font-start-color, $hero-gradient-font-end-color)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
   margin: $spacing-20
+  +media(tablet-landscape)
+    font-size: $font-size-90
+  +media(tablet-portrait)
+    font-size: $font-size-80
+  +media(mobile)
+    font-size: $font-size-60
 
 .hero__subheading
   +font-primary
