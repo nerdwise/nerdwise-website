@@ -1,4 +1,4 @@
-import { Hero } from "../components/hero/hero";
+import { Blocks } from '../components/blocks/blocks';
 
-const hero = new Hero();
-hero.startScrollEffect();
+const blocks = new Blocks();
+blocks.startScrollEffect(-window.innerHeight, 0);
