@@ -13,7 +13,6 @@
   font-weight: 600
 
 // Box Shadows
-
 =box-shadow-light
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
 
@@ -22,3 +21,18 @@
 
 =box-shadow-bold
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25)
+
+// Breakpoints
+=media($breakpoint)
+  @if $breakpoint == desktop 
+    @media(max-width: 1440px)
+      @content
+  @if $breakpoint == tablet-landscape 
+    @media(max-width: 1200px)
+      @content
+  @if $breakpoint == tablet-portrait 
+    @media(max-width: 900px)
+      @content
+  @if $breakpoint == mobile
+    @media(max-width: 600px)
+      @content
