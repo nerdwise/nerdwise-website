@@ -4,7 +4,7 @@ logo:
   alt: Logo
 links:
   - name: About
-    url: /about
+    url: /#about
   - name: Projects
     url: /projects
   - name: Workflow
