@@ -1,3 +1,3 @@
-import { Hero } from "../components/hero/hero";
-var hero = new Hero();
-hero.startScrollEffect();
+import { Blocks } from '../components/blocks/blocks';
+var blocks = new Blocks();
+blocks.startScrollEffect(-window.innerHeight, 0);
