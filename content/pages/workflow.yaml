@@ -1,8 +1,0 @@
-$title: Workflow
-$order: -1
-description: See how we get things done
-
-ng_controller: WorkflowController
-
-components:
-- component: workflow

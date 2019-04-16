@@ -1,8 +1,0 @@
-$title: Contact
-$order: -1
-description: Get in touch
-
-ng_controller: ContactController
-
-components:
-- component: contact
