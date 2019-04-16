@@ -7,8 +7,10 @@ var Nav = (function () {
     function Nav() {
         this.scrollEffect_ = null;
         this.scrollWatcher_ = null;
+        this.sectionWatcher_ = null;
         this.hero_ = document.querySelector('.hero');
         this.navBackground_ = document.querySelector('.nav__background');
+        this.about_ = document.querySelector('#about');
     }
     Nav.prototype.slideNav = function () {
         this.scrollEffect_ = new ScrollEffect(this.hero_, {
@@ -27,9 +29,16 @@ var Nav = (function () {
             return Scroll.getSingleton().getPosition().y > window.innerHeight / 4;
         }, 'dark');
     };
+    Nav.prototype.currentSection = function () {
+        var _this = this;
+        this.sectionWatcher_ = new ActiveOnCondition('nav__link--about', function () {
+            return (Scroll.getSingleton().getPosition().y > _this.about_.offsetTop - 30);
+        }, 'active');
+    };
     Nav.prototype.init = function () {
         this.slideNav();
         this.darkNav();
+        this.currentSection();
     };
     return Nav;
 }());

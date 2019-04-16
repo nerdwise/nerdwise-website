@@ -31,7 +31,7 @@
   text-decoration: none
   color: $nav-font-color
   font-size: $nav-link-font-size
-  transition: color 0.2s
+  transition: color 0.2s, font-weight 0.2s
 
 .nav__link:hover
   color: $nav-font-hover-color
@@ -48,7 +48,7 @@
   transform: scaleX(0)
   transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out
 
-.nav__link:hover:before
+.nav__link:hover:before,
   visibility: visible
   transform: scaleX(1)
 
@@ -68,3 +68,16 @@
     color: $nav-font-hover-color--dark
   .nav__link:before
     background-color: $nav-font-hover-color--dark
+
+.nav__link--about--active
+  color: $nav-font-hover-color--dark !important
+  &:before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 2px
+    top: 50%
+    left: 0
+    background-color: $nav-font-hover-color--dark
+    visibility: visible
+    transform: scaleX(1)
