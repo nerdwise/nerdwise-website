@@ -1,8 +1,0 @@
-$title: Projects
-$order: -1
-description: View some of our work
-
-ng_controller: ProjectsController
-
-components:
-- component: projects

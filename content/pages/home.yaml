@@ -32,3 +32,6 @@ components:
       image:
         url: https://via.placeholder.com/350x600
         alt: Kaden Zipfel
+- component: projects
+- component: workflow
+- component: contact
