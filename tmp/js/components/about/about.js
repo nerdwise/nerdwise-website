@@ -3,16 +3,14 @@ import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-v
 var About = (function () {
     function About() {
         this.blockWatcher_ = null;
-        this.frames_ = Array.from(document.querySelectorAll('.profile__frame'));
+        this.frame_ = document.querySelector('.profile__frame');
     }
     About.prototype.blockReveal = function () {
         var _this = this;
-        this.frames_.map(function (frame) {
-            _this.blockWatcher_ = new ActiveOnCondition('profile__frame', function () {
-                return (Scroll.getSingleton().getPosition().y >
-                    frame.offsetTop - window.innerHeight / 5);
-            }, 'reveal');
-        });
+        this.blockWatcher_ = new ActiveOnCondition('profile__frame', function () {
+            return (Scroll.getSingleton().getPosition().y >
+                _this.frame_.offsetTop - window.innerHeight / 5);
+        }, 'reveal');
     };
     return About;
 }());
