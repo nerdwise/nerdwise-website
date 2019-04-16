@@ -4,10 +4,10 @@ logo:
   alt: Logo
 links:
   - name: About
-    url: /about
+    url: /#about
   - name: Projects
-    url: /projects
+    url: /#projects
   - name: Workflow
-    url: /workflow
+    url: /#workflow
   - name: Contact
-    url: /contact
+    url: /#contact
