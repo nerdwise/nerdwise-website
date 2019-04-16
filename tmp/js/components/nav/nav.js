@@ -1,6 +1,3 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 import { ActiveOnCondition } from '../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base';
 import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 var Nav = (function () {
@@ -15,22 +12,10 @@ var Nav = (function () {
         this.workflow_ = document.querySelector('#workflow');
         this.contact_ = document.querySelector('#contact');
     }
-    Nav.prototype.slideNav = function () {
-        this.scrollEffect_ = new ScrollEffect(this.hero_, {
-            effects: [
-                new Tween([[0, 'width: 0'], [1, 'width: 100vw']], {
-                    styleTarget: this.navBackground_
-                })
-            ],
-            getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-            startDistance: function () { return 0; },
-            endDistance: window.innerHeight / 4
-        });
-    };
-    Nav.prototype.darkNav = function () {
+    Nav.prototype.lightNav = function () {
         this.scrollWatcher_ = new ActiveOnCondition('nav', function () {
-            return Scroll.getSingleton().getPosition().y > window.innerHeight / 4;
-        }, 'dark');
+            return Scroll.getSingleton().getPosition().y > 20;
+        }, 'light');
     };
     Nav.prototype.currentSection = function () {
         var _this = this;
@@ -51,8 +36,7 @@ var Nav = (function () {
         });
     };
     Nav.prototype.init = function () {
-        this.slideNav();
-        this.darkNav();
+        this.lightNav();
         this.currentSection();
     };
     return Nav;

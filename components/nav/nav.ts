@@ -24,26 +24,13 @@ class Nav {
     this.contact_ = document.querySelector('#contact');
   }
 
-  slideNav(): void {
-    this.scrollEffect_ = new ScrollEffect(this.hero_, {
-      effects: [
-        new Tween([[0, 'width: 0'], [1, 'width: 100vw']], {
-          styleTarget: this.navBackground_
-        })
-      ],
-      getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-      startDistance: () => 0,
-      endDistance: window.innerHeight / 4
-    });
-  }
-
-  darkNav(): void {
+  lightNav(): void {
     this.scrollWatcher_ = new ActiveOnCondition(
       'nav',
       () => {
-        return Scroll.getSingleton().getPosition().y > window.innerHeight / 4;
+        return Scroll.getSingleton().getPosition().y > 20;
       },
-      'dark'
+      'light'
     );
   }
 
@@ -73,8 +60,7 @@ class Nav {
   }
 
   init(): void {
-    this.slideNav();
-    this.darkNav();
+    this.lightNav();
     this.currentSection();
   }
 }

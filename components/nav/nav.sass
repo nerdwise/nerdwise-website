@@ -58,16 +58,19 @@
   position: fixed
   top: 0
   right: 0
-  z-index: 2
+  z-index: -1
   background-color: $nav-background-color
+  transition: width 0.3s
 
-.nav--dark
+.nav--light
   .nav__link
     color: $nav-font-color--dark
   .nav__link:hover
     color: $nav-font-hover-color--dark
   .nav__link:before
     background-color: $nav-font-hover-color--dark
+  .nav__background
+    width: 100vw
 
 .nav__link--about--active
   color: $nav-font-hover-color--dark !important
