@@ -20,8 +20,21 @@
   .profile__image
     margin-left: $spacing-60
 
-.profile__image
+.profile__frame
+  overflow: hidden
+  transform: scaleY(0)
+  visibility: hidden
   margin-right: $spacing-60
+  transition: transform 0.3s, visibility 0.3s
+
+.profile__frame--reveal
+  transform: scaleY(1)
+  visibility: visible
+
+.profile__image
+  width: 100%
+  height: 100%
+  object-fit: cover
 
 .profile__info
   display: flex
