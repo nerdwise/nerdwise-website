@@ -5,7 +5,7 @@
   </h1>
   {% for person in component.staff %}
   <div class="profile">
-    <div class="profile__frame">
+    <div class="{{ person.frameClass }}">
       <img
         src="{{ person.image.url }}"
         alt="{{ person.image.alt }}"

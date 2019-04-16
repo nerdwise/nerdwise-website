@@ -20,18 +20,21 @@ components:
       image:
         url: https://via.placeholder.com/350x600
         alt: Angus MacDonald
+      frameClass: profile__frame profile__frame--1
     - name: Jonathan Loubert
       position: Senior Developer
       about: Jon loves writing code and some other stuff too...
       image:
         url: https://via.placeholder.com/350x600
         alt: Jonathan Loubert
+      frameClass: profile__frame profile__frame--2
     - name: Kaden Zipfel
       position: Associate Developer
       about: Kaden loves writing code and some other stuff too...
       image:
         url: https://via.placeholder.com/350x600
         alt: Kaden Zipfel
+      frameClass: profile__frame profile__frame--3
 - component: projects
 - component: workflow
 - component: contact
