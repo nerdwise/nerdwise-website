@@ -11,20 +11,17 @@
 .profile
   display: flex
   align-items: flex-start
-  justify-content: center
+  justify-content: space-between
   margin-bottom: $spacing-60
+  width: 45%
 
 .profile:nth-of-type(even)
   flex-direction: row-reverse
-
-  .profile__image
-    margin-left: $spacing-60
 
 .profile__frame
   overflow: hidden
   transform: scaleY(0)
   visibility: hidden
-  margin-right: $spacing-60
   transition: transform 0.3s, visibility 0.3s
 
 .profile__frame--reveal
