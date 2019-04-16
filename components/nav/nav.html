@@ -8,7 +8,10 @@
   </div>
   <ul class="nav__content">
     {% for link in component.links %}
-    <a href="{{ link.url }}" class="nav__link">
+    <a
+      href="{{ link.url }}"
+      class="nav__link nav__link--{{ link.name.lower() }}"
+    >
       <li class="nav__item">
         {{ link.name }}
       </li>

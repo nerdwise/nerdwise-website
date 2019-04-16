@@ -7,12 +7,15 @@ import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-v
 class Nav {
   private scrollEffect_: ScrollEffect = null;
   private scrollWatcher_: ActiveOnCondition = null;
+  private sectionWatcher_: ActiveOnCondition = null;
   private hero_: HTMLElement;
   private navBackground_: HTMLElement;
+  private about_: HTMLElement;
 
   constructor() {
     this.hero_ = document.querySelector('.hero');
     this.navBackground_ = document.querySelector('.nav__background');
+    this.about_ = document.querySelector('#about');
   }
 
   slideNav(): void {
@@ -38,9 +41,22 @@ class Nav {
     );
   }
 
+  currentSection(): void {
+    this.sectionWatcher_ = new ActiveOnCondition(
+      'nav__link--about',
+      () => {
+        return (
+          Scroll.getSingleton().getPosition().y > this.about_.offsetTop - 30
+        );
+      },
+      'active'
+    );
+  }
+
   init(): void {
     this.slideNav();
     this.darkNav();
+    this.currentSection();
   }
 }
 
