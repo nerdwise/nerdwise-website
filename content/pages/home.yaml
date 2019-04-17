@@ -42,10 +42,12 @@ components:
       image:
         url: https://via.placeholder.com/500x900
         alt: Project Image
+      infoClass: project__info project__info--1
     - name: Project
       about: Lorem ipsum dolor sit amet consectetur adipisicing elit.
       image:
         url: https://via.placeholder.com/500x900
         alt: Project Image
+      infoClass: project__info project__info--2
 - component: workflow
 - component: contact
