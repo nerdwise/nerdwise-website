@@ -36,5 +36,16 @@ components:
         alt: Kaden Zipfel
       frameClass: profile__frame profile__frame--3
 - component: projects
+  projects:
+    - name: Project
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      image:
+        url: https://via.placeholder.com/500x900
+        alt: Project Image
+    - name: Project
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      image:
+        url: https://via.placeholder.com/500x900
+        alt: Project Image
 - component: workflow
 - component: contact
