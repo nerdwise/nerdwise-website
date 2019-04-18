@@ -35,11 +35,11 @@ class Nav {
   }
 
   currentSection(): void {
-    const sections = ['about', 'projects', 'workflow', 'contact'];
+    const sections = ['workflow', 'projects', 'about', 'contact'];
     const sectionElements = [
-      this.about_,
-      this.projects_,
       this.workflow_,
+      this.projects_,
+      this.about_,
       this.contact_
     ];
 

@@ -19,11 +19,11 @@ var Nav = (function () {
     };
     Nav.prototype.currentSection = function () {
         var _this = this;
-        var sections = ['about', 'projects', 'workflow', 'contact'];
+        var sections = ['workflow', 'projects', 'about', 'contact'];
         var sectionElements = [
-            this.about_,
-            this.projects_,
             this.workflow_,
+            this.projects_,
+            this.about_,
             this.contact_
         ];
         sections.map(function (section, sectionIndex) {

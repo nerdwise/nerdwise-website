@@ -3,11 +3,11 @@ logo:
   url: /static/images/logo.svg
   alt: Logo
 links:
-  - name: About
-    url: /#about
-  - name: Projects
-    url: /#projects
   - name: Workflow
     url: /#workflow
+  - name: Projects
+    url: /#projects
+  - name: About
+    url: /#about
   - name: Contact
     url: /#contact
