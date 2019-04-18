@@ -21,23 +21,34 @@
 .profile__frame
   overflow: hidden
   transform: scaleY(0)
+  transform-origin: bottom
   visibility: hidden
+  background: $profile-block-color
   transition: transform 0.3s, visibility 0.3s
 
 .profile__frame--1--reveal
   transform: scaleY(1)
   visibility: visible
+  .profile__image
+    transform: scaleY(1)
 .profile__frame--2--reveal
   transform: scaleY(1)
   visibility: visible
+  .profile__image
+    transform: scaleY(1)
 .profile__frame--3--reveal
   transform: scaleY(1)
   visibility: visible
+  .profile__image
+    transform: scaleY(1)
 
 .profile__image
   width: 100%
   height: 100%
+  transform: scaleY(0)
+  transform-origin: bottom
   object-fit: cover
+  transition: 0.3s transform 0.3s
 
 .profile__info
   display: flex

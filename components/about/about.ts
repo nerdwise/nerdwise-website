@@ -16,7 +16,7 @@ class About {
         () => {
           return (
             Scroll.getSingleton().getPosition().y >
-            frame.offsetTop - window.innerHeight / 5
+            frame.offsetTop - window.innerHeight / 3
           );
         },
         'reveal'
