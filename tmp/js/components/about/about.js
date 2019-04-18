@@ -10,7 +10,7 @@ var About = (function () {
         this.frames_.map(function (frame, frameIndex) {
             _this.blockWatcher_ = new ActiveOnCondition("profile__frame--" + (frameIndex + 1), function () {
                 return (Scroll.getSingleton().getPosition().y >
-                    frame.offsetTop - window.innerHeight / 5);
+                    frame.offsetTop - window.innerHeight / 3);
             }, 'reveal');
         });
     };
