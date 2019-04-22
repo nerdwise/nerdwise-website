@@ -26,21 +26,33 @@
   background: $profile-block-color
   transition: transform 0.3s, visibility 0.3s
 
-.profile__frame--1--reveal
-  transform: scaleY(1)
-  visibility: visible
+.profile--1--reveal
+  .profile__frame
+    transform: scaleY(1)
+    visibility: visible
   .profile__image
     transform: scaleY(1)
-.profile__frame--2--reveal
-  transform: scaleY(1)
-  visibility: visible
+  .profile__info
+    opacity: 1
+    transform: translateY(0)
+.profile--2--reveal
+  .profile__frame
+    transform: scaleY(1)
+    visibility: visible
   .profile__image
     transform: scaleY(1)
-.profile__frame--3--reveal
-  transform: scaleY(1)
-  visibility: visible
+  .profile__info
+    opacity: 1
+    transform: translateY(0)
+.profile--3--reveal
+  .profile__frame
+    transform: scaleY(1)
+    visibility: visible
   .profile__image
     transform: scaleY(1)
+  .profile__info
+    opacity: 1
+    transform: translateY(0)
 
 .profile__image
   width: 100%
@@ -55,6 +67,9 @@
   flex-direction: column
   align-items: flex-start
   justify-content: flex-start
+  opacity: 0
+  transform: translateY(50%)
+  transition: opacity 0.2s, transform 0.2s
 
 .profile__name
   margin-bottom: $spacing-50
