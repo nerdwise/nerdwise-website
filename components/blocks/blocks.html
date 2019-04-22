@@ -1,4 +1,4 @@
-<div class="blocks">
+<div class="blocks {{ component.css_classes|join(' ') }}">
   {% for i in range(16) %}
   <div class="block"></div>
   {% endfor %}

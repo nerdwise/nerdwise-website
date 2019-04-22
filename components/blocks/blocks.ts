@@ -4,51 +4,68 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 import { NumericRange } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/numeric-range';
 import { CubicBezier } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/cubic-bezier';
 
+const EASING_A_RANGE = new NumericRange(1, 0);
+const EASING_B_RANGE = new NumericRange(0.36, 0);
+const EASING_C_RANGE = new NumericRange(0, 0.36);
+const EASING_D_RANGE = new NumericRange(0, 1);
+
+const BLOCK_KEYFRAMES: [number, string][] = [
+  [0, 'transform: translateY(0)'],
+  [1, 'transform: translateY(-100vh)']
+];
+
 class Blocks {
-  private readonly blocksContainer_: HTMLElement;
+  private readonly blocksContainers_: HTMLElement[];
   private scrollEffect_: ScrollEffect = null;
-  private blocks_: HTMLElement[];
 
   constructor() {
-    this.blocksContainer_ = document.querySelector('.blocks');
-    this.blocks_ = Array.from(document.querySelectorAll('.block'));
+    this.blocksContainers_ = Array.from(document.querySelectorAll('.blocks'));
   }
 
-  startScrollEffect(start: number, end: number): void {
-    const easingARange = new NumericRange(1, 0);
-    const easingBRange = new NumericRange(0.36, 0);
-    const easingCRange = new NumericRange(0, 0.36);
-    const easingDRange = new NumericRange(0, 1);
+  private getBlocksFromContainer_(blocksContainer: HTMLElement): HTMLElement[] {
+    return Array.from(blocksContainer.querySelectorAll('.block'));
+  }
 
-    const blockRange = new NumericRange(0, this.blocks_.length - 1);
+  private getBlockTween_(
+    blockRange: NumericRange,
+    blockIndex: number,
+    block: HTMLElement
+  ): Tween {
+    const blockPercent = blockRange.getValueAsPercent(blockIndex);
+    const easingAValue = EASING_A_RANGE.getPercentAsValue(blockPercent);
+    const easingBValue = EASING_B_RANGE.getPercentAsValue(blockPercent);
+    const easingCValue = EASING_C_RANGE.getPercentAsValue(blockPercent);
+    const easingDValue = EASING_D_RANGE.getPercentAsValue(blockPercent);
 
-    const blockKeyframes: [number, string][] = [
-      [0, 'transform: translateY(0)'],
-      [1, 'transform: translateY(-100vh)']
-    ];
-    const blockTweens = this.blocks_.map((block, blockIndex) => {
-      const blockPercent = blockRange.getValueAsPercent(blockIndex);
-      const easingAValue = easingARange.getPercentAsValue(blockPercent);
-      const easingBValue = easingBRange.getPercentAsValue(blockPercent);
-      const easingCValue = easingCRange.getPercentAsValue(blockPercent);
-      const easingDValue = easingDRange.getPercentAsValue(blockPercent);
-
-      return new Tween(blockKeyframes, {
-        styleTarget: block,
-        easingFunction: CubicBezier.getFunction(
-          easingAValue,
-          easingBValue,
-          easingCValue,
-          easingDValue
-        )
-      });
+    return new Tween(BLOCK_KEYFRAMES, {
+      styleTarget: block,
+      easingFunction: CubicBezier.getFunction(
+        easingAValue,
+        easingBValue,
+        easingCValue,
+        easingDValue
+      )
     });
+  }
 
-    this.scrollEffect_ = new ScrollEffect(this.blocksContainer_, {
-      effects: blockTweens,
-      getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-      startDistance: () => start,
-      endDistance: end
+  private getBlockTweens_(blocksContainer: HTMLElement): Tween[] {
+    const blocks = this.getBlocksFromContainer_(blocksContainer);
+
+    const blockRange = new NumericRange(0, blocks.length - 1);
+
+    return blocks.map((block, blockIndex) => {
+      return this.getBlockTween_(blockRange, blockIndex, block);
+    });
+  }
+
+  public startScrollEffect(): void {
+    this.blocksContainers_.forEach(blocksContainer => {
+      this.scrollEffect_ = new ScrollEffect(blocksContainer, {
+        effects: this.getBlockTweens_(blocksContainer),
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: () => -window.innerHeight,
+        endDistance: 0
+      });
     });
   }
 }

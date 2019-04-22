@@ -4,7 +4,7 @@ import { About } from '../components/about/about';
 import { Hero } from '../components/hero/hero';
 
 const blocks = new Blocks();
-blocks.startScrollEffect(-window.innerHeight, 0);
+blocks.startScrollEffect();
 
 const nav = new Nav();
 nav.init();
