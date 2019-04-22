@@ -6,7 +6,6 @@ import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-v
 
 class Nav {
   private scrollEffect_: ScrollEffect = null;
-  private scrollWatcher_: ActiveOnCondition = null;
   private sectionWatcher_: ActiveOnCondition = null;
   private hero_: HTMLElement;
   private navBackground_: HTMLElement;
@@ -22,16 +21,6 @@ class Nav {
     this.projects_ = document.querySelector('#projects');
     this.workflow_ = document.querySelector('#workflow');
     this.contact_ = document.querySelector('#contact');
-  }
-
-  lightNav(): void {
-    this.scrollWatcher_ = new ActiveOnCondition(
-      'nav',
-      () => {
-        return Scroll.getSingleton().getPosition().y > 20;
-      },
-      'light'
-    );
   }
 
   currentSection(): void {
@@ -60,7 +49,6 @@ class Nav {
   }
 
   init(): void {
-    this.lightNav();
     this.currentSection();
   }
 }

@@ -3,7 +3,6 @@ import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-v
 var Nav = (function () {
     function Nav() {
         this.scrollEffect_ = null;
-        this.scrollWatcher_ = null;
         this.sectionWatcher_ = null;
         this.hero_ = document.querySelector('.hero');
         this.navBackground_ = document.querySelector('.nav__background');
@@ -12,11 +11,6 @@ var Nav = (function () {
         this.workflow_ = document.querySelector('#workflow');
         this.contact_ = document.querySelector('#contact');
     }
-    Nav.prototype.lightNav = function () {
-        this.scrollWatcher_ = new ActiveOnCondition('nav', function () {
-            return Scroll.getSingleton().getPosition().y > 20;
-        }, 'light');
-    };
     Nav.prototype.currentSection = function () {
         var _this = this;
         var sections = ['workflow', 'projects', 'about', 'contact'];
@@ -36,7 +30,6 @@ var Nav = (function () {
         });
     };
     Nav.prototype.init = function () {
-        this.lightNav();
         this.currentSection();
     };
     return Nav;

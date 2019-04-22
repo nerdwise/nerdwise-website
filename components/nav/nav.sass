@@ -16,7 +16,7 @@
 
 .nav__brand
   height: calc(100% + 1rem)
-  background-color: $nav-logo-background-color
+  background-color: rgba($nav-logo-background-color, 0.8)
   padding: 1rem
   box-shadow: 2px 2px 4px rgba($nav-logo-background-color, 0.25)
 
@@ -67,26 +67,16 @@
   transform: scaleX(1.3)
 
 .nav__background
-  height: calc(100% + 4rem)
-  width: 0
+  height: calc(100% + 2rem)
+  width: calc(100% + 3rem)
   position: absolute
-  top: -2rem
   right: -3rem
   z-index: -1
-  background-color: $nav-background-color
-  box-shadow: 2px 2px 4px rgba(0,0,0,.25)
-  transition: width 0.3s
-
-.nav--light
-  .nav__link
-    color: $nav-font-color--dark
-  .nav__link:hover
-    color: $nav-font-hover-color--dark
-  .nav__background
-    width: calc(100% + 6rem)
+  background-color: rgba($nav-background-color, 0.8)
+  box-shadow: 2px 2px 4px rgba($nav-background-color, 0.25)
 
 .nav__link--about--active
-  color: $nav-font-hover-color--dark !important
+  color: $nav-font-hover-color !important
   &:before
     content: ""
     position: absolute
@@ -98,7 +88,7 @@
     visibility: visible
     transform: scaleX(1.3)
 .nav__link--projects--active
-  color: $nav-font-hover-color--dark !important
+  color: $nav-font-hover-color !important
   &:before
     content: ""
     position: absolute
@@ -110,7 +100,7 @@
     visibility: visible
     transform: scaleX(1.3)
 .nav__link--workflow--active
-  color: $nav-font-hover-color--dark !important
+  color: $nav-font-hover-color !important
   &:before
     content: ""
     position: absolute
@@ -122,7 +112,7 @@
     visibility: visible
     transform: scaleX(1.3)
 .nav__link--contact--active
-  color: $nav-font-hover-color--dark !important
+  color: $nav-font-hover-color !important
   &:before
     content: ""
     position: absolute
