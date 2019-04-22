@@ -34,9 +34,6 @@ jobs:
     - checkout
     - run: *node_version
     - restore_cache: *cache_restore
-    - run:
-        name: Install Dependencies
-        command: make develop
     - run: *grow_install
     - save_cache: *cache_save
     - run: *grow_build
