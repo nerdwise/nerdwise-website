@@ -20,7 +20,7 @@ class Hero {
       ],
       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_CENTER,
       startDistance: () => 0,
-      endDistance: window.innerHeight / 2
+      endDistance: window.innerHeight / 3
     });
   }
 }

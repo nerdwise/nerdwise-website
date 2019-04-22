@@ -16,7 +16,7 @@ var Hero = (function () {
             ],
             getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_CENTER,
             startDistance: function () { return 0; },
-            endDistance: window.innerHeight / 2
+            endDistance: window.innerHeight / 3
         });
     };
     return Hero;
