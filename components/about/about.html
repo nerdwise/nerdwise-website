@@ -3,8 +3,8 @@
     {{ component.title }}
   </h1>
   {% for person in component.staff %}
-  <div class="profile">
-    <div class="{{ person.frameClass }}">
+  <div class="{{ person.class }}">
+    <div class="profile__frame">
       <img
         src="{{ person.image.url }}"
         alt="{{ person.image.alt }}"

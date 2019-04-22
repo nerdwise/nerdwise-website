@@ -3,20 +3,20 @@ import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-v
 
 class About {
   private blockWatcher_: ActiveOnCondition = null;
-  private frames_: HTMLElement[];
+  private profiles_: HTMLElement[];
 
   constructor() {
-    this.frames_ = Array.from(document.querySelectorAll('.profile__frame'));
+    this.profiles_ = Array.from(document.querySelectorAll('.profile'));
   }
 
   blockReveal(): void {
-    this.frames_.map((frame, frameIndex) => {
+    this.profiles_.map((frame, frameIndex) => {
       this.blockWatcher_ = new ActiveOnCondition(
-        `profile__frame--${frameIndex + 1}`,
+        `profile--${frameIndex + 1}`,
         () => {
           return (
             Scroll.getSingleton().getPosition().y >
-            frame.offsetTop - window.innerHeight / 3
+            frame.offsetTop - window.innerHeight / 2
           );
         },
         'reveal'
