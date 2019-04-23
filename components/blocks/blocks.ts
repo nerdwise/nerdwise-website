@@ -9,9 +9,14 @@ const EASING_B_RANGE = new NumericRange(0.2, 0);
 const EASING_C_RANGE = new NumericRange(0, 0.2);
 const EASING_D_RANGE = new NumericRange(0, .8);
 
+const ROTATION_ANGLE = 10;
+const SCALE = 1.05;
+
 const BLOCK_KEYFRAMES: [number, string][] = [
-  [0, 'transform: translateY(0)'],
-  [1, 'transform: translateY(-75vh)']
+  [0, `transform: scaleX(${SCALE}) translateY(5vh) skewY(-${ROTATION_ANGLE}deg) rotate(${ROTATION_ANGLE}deg)`],
+  [0.225, `transform: scaleX(.9) translateY(-15vh) skewY(-${ROTATION_ANGLE * (2/3)}deg) rotate(${ROTATION_ANGLE * .25}deg)`],
+  [0.45, `transform: scaleX(1) translateY(-35vh) skewY(-${ROTATION_ANGLE * (1/3)}deg) rotate(-${ROTATION_ANGLE * .5}deg)`],
+  [.9, `transform: scaleX(1.1) translateY(-75vh) skewY(${ROTATION_ANGLE * (1/3)}deg) rotate(0deg)`]
 ];
 
 class Blocks {

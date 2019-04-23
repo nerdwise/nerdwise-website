@@ -6,18 +6,18 @@
   overflow: visible
   padding-bottom: 30vh
   position: relative
-  width: 100%
+  width: 120%
+  margin-left: -10%
 
 .blocks--reverse
-  flex-direction: row-reverse
+  //flex-direction: row-reverse
+  transform: scaleX(-1)
 
 =blocks-color($start, $middle, $right)
   .block
-    background: linear-gradient(to bottom, $start, $middle 12%, $block-bottom-color 90%)
-  .block:before
     background-image: linear-gradient(to bottom, $right, $block-bottom-color 90%)
-  .block:after
-    background: $block-bottom-color
+  .block:before
+    background: linear-gradient(to bottom, $start, $middle 12%, $block-bottom-color 90%)
 
 .blocks--pink
   +blocks-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
@@ -31,21 +31,14 @@
 .block
   width: 100%
   height: 75vh
-  margin-right: $spacing-30
-
-.block:before,
-.block:after
-  content: ''
-  position: absolute
-  bottom: -0.5rem
-  right: -0.5rem
+  margin-right: 2rem
+  margin-top: .5rem
+  margin-left: .5rem
 
 .block:before
-  bottom: -0.5rem
-  width: 0.5rem
-  height: calc(100% + 2px)
-
-.block:after
-  right: -0.5rem
-  height: 0.5rem
-  width: calc(100% + 2px)
+  content: ''
+  position: absolute
+  top: -0.5rem
+  left: -0.5rem
+  width: 100%
+  height: 100%

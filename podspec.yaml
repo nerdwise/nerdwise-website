@@ -47,6 +47,13 @@ deployments:
     out_dir: ./build/
     env:
       name: staging
-      host: nerdwise-staging.s3-us-west-2.amazonaws.com
+      host: nerdwise-b86a0.firebaseapp.com/
+      scheme: https
+  prod:
+    destination: local
+    out_dir: ./build/
+    env:
+      name: prod
+      host: nerdwise-prod.firebaseapp.com/
       scheme: https
 
