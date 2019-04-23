@@ -1,8 +1,9 @@
-project ?= nerdwise
+project ?= nerdwise-website
 version ?= auto
 
-staging_s3_bucket = nerdwise-staging
-prod_s3_bucket = nerdwise-prod
+build-staging:
+	PATH=$(PATH):$(HOME)/bin grow deploy -f staging
 
-stage-s3:
-	firebase deploy
+build-prod:
+	PATH=$(PATH):$(HOME)/bin grow deploy -f prod
+

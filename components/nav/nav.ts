@@ -1,18 +1,14 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 import { ActiveOnCondition } from '../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base';
 import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 
 class Nav {
-  private scrollEffect_: ScrollEffect = null;
+  private readonly about_: HTMLElement;
+  private readonly projects_: HTMLElement;
+  private readonly workflow_: HTMLElement;
+  private readonly contact_: HTMLElement;
   private sectionWatcher_: ActiveOnCondition = null;
   private hero_: HTMLElement;
   private navBackground_: HTMLElement;
-  private about_: HTMLElement;
-  private projects_: HTMLElement;
-  private workflow_: HTMLElement;
-  private contact_: HTMLElement;
 
   constructor() {
     this.hero_ = document.querySelector('.hero');

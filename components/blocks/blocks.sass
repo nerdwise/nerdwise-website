@@ -1,45 +1,36 @@
+@import ../../global/sass-config/colors
+
 .blocks
   display: flex
   height: 0
-  width: 100%
-  position: relative
   overflow: visible
-  
+  padding-bottom: 30vh
+  position: relative
+  width: 100%
+
 .blocks--reverse
   flex-direction: row-reverse
 
+=blocks-color($start, $middle, $right)
+  .block
+    background: linear-gradient(to bottom, $start, $middle 12%, $block-bottom-color 90%)
+  .block:before
+    background-image: linear-gradient(to bottom, $right, $block-bottom-color 90%)
+  .block:after
+    background: $block-bottom-color
+
 .blocks--pink
-  .block
-    background: linear-gradient(to bottom, $block-start-color--pink, $block-middle-color--pink 33%, $block-end-color--pink)
-  .block:before
-    background-image: -webkit-gradient(linear, 0 100%, 0 0, from($block-bottom-color--pink), to($block-right-color--pink))
-  .block:after
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($block-bottom-color--pink), to($block-bottom-color--pink))
+  +blocks-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
 .blocks--orange
-  .block
-    background: linear-gradient(to bottom, $block-start-color--orange, $block-middle-color--orange 33%, $block-end-color--orange)
-  .block:before
-    background-image: -webkit-gradient(linear, 0 100%, 0 0, from($block-bottom-color--orange), to($block-right-color--orange))
-  .block:after
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($block-bottom-color--orange), to($block-bottom-color--orange))
+  +blocks-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
 .blocks--yellow
-  .block
-    background: linear-gradient(to bottom, $block-start-color--yellow, $block-middle-color--yellow 33%, $block-end-color--yellow)
-  .block:before
-    background-image: -webkit-gradient(linear, 0 100%, 0 0, from($block-bottom-color--yellow), to($block-right-color--yellow))
-  .block:after
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($block-bottom-color--yellow), to($block-bottom-color--yellow))
+  +blocks-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
 .blocks--cyan
-  .block
-    background: linear-gradient(to bottom, $block-start-color--cyan, $block-middle-color--cyan 33%, $block-end-color--cyan)
-  .block:before
-    background-image: -webkit-gradient(linear, 0 100%, 0 0, from($block-bottom-color--cyan), to($block-right-color--cyan))
-  .block:after
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($block-bottom-color--cyan), to($block-bottom-color--cyan))
+  +blocks-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
 
 .block
   width: 100%
-  height: 100vh
+  height: 75vh
   margin-right: $spacing-30
 
 .block:before,
@@ -53,7 +44,7 @@
   bottom: -0.5rem
   width: 0.5rem
   height: calc(100% + 2px)
-  
+
 .block:after
   right: -0.5rem
   height: 0.5rem

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "nerdwise-b86a0"
+    "staging": "nerdwise-b86a0",
+    "prod": "nerdwise-prod"
   }
 }

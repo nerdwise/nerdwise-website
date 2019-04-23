@@ -4,14 +4,14 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 import { NumericRange } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/numeric-range';
 import { CubicBezier } from '../../node_modules/toolbox-v2/src/toolbox/utils/math/cubic-bezier';
 
-const EASING_A_RANGE = new NumericRange(1, 0);
-const EASING_B_RANGE = new NumericRange(0.36, 0);
-const EASING_C_RANGE = new NumericRange(0, 0.36);
-const EASING_D_RANGE = new NumericRange(0, 1);
+const EASING_A_RANGE = new NumericRange(.8, 0);
+const EASING_B_RANGE = new NumericRange(0.2, 0);
+const EASING_C_RANGE = new NumericRange(0, 0.2);
+const EASING_D_RANGE = new NumericRange(0, .8);
 
 const BLOCK_KEYFRAMES: [number, string][] = [
   [0, 'transform: translateY(0)'],
-  [1, 'transform: translateY(-100vh)']
+  [1, 'transform: translateY(-75vh)']
 ];
 
 class Blocks {
@@ -19,14 +19,18 @@ class Blocks {
   private scrollEffect_: ScrollEffect = null;
 
   constructor() {
-    this.blocksContainers_ = Array.from(document.querySelectorAll('.blocks'));
+    this.blocksContainers_ =
+      <HTMLElement[]>Array.from(document.querySelectorAll('.blocks'));
   }
 
-  private getBlocksFromContainer_(blocksContainer: HTMLElement): HTMLElement[] {
-    return Array.from(blocksContainer.querySelectorAll('.block'));
+  private static getBlocksFromContainer_(
+    blocksContainer: HTMLElement
+  ): HTMLElement[] {
+    return <HTMLElement[]>Array.from(
+      blocksContainer.querySelectorAll('.block'));
   }
 
-  private getBlockTween_(
+  private static getBlockTween_(
     blockRange: NumericRange,
     blockIndex: number,
     block: HTMLElement
@@ -49,12 +53,12 @@ class Blocks {
   }
 
   private getBlockTweens_(blocksContainer: HTMLElement): Tween[] {
-    const blocks = this.getBlocksFromContainer_(blocksContainer);
+    const blocks = Blocks.getBlocksFromContainer_(blocksContainer);
 
     const blockRange = new NumericRange(0, blocks.length - 1);
 
     return blocks.map((block, blockIndex) => {
-      return this.getBlockTween_(blockRange, blockIndex, block);
+      return Blocks.getBlockTween_(blockRange, blockIndex, block);
     });
   }
 
