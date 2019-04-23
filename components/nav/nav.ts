@@ -1,6 +1,8 @@
 import { ActiveOnCondition } from '../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base';
 import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 
+const SECTIONS = ['workflow', 'projects', 'about', 'contact'];
+
 class Nav {
   private readonly about_: HTMLElement;
   private readonly projects_: HTMLElement;
@@ -19,24 +21,31 @@ class Nav {
     this.contact_ = document.querySelector('#contact');
   }
 
-  currentSection(): void {
-    const sections = ['workflow', 'projects', 'about', 'contact'];
-    const sectionElements = [
+  getElementYPosition(sectionIndex: number): number {
+    const SECTION_ELEMENTS = [
       this.workflow_,
       this.projects_,
       this.about_,
       this.contact_
     ];
 
-    sections.map((section, sectionIndex) => {
+    if (typeof SECTION_ELEMENTS[sectionIndex] === 'undefined') {
+      return 999999;
+    } else {
+      return SECTION_ELEMENTS[sectionIndex].offsetTop - 30;
+    }
+  }
+
+  currentSection(): void {
+    SECTIONS.map((section, sectionIndex) => {
       this.sectionWatcher_ = new ActiveOnCondition(
         `nav__link--${section}`,
         () => {
           return (
             Scroll.getSingleton().getPosition().y >
-              sectionElements[sectionIndex].offsetTop - 30 &&
+              this.getElementYPosition(sectionIndex) &&
             Scroll.getSingleton().getPosition().y <
-              sectionElements[sectionIndex + 1].offsetTop - 30
+              this.getElementYPosition(sectionIndex + 1)
           );
         },
         'active'
