@@ -5,9 +5,11 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 class Hero {
   private scrollEffect_: ScrollEffect = null;
   private header_: HTMLElement;
+  private overlay_: HTMLElement;
 
   constructor() {
     this.header_ = document.querySelector('.hero__heading');
+    this.overlay_ = document.querySelector('.hero__overlay');
   }
 
   tweenHeader(): void {
@@ -16,7 +18,10 @@ class Hero {
         new Tween([
           [0, 'opacity: 1; transform: scale(1)'],
           [1, 'opacity: 0; transform: scale(0.9)']
-        ])
+        ]),
+        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
+          styleTarget: this.overlay_
+        })
       ],
       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_CENTER,
       startDistance: () => 0,
