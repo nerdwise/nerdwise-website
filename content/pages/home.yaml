@@ -69,3 +69,76 @@ components:
     - Let's talk about a project
     - Let's meet for coffee
     - Let's just chat
+  forms:
+    - field:
+        - element: input
+          id: name
+          label: Name
+          placeholder: Name
+          type: text
+          class: form__input
+        - element: input
+          id: company
+          label: Company
+          placeholder: Company
+          type: text
+          class: form__input
+        - element: input
+          id: email
+          label: Email
+          placeholder: Email
+          type: email
+          class: form__input
+        - element: input
+          id: budget
+          label: Budget
+          placeholder: Budget
+          type: text
+          class: form__input
+        - element: textarea
+          id: message
+          label: Message
+          placeholder: Tell us about your project...
+          type: text
+          class: form__textarea
+      class: contact__form contact__form--1
+    - field:
+        - element: input
+          id: name
+          label: Name
+          placeholder: Name
+          type: text
+          class: form__input
+        - element: input
+          id: email
+          label: Email
+          placeholder: Email
+          type: email
+          class: form__input
+        - element: textarea
+          id: message
+          label: Message
+          placeholder: How do you like your coffee?
+          type: text
+          class: form__textarea
+      class: contact__form contact__form--2
+    - field:
+        - element: input
+          id: name
+          label: Name
+          placeholder: Name
+          type: text
+          class: form__input
+        - element: input
+          id: email
+          label: Email
+          placeholder: Email
+          type: email
+          class: form__input
+        - element: textarea
+          id: message
+          label: Message
+          placeholder: So what do you want to talk about?
+          type: text
+          class: form__textarea
+      class: contact__form contact__form--3
