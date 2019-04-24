@@ -66,9 +66,12 @@ components:
 - component: contact
   email: projects@nerdwise.ca
   topics:
-    - Let's talk about a project
-    - Let's meet for coffee
-    - Let's just chat
+    - name: Let's talk about a project
+      class: contact__topic contact__topic--1
+    - name: Let's meet for coffee
+      class: contact__topic contact__topic--2
+    - name: Let's just chat
+      class: contact__topic contact__topic--3
   forms:
     - field:
         - element: input

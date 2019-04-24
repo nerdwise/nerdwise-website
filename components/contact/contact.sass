@@ -25,7 +25,7 @@
   align-items: flex-end
   justify-content: space-evenly
   height: 65vh
-  max-width: 50%
+  width: 50%
   margin: 0 $spacing-60
 
 .contact__topics
@@ -39,15 +39,20 @@
 .contact__topic
   color: $contact-topic-color
   text-decoration: none
+  cursor: pointer
+
+.contact__right
+  height: 65vh
+  width: 50%
+  margin: 0 $spacing-60
 
 .contact__form
-  height: 65vh
-  max-width: 50%
-  display: flex
+  height: 100%
+  width: 100%
   flex-direction: column
-  align-items: flex-end
+  align-items: flex-start
   justify-content: center
-  margin: 0 $spacing-60
+  display: none
 
 .form__group
   display: flex
@@ -83,3 +88,10 @@
   width: 12rem
   +font-weight-light
   text-transform: uppercase
+
+.contact__form--1--reveal
+  display: flex
+.contact__form--2--reveal
+  display: flex
+.contact__form--3--reveal
+  display: flex

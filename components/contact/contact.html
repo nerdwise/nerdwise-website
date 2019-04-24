@@ -6,37 +6,41 @@
     }}</a>
     <div class="contact__topics">
       {% for topic in component.topics %}
-      <a href="#" class="contact__topic">{{ topic }} &#10141;</a>
+      <a class="{{ topic.class }}">{{ topic.name }} &#10141;</a>
       {% endfor %}
     </div>
   </div>
 
-  {% for form in component.forms %}
-  <div class="{{ form.class }}">
-    {% for field in form.field %}
-    <div class="form__group">
-      <label for="{{ field.id }}" class="form__label">{{ field.label }}</label>
-      {% if field.element == 'input' %}
-      <input
-        type="{{ field.type }}"
-        id="{{ field.id }}"
-        name="{{ field.id }}"
-        placeholder="{{ field.placeholder }}"
-        class="{{ field.class }}"
-      />
-      {% elif field.element == 'textarea' %}
-      <textarea
-        name="{{ field.id }}"
-        id="{{ field.id }}"
-        placeholder="{{ field.placeholder }}"
-        class="{{ field.class }}"
-      ></textarea>
-      {% endif %}
+  <div class="contact__right">
+    {% for form in component.forms %}
+    <div class="{{ form.class }}">
+      {% for field in form.field %}
+      <div class="form__group">
+        <label for="{{ field.id }}" class="form__label">{{
+          field.label
+        }}</label>
+        {% if field.element == 'input' %}
+        <input
+          type="{{ field.type }}"
+          id="{{ field.id }}"
+          name="{{ field.id }}"
+          placeholder="{{ field.placeholder }}"
+          class="{{ field.class }}"
+        />
+        {% elif field.element == 'textarea' %}
+        <textarea
+          name="{{ field.id }}"
+          id="{{ field.id }}"
+          placeholder="{{ field.placeholder }}"
+          class="{{ field.class }}"
+        ></textarea>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <div class="form__group">
+        <button type="submit" class="form__button">Send</button>
+      </div>
     </div>
     {% endfor %}
-    <div class="form__group">
-      <button type="submit" class="form__button">Send</button>
-    </div>
   </div>
-  {% endfor %}
 </section>
