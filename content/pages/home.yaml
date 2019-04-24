@@ -64,3 +64,8 @@ components:
   css_classes:
     - blocks--cyan
 - component: contact
+  email: projects@nerdwise.ca
+  topics:
+    - Let's talk about a project
+    - Let's meet for coffee
+    - Let's just chat
