@@ -1,2 +1,101 @@
 .contact
   min-height: 100vh
+  +font-primary
+  display: flex
+  align-items: center
+  justify-content: center
+
+.contact__header
+  font-size: $font-size-70
+  +font-weight-bold
+  color: $contact-header-color
+
+.contact__email
+  color: $contact-email-color
+  font-size: $font-size-50
+  text-transform: uppercase
+  text-decoration: none
+  border-bottom: 1px solid $contact-email-border-color
+  padding-bottom: 0.2rem
+  +font-weight-light
+
+.contact__info
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  justify-content: space-evenly
+  height: 65vh
+  width: 50%
+  margin: 0 $spacing-60
+
+.contact__topics
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  justify-content: space-evenly
+  height: 40%
+  font-size: $font-size-40
+
+.contact__topic
+  color: $contact-topic-color
+  text-decoration: none
+  cursor: pointer
+  transition: transform 0.3s
+
+.contact__topic:hover
+  transform: translateX(0.5rem)
+
+.contact__right
+  height: 65vh
+  width: 50%
+  margin: 0 $spacing-60
+
+.contact__form
+  height: 100%
+  width: 100%
+  flex-direction: column
+  align-items: flex-start
+  justify-content: center
+  display: none
+
+.form__group
+  display: flex
+  flex-direction: column
+  margin: $spacing-20 0
+
+.form__input,
+.form__textarea,
+.form__button
+  font-size: $font-size-20
+  padding: 0.5rem
+  margin: $spacing-20 0
+  color: $contact-input-color
+
+.form__input,
+.form__textarea
+  border: 1px solid $contact-border-color
+  width: 24rem
+
+.form__input
+  height: 3rem
+
+.form__textarea
+  height: 8rem
+  background-color: transparent
+
+.form__label
+  color: $contact-label-color
+
+.form__button
+  border: 2px solid $contact-border-color
+  text-align: center
+  width: 12rem
+  +font-weight-light
+  text-transform: uppercase
+
+.contact__form--1--reveal
+  display: flex
+.contact__form--2--reveal
+  display: flex
+.contact__form--3--reveal
+  display: flex

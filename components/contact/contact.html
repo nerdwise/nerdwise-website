@@ -1,1 +1,46 @@
-<section class="contact" id="contact"></section>
+<section class="contact" id="contact">
+  <div class="contact__info">
+    <h1 class="contact__header">Get in touch.</h1>
+    <a href="mailto:{{ component.email }}" class="contact__email">{{
+      component.email
+    }}</a>
+    <div class="contact__topics">
+      {% for topic in component.topics %}
+      <a class="{{ topic.class }}">{{ topic.name }} &#10141;</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="contact__right">
+    {% for form in component.forms %}
+    <div class="{{ form.class }}">
+      {% for field in form.field %}
+      <div class="form__group">
+        <label for="{{ field.id }}" class="form__label">{{
+          field.label
+        }}</label>
+        {% if field.element == 'input' %}
+        <input
+          type="{{ field.type }}"
+          id="{{ field.id }}"
+          name="{{ field.id }}"
+          placeholder="{{ field.placeholder }}"
+          class="{{ field.class }}"
+        />
+        {% elif field.element == 'textarea' %}
+        <textarea
+          name="{{ field.id }}"
+          id="{{ field.id }}"
+          placeholder="{{ field.placeholder }}"
+          class="{{ field.class }}"
+        ></textarea>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <div class="form__group">
+        <button type="submit" class="form__button">Send</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
