@@ -21,13 +21,13 @@ components:
 - component: projects
   projects:
     - name: Project
-      about: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
       image:
         url: https://via.placeholder.com/500x900
         alt: Project Image
       infoClass: project__info project__info--1
     - name: Project
-      about: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
       image:
         url: https://via.placeholder.com/500x900
         alt: Project Image
@@ -41,21 +41,21 @@ components:
   staff:
     - name: Angus MacDonald
       position: CEO
-      about: Angus loves writing code and some other stuff too...
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
       image:
         url: https://via.placeholder.com/350x600
         alt: Angus MacDonald
       class: profile profile--1
     - name: Jonathan Loubert
       position: Senior Developer
-      about: Jon loves writing code and some other stuff too...
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
       image:
         url: https://via.placeholder.com/350x600
         alt: Jonathan Loubert
       class: profile profile--2
     - name: Kaden Zipfel
       position: Associate Developer
-      about: Kaden loves writing code and some other stuff too...
+      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
       image:
         url: https://via.placeholder.com/350x600
         alt: Kaden Zipfel

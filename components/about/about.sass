@@ -11,9 +11,8 @@
 .profile
   display: flex
   align-items: flex-start
-  justify-content: space-between
+  justify-content: center
   margin-bottom: $spacing-60
-  width: 60%
 
 .profile:nth-of-type(even)
   flex-direction: row-reverse
@@ -24,6 +23,7 @@
   transform-origin: bottom
   visibility: hidden
   background: $profile-block-color
+  margin: 0 $spacing-60
   transition: transform 0.3s, visibility 0.3s
 
 .profile--1--reveal
@@ -70,16 +70,19 @@
   opacity: 0
   transform: translateY(50%)
   transition: opacity 0.2s, transform 0.2s
+  width: 30rem
+  margin: 0 $spacing-60
 
 .profile__name
-  margin-bottom: $spacing-50
-  +font-primary
+  margin-bottom: $spacing-60
+  +font-secondary
   +font-weight-bold
   font-size: $profile-name-font-size
   color: $profile-name-font-color
 
 .profile__about
-  +font-secondary
+  +font-primary
   +font-weight-regular
-  $font-size: $profile-about-font-size
+  font-size: $profile-about-font-size
   color: $profile-about-font-color
+  line-height: $profile-about-line-height

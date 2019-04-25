@@ -11,9 +11,8 @@
 .project
   display: flex
   align-items: flex-start
-  justify-content: space-between
+  justify-content: center
   margin-bottom: $spacing-60
-  width: 60%
 
 .project:nth-of-type(odd)
   flex-direction: row-reverse
@@ -25,6 +24,11 @@
   justify-content: flex-start
   position: sticky
   top: 12vh
+  width: 30rem
+  margin: 0 $spacing-60
+
+.project__image
+  margin: 0 $spacing-60
 
 .project__info--1--pause
   position: fixed
@@ -41,5 +45,6 @@
 .project__about
   +font-secondary
   +font-weight-regular
-  $font-size: $project-about-font-size
+  font-size: $project-about-font-size
   color: $project-about-font-color
+  line-height: $project-about-line-height
