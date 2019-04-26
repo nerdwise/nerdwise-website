@@ -17,7 +17,7 @@ class Hero {
       effects: [
         new Tween([
           [0, 'opacity: 1; transform: scale(1) rotate(0deg) translateY(0)'],
-          [1, 'opacity: 0; transform: scale(0.9) rotateX(3deg) translateY(-5vh)']
+          [1, 'opacity: 0; transform: scale(0.9) rotateX(3deg) translateY(-3vh)']
         ]),
         new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
           styleTarget: this.overlay_
@@ -25,7 +25,7 @@ class Hero {
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
       startDistance: () => 0,
-      endDistance: window.innerHeight / 3
+      endDistance: window.innerHeight / 2.5
     });
   }
 }
