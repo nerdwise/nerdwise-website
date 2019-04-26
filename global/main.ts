@@ -3,6 +3,7 @@ import { Nav } from '../components/nav/nav';
 import { About } from '../components/about/about';
 import { Hero } from '../components/hero/hero';
 import { Contact } from '../components/contact/contact';
+import { SkewedSection } from '../components/skewed-section/skewed-section';
 
 const blocks = new Blocks();
 blocks.startScrollEffect();
@@ -18,3 +19,6 @@ hero.tweenHeader();
 
 const contact = new Contact();
 contact.onClick();
+
+const skewedSection = new SkewedSection();
+skewedSection.startScrollEffect();

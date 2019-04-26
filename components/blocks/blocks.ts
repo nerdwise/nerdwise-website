@@ -3,7 +3,8 @@ import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scro
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
 const BLOCK_KEYFRAMES: [number, string][] = [
-  [0.75, `height: 1rem; transform: skewY(2deg) translateY(2.1rem)`],
+  [0, `transform: skewY(2deg) translateY(2.1rem)`],
+  [0.75, `height: 1rem;`],
   [1, `height: 6vh; transform: skewY(-.3deg) translateY(0rem)`]
 ];
 
