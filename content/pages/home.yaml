@@ -10,15 +10,14 @@ ng_controller: BaseController
 components:
 - component: hero
   header: Hero Header
-- component: blocks
-  css_classes:
+  wrap: False
+- component: workflow
+  block_css_classes:
     - block--pink
     - block--reverse
-- component: workflow
-- component: blocks
-  css_classes:
-    - block--orange
 - component: projects
+  block_css_classes:
+    - block--orange
   projects:
     - name: Project
       about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
@@ -32,11 +31,10 @@ components:
         url: https://via.placeholder.com/500x900
         alt: Project Image
       infoClass: project__info project__info--2
-- component: blocks
-  css_classes:
+- component: about
+  block_css_classes:
     - block--yellow
     - block--reverse
-- component: about
   title: About
   staff:
     - name: Angus MacDonald
@@ -60,10 +58,9 @@ components:
         url: https://via.placeholder.com/350x600
         alt: Kaden Zipfel
       class: profile profile--3
-- component: blocks
-  css_classes:
-    - block--cyan
 - component: contact
+  block_css_classes:
+    - block--cyan
   email: projects@nerdwise.ca
   topics:
     - name: Let's talk about a project

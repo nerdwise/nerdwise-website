@@ -17,6 +17,7 @@
     "/components/hero/hero.html",
     "/components/nav/nav.html",
     "/components/projects/projects.html",
+    "/components/skewed-section/skewed-section.html",
     "/components/workflow/workflow.html",
     "/content/data/footer.yaml",
     "/content/data/nav.yaml",
