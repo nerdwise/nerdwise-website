@@ -2,12 +2,9 @@ import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/componen
 import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
-const ROTATION_ANGLE = 10;
-const SCALE = 1.05;
-
 const BLOCK_KEYFRAMES: [number, string][] = [
-  [0.75, `transform: scale(1, 0.25)`],
-  [1, `transform: scale(1, 1)`]
+  [0.75, `transform: scale(1, 0.25) skewY(2deg)`],
+  [1, `transform: scale(1, 1.25) skewY(-.3deg)`]
 ];
 
 const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
@@ -16,37 +13,33 @@ const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
 ];
 
 class Blocks {
-  private readonly blocksContainers_: HTMLElement[];
-  private scrollEffect_: ScrollEffect = null;
+  private readonly blockSpacers_: HTMLElement[];
 
   constructor() {
-    this.blocksContainers_ =
+    this.blockSpacers_ =
       <HTMLElement[]>Array.from(document.querySelectorAll('.block-spacer'));
   }
 
-  private static getBlockTween_(block: HTMLElement): Tween {
-    return new Tween(BLOCK_KEYFRAMES, {styleTarget: block});
-  }
-
-  private static getBlockBackgroundTween_(block: HTMLElement): Tween {
-    return new Tween(BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: block});
-  }
-
-  private getBlockTweens_(blocksContainer: HTMLElement): Tween[] {
+  private static getBlockTweens_(blockSpacer: HTMLElement): Tween[] {
+    const block = <HTMLElement>(blockSpacer.nextElementSibling);
+    const blockBackground =
+      <HTMLElement>(block.querySelector('.block__background'));
     return [
-      Blocks.getBlockBackgroundTween_((<HTMLElement>blocksContainer.nextElementSibling).querySelector('.block__background')),
-      Blocks.getBlockTween_((<HTMLElement>blocksContainer.nextElementSibling))
+      new Tween(BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: blockBackground}),
+      new Tween(BLOCK_KEYFRAMES, {styleTarget: block}),
     ];
   }
 
   public startScrollEffect(): void {
-    this.blocksContainers_.forEach(blocksContainer => {
-      this.scrollEffect_ = new ScrollEffect(blocksContainer, {
-        effects: this.getBlockTweens_(blocksContainer),
-        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-        startDistance: () => -window.innerHeight,
-        endDistance: 0
-      });
+    this.blockSpacers_.forEach((blocksContainer) => {
+      new ScrollEffect(
+        blocksContainer,
+        {
+          effects: Blocks.getBlockTweens_(blocksContainer),
+          getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+          startDistance: () => -window.innerHeight,
+          endDistance: 0
+        });
     });
   }
 }
