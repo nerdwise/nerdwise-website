@@ -9,7 +9,7 @@
 
 =block-color($start, $middle, $right)
   .block__background
-    background: linear-gradient(to right, $start, $middle, $right)
+    background: linear-gradient(to right, $color-white 50%, $start 60%, $middle 90%, $right 100%)
 
 .block--pink
   +block-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
@@ -30,7 +30,7 @@
   z-index: 1
 
 .block__background
-  width: 200%
+  width: 400%
   height: 100%
   position: absolute
   top: 0

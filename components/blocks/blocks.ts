@@ -6,13 +6,13 @@ const ROTATION_ANGLE = 10;
 const SCALE = 1.05;
 
 const BLOCK_KEYFRAMES: [number, string][] = [
-  [0.8, `transform: scale(1, 0.09)`],
+  [0.75, `transform: scale(1, 0.25)`],
   [1, `transform: scale(1, 1)`]
 ];
 
 const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
   [0, `transform: translateX(0)`],
-  [1, `transform: translateX(-50%)`]
+  [1, `transform: translateX(-75%)`]
 ];
 
 class Blocks {
