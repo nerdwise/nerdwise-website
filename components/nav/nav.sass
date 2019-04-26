@@ -1,14 +1,13 @@
 @import ../global/sass-config/_mixins
-  
+
 .nav
-  height: 10vh
+  +font-primary
+  +font-weight-regular
+  height: 6vh
   width: 100%
-  padding: $spacing-30 $spacing-20
   display: flex
   align-items: center
   justify-content: space-between
-  +font-primary
-  +font-weight-regular
   position: fixed
   top: 0
   left: 0
@@ -16,9 +15,7 @@
 
 .nav__brand
   height: calc(100% + 1rem)
-  background-color: rgba($nav-logo-background-color, 0.8)
   padding: 1rem
-  box-shadow: 2px 2px 4px rgba($nav-logo-background-color, 0.25)
 
 .nav__logo
   height: 100%
@@ -29,42 +26,39 @@
   align-items: center
   justify-content: space-between
   width: 50%
-  padding: 0 3rem
+  height: 100%
 
 .nav__link
+  background: rgba($color-black, 0)
   position: relative
   text-decoration: none
   color: $nav-font-color
   font-size: $nav-link-font-size
-  transition: color 0.2s, font-weight 0.2s
+  transition: font-weight 0.2s
+  text-transform: uppercase
+  height: 100%
+  padding: 0 $spacing-40
+  display: flex
+  align-items: center
+
+  &:after
+    content: ''
+    position: absolute
+    background: $color-neutral-100
+    top: 0
+    left: 0
+    right: 0
+    width: 1rem
+    height: 1rem
+    margin: auto
+    transform: translateY(-1.25rem) rotate(45deg)
+    transition: transform .2s
 
 .nav__link:hover
   color: $nav-font-hover-color
 
-.nav__link:before
-  content: ""
-  position: absolute
-  width: 100%
-  height: 4px
-  top: 50%
-  left: 0
-  visibility: hidden
-  transform: scaleX(0)
-  z-index: -1
-  transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out
-
-.nav__link--about:before
-  background-color: $nav-strikethrough-color--about
-.nav__link--projects:before
-  background-color: $nav-strikethrough-color--projects
-.nav__link--workflow:before
-  background-color: $nav-strikethrough-color--workflow
-.nav__link--contact:before
-  background-color: $nav-strikethrough-color--contact
-
-.nav__link:hover:before,
-  visibility: visible
-  transform: scaleX(1.3)
+  &:after
+    transform: translateY(-.8rem) rotate(45deg)
 
 .nav__background
   height: calc(100% + 2rem)
@@ -72,54 +66,21 @@
   position: absolute
   right: -3rem
   z-index: -1
-  background-color: rgba($nav-background-color, 0.8)
-  box-shadow: 2px 2px 4px rgba($nav-background-color, 0.25)
+
+=nav-link-active($color)
+  font-weight: 600
+
+  &:after
+    transform: translateY(-.6rem) rotate(45deg)
+
+  &:hover:after
+    transform: translateY(-.5rem) rotate(45deg)
 
 .nav__link--about--active
-  color: $nav-font-hover-color !important
-  &:before
-    content: ""
-    position: absolute
-    width: 100%
-    height: 4px
-    top: 50%
-    left: 0
-    background-color: $nav-strikethrough-color--about
-    visibility: visible
-    transform: scaleX(1.3)
+  +nav-link-active($nav-strikethrough-color--about)
 .nav__link--projects--active
-  color: $nav-font-hover-color !important
-  &:before
-    content: ""
-    position: absolute
-    width: 100%
-    height: 4px
-    top: 50%
-    left: 0
-    background-color: $nav-strikethrough-color--projects
-    visibility: visible
-    transform: scaleX(1.3)
+  +nav-link-active($nav-strikethrough-color--projects)
 .nav__link--workflow--active
-  color: $nav-font-hover-color !important
-  &:before
-    content: ""
-    position: absolute
-    width: 100%
-    height: 4px
-    top: 50%
-    left: 0
-    background-color: $nav-strikethrough-color--workflow
-    visibility: visible
-    transform: scaleX(1.3)
+  +nav-link-active($nav-strikethrough-color--workflow)
 .nav__link--contact--active
-  color: $nav-font-hover-color !important
-  &:before
-    content: ""
-    position: absolute
-    width: 100%
-    height: 4px
-    top: 50%
-    left: 0
-    background-color: $nav-strikethrough-color--contact
-    visibility: visible
-    transform: scaleX(1.3)
+  +nav-link-active($nav-strikethrough-color--contact)

@@ -6,6 +6,11 @@ const ROTATION_ANGLE = 10;
 const SCALE = 1.05;
 
 const BLOCK_KEYFRAMES: [number, string][] = [
+  [0.8, `transform: scale(1, 0.09)`],
+  [1, `transform: scale(1, 1)`]
+];
+
+const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
   [0, `transform: translateX(0)`],
   [1, `transform: translateX(-50%)`]
 ];
@@ -23,8 +28,15 @@ class Blocks {
     return new Tween(BLOCK_KEYFRAMES, {styleTarget: block});
   }
 
+  private static getBlockBackgroundTween_(block: HTMLElement): Tween {
+    return new Tween(BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: block});
+  }
+
   private getBlockTweens_(blocksContainer: HTMLElement): Tween[] {
-    return [Blocks.getBlockTween_((<HTMLElement>blocksContainer.nextElementSibling).querySelector('.block__background'))];
+    return [
+      Blocks.getBlockBackgroundTween_((<HTMLElement>blocksContainer.nextElementSibling).querySelector('.block__background')),
+      Blocks.getBlockTween_((<HTMLElement>blocksContainer.nextElementSibling))
+    ];
   }
 
   public startScrollEffect(): void {
