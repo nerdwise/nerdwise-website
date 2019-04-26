@@ -1,6 +1,6 @@
 component: footer
 logo: 
-  url: /static/images/logo.svg
+  url: /static/images/nerdwise-logo.svg
   alt: Logo
 links:
   - name: About
