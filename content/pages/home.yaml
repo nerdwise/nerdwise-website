@@ -12,12 +12,12 @@ components:
   header: Hero Header
 - component: blocks
   css_classes:
-    - blocks--pink
-    - blocks--reverse
+    - block--pink
+    - block--reverse
 - component: workflow
 - component: blocks
-  css_classes: 
-    - blocks--orange
+  css_classes:
+    - block--orange
 - component: projects
   projects:
     - name: Project
@@ -34,8 +34,8 @@ components:
       infoClass: project__info project__info--2
 - component: blocks
   css_classes:
-    - blocks--yellow
-    - blocks--reverse
+    - block--yellow
+    - block--reverse
 - component: about
   title: About
   staff:
@@ -62,7 +62,7 @@ components:
       class: profile profile--3
 - component: blocks
   css_classes:
-    - blocks--cyan
+    - block--cyan
 - component: contact
   email: projects@nerdwise.ca
   topics:

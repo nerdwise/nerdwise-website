@@ -1,44 +1,36 @@
 @import ../../global/sass-config/colors
 
-.blocks
-  display: flex
+.block-spacer
   height: 0
   overflow: visible
   padding-bottom: 30vh
   position: relative
-  width: 120%
-  margin-left: -10%
+  width: 100%
 
-.blocks--reverse
-  //flex-direction: row-reverse
-  transform: scaleX(-1)
+=block-color($start, $middle, $right)
+  .block__background
+    background: linear-gradient(to right, $start, $middle, $right)
 
-=blocks-color($start, $middle, $right)
-  .block
-    background-image: linear-gradient(to bottom, $right, $block-bottom-color 90%)
-  .block:before
-    background: linear-gradient(to bottom, $start, $middle 12%, $block-bottom-color 90%)
-
-.blocks--pink
-  +blocks-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
-.blocks--orange
-  +blocks-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
-.blocks--yellow
-  +blocks-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
-.blocks--cyan
-  +blocks-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
+.block--pink
+  +block-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
+.block--orange
+  +block-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
+.block--yellow
+  +block-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
+.block--cyan
+  +block-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
 
 .block
   width: 100%
-  height: 75vh
-  margin-right: 2rem
-  margin-top: .5rem
-  margin-left: .5rem
+  height: 100px
+  position: sticky
+  top: 0
+  overflow: hidden
 
-.block:before
-  content: ''
-  position: absolute
-  top: -0.5rem
-  left: -0.5rem
-  width: 100%
+.block__background
+  width: 200%
   height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
