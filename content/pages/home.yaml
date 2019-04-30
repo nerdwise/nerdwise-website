@@ -15,6 +15,32 @@ components:
   block_css_classes:
     - block--pink
     - block--reverse
+  body:
+    - Built with intent every step of the way.
+    - We take pride in creating valuable sites for our clients. You didn't set
+      out to create a website for its own sake. Your site is a tool in your
+      business's arsenal to help drive sales and build customer engagement. We
+      get that, we had the same motivations when we built this site :)
+    - Any project we start will kick off with a meeting to discuss budgets,
+      timelines, priorities and the desired final product.
+    - We'll come back to you shortly thereafter with an actionable plan
+      outlining what we can deliver.
+    - Then, once we've received your go-ahead, we'll setup a GitHub repo to work
+      on your project. If that doesn't sound familiar, don't worry, we'll run
+      you through it. In short, it's where you'll be able to set priorities and
+      manage progress in real time.
+    - At the same time we'll set you up with access to our content management
+      system (CMS), where you'll have complete control over what goes on your
+      site.
+    - As we work you'll have access to a staging server where you can see
+      the changes we're making as we make them.
+    - Once we get to a point where you're happy to go live, we'll push the
+      button and your site will be visible to the world.
+    - Our relationship doesn't have to end after the first launch either, we can
+      continue to deliver post-launch pages and designs as well as setting you
+      up with scheduled builds so that you can edit content in the CMS and see
+      it live on the site automatically.
+    - Now all that's left is to give us a shout and kick this process off! :)
 - component: projects
   block_css_classes:
     - block--orange
