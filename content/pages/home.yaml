@@ -25,12 +25,15 @@ components:
   block_css_classes:
     - block--pink
     - block--reverse
-  body:
+  what_we_do:
+    - Deliver completely custom high-end bespoke websites.
+    - Your business isn't a copy-paste, your site shouldn't be either.
+  how_we_do:
     - Built with intent every step of the way.
     - We take pride in creating valuable sites for our clients. You didn't set
       out to create a website for its own sake. Your site is a tool in your
       business's arsenal to help drive sales and build customer engagement. We
-      get that, we had the same motivations when we built this site :)
+      get that, we had the same motivations whfen we built this site :)
     - Any project we start will kick off with a meeting to discuss budgets,
       timelines, priorities and the desired final product.
     - We'll come back to you shortly thereafter with an actionable plan
@@ -54,6 +57,9 @@ components:
       up with scheduled builds so that you can edit content in the CMS and see
       it live on the site automatically.
     - Now all that's left is to give us a shout and kick this process off! :)
+  why_we_do:
+    - We're nerds and we love what we do, marrying beautiful designs with
+      high performance code.
 - component: projects
   block_css_classes:
     - block--orange

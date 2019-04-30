@@ -2,10 +2,20 @@ import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/componen
 import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
+const START_DEGREE = 2;
+const END_DEGREE = -.3;
+
+function getTanFromDegrees(degrees: number): number {
+  return Math.tan(degrees * Math.PI/180);
+}
+
+const START_TRANSLATE = getTanFromDegrees(Math.abs(START_DEGREE)) * 50;
+const END_TRANSLATE = -getTanFromDegrees(Math.abs(END_DEGREE)) * 50;
+
 const BLOCK_KEYFRAMES: [number, string][] = [
-  [0, `transform: skewY(2deg) translateY(2.1rem)`],
+  [0, `transform: skewY(${START_DEGREE}deg) translateY(${START_TRANSLATE}vw)`],
   [0.75, `height: 1rem;`],
-  [1, `height: 6vh; transform: skewY(-.3deg) translateY(0rem)`]
+  [1, `height: 7vh; transform: skewY(${END_DEGREE}deg) translateY(${END_TRANSLATE}vw)`]
 ];
 
 const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
