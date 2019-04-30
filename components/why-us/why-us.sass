@@ -1,0 +1,90 @@
+.why-us
+  min-height: 100vh
+  padding: 10vh 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.why-us__header
+  font-size: $font-size-60
+  +font-primary
+  +font-weight-bold
+  color: $why-us-header-color
+  margin-bottom: $spacing-60
+
+.why-us__tagline
+  font-size: $font-size-50
+  +font-secondary
+  +font-weight-regular
+  color: $why-us-tagline-color
+  margin-bottom: $spacing-60
+
+.why-us__button
+  font-size: $font-size-50
+  +font-secondary
+  +font-weight-light
+  color: $why-us-button-color
+  border: 3px solid $why-us-button-color
+  padding: $spacing-20 $spacing-60
+  cursor: pointer
+  transition: color 0.2s, background 0.2s
+
+.why-us__button:hover 
+  color: $why-us-button-color--dark
+  background: $why-us-button-color
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1
+  height: 100vh
+  width: 100vw
+  background: rgba(0, 0, 0, 0.25)
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: auto
+  visibility: hidden
+  opacity: 0
+  transform: translateY(50%)
+  transition: transform 0.2s, opacity 0.2s
+
+.display
+  visibility: visible
+  opacity: 1
+  transform: translateY(0)
+
+.modal__content
+  width: 50rem
+  height: 25rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+  background: white
+  position: fixed
+  background: $modal-background-color
+
+.modal__x
+  position: absolute
+  font-size: $font-size-40
+  color: $modal-header-color
+  cursor: pointer
+  top: 0.5rem
+  right: 1rem
+
+.modal__header
+  color: $modal-header-color
+  font-size: $font-size-40
+  +font-primary
+  +font-weight-bold
+  margin: $spacing-60 0
+
+.modal__question
+  color: $modal-question-color
+  font-size: $font-size-30
+  +font-secondary
+  +font-weight-regular
+  margin-bottom: $spacing-60
