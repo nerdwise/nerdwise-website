@@ -1,0 +1,20 @@
+<section class="why-us">
+  <h1 class="why-us__header">
+    {{ component.header }}
+  </h1>
+  <h4 class="why-us__tagline">{{ component.tagline }}</h4>
+  <button class="why-us__button">
+    {{ component.button }}
+  </button>
+  <div class="modal">
+    <div class="modal__content">
+      <div class="modal__x">&times;</div>
+      <h2 class="modal__header">{{ component.modal.title }}</h2>
+      <ul class="modal__list">
+        {% for question in component.modal.questions %}
+        <li class="modal__question">{{ question }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
