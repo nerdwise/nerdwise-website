@@ -1,0 +1,24 @@
+action: https://docs.google.com/forms/d/e/1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA/formResponse?hl=en
+class: contact__form contact__form--2
+items:
+- description: ''
+  fields:
+  - field_type: TEXT
+    name: entry.955900110
+    placeholder@: Name
+  label@: Name
+  required: true
+- description: ''
+  fields:
+  - field_type: EMAIL
+    name: entry.1687256934
+    placeholder@: Email
+  label@: Email
+  required: true
+- description: ''
+  fields:
+  - field_type: TEXTAREA
+    name: entry.598564064
+    placeholder@: How do you like your coffee?
+  label@: Message
+  required: true

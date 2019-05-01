@@ -95,7 +95,9 @@ components:
         alt: Kaden Zipfel
       class: profile profile--3
 - component: contact
-  form: !g.doc /content/partials/form.yaml
+  projectForm: !g.doc /content/partials/projectForm.yaml
+  coffeeForm: !g.doc /content/partials/coffeeForm.yaml
+  chatForm: !g.doc /content/partials/chatForm.yaml
   block_css_classes:
     - block--cyan
   email: projects@nerdwise.ca
