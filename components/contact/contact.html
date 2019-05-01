@@ -15,11 +15,31 @@
     {% import "/extensions/google_forms/google_forms.html" as google_forms with
     context %}
     <form
-      action="{{ component.form.action }}"
+      action="{{ component.projectForm.action }}"
       method="POST"
-      class="{{ component.form.class }}"
+      class="{{ component.projectForm.class }}"
     >
-      {{ google_forms.render_fields(component.form.items) }}
+      {{ google_forms.render_fields(component.projectForm.items) }}
+      <div class="form__group">
+        <button type="submit" class="form__button">Send</button>
+      </div>
+    </form>
+    <form
+      action="{{ component.coffeeForm.action }}"
+      method="POST"
+      class="{{ component.coffeeForm.class }}"
+    >
+      {{ google_forms.render_fields(component.coffeeForm.items) }}
+      <div class="form__group">
+        <button type="submit" class="form__button">Send</button>
+      </div>
+    </form>
+    <form
+      action="{{ component.chatForm.action }}"
+      method="POST"
+      class="{{ component.chatForm.class }}"
+    >
+      {{ google_forms.render_fields(component.chatForm.items) }}
       <div class="form__group">
         <button type="submit" class="form__button">Send</button>
       </div>

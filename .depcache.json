@@ -1,14 +1,4 @@
 {
-  "/content/pages/colors.yaml": [
-    "/components/colors/colors.html",
-    "/components/footer/footer.html",
-    "/components/nav/nav.html",
-    "/content/data/footer.yaml",
-    "/content/data/nav.yaml",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
   "/content/pages/home.yaml": [
     "/components/about/about.html",
     "/components/blocks/blocks.html",
@@ -22,7 +12,9 @@
     "/components/workflow/workflow.html",
     "/content/data/footer.yaml",
     "/content/data/nav.yaml",
-    "/content/partials/form.yaml",
+    "/content/partials/chatForm.yaml",
+    "/content/partials/coffeeForm.yaml",
+    "/content/partials/projectForm.yaml",
     "/dist/css/main.min.css",
     "/dist/js/main.min.js",
     "/static/images/favicon.png"

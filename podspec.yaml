@@ -33,7 +33,13 @@ preprocessors:
   build_task: grow-build
 - kind: google_forms
   id: 1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg
-  path: /content/partials/form.yaml
+  path: /content/partials/projectForm.yaml
+- kind: google_forms
+  id: 1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA
+  path: /content/partials/coffeeForm.yaml
+- kind: google_forms
+  id: 1FAIpQLScY2003v7ZupB7UMHKlLUKvHfe6YCqW0d2phqqNTf-oHZVZDQ
+  path: /content/partials/chatForm.yaml
 
 static_dirs:
 - static_dir: /static/
