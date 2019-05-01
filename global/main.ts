@@ -16,7 +16,7 @@ const about = new About();
 about.blockReveal();
 
 const hero = new Hero();
-hero.tweenHeader();
+hero.init();
 
 const contact = new Contact();
 contact.onClick();
