@@ -23,10 +23,17 @@ meta:
     twitter: example
     facebook: example
 
+extensions:
+  preprocessors:
+  - extensions.google_forms.GoogleFormsPreprocessor
+
 preprocessors:
 - name: gulp
   kind: gulp
   build_task: grow-build
+- kind: google_forms
+  id: 1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg
+  path: /content/partials/form.yaml
 
 static_dirs:
 - static_dir: /static/

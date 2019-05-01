@@ -12,35 +12,17 @@
   </div>
 
   <div class="contact__right">
-    {% for form in component.forms %}
-    <div class="{{ form.class }}">
-      {% for field in form.field %}
-      <div class="form__group">
-        <label for="{{ field.id }}" class="form__label">{{
-          field.label
-        }}</label>
-        {% if field.element == 'input' %}
-        <input
-          type="{{ field.type }}"
-          id="{{ field.id }}"
-          name="{{ field.id }}"
-          placeholder="{{ field.placeholder }}"
-          class="{{ field.class }}"
-        />
-        {% elif field.element == 'textarea' %}
-        <textarea
-          name="{{ field.id }}"
-          id="{{ field.id }}"
-          placeholder="{{ field.placeholder }}"
-          class="{{ field.class }}"
-        ></textarea>
-        {% endif %}
-      </div>
-      {% endfor %}
+    {% import "/extensions/google_forms/google_forms.html" as google_forms with
+    context %}
+    <form
+      action="{{ component.form.action }}"
+      method="POST"
+      class="{{ component.form.class }}"
+    >
+      {{ google_forms.render_fields(component.form.items) }}
       <div class="form__group">
         <button type="submit" class="form__button">Send</button>
       </div>
-    </div>
-    {% endfor %}
+    </form>
   </div>
 </section>
