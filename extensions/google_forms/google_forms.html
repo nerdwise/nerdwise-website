@@ -1,7 +1,7 @@
 {% macro checkbox_or_radio_field_group(item, field, loop) %}
   {% if item.label and loop.first %}
   <div class="form__group" data-label="{{item.label|slug}}" data-name="{{field.name}}">
-      <label class="form__label">{{_(item.label)}}
+      <label class="form__group__label">{{_(item.label)}}
         {% if item.required %}
         <span class="required">*</span>
         {% endif %}
@@ -103,8 +103,7 @@
           type="{{"email" if "email" in item.label.lower() else field.field_type|lower}}"
           {{"required" if item.required}}
           name="{{field.name}}"
-          class="form__input"
-          placeholder="{{field.placeholder}}">
+          class="form__field__control">
       {% endif %}
     </div>
   </div>
@@ -122,8 +121,7 @@
       <textarea
         {{"required" if item.required}}
         name="{{field.name}}"
-        class="form__textarea"
-        placeholder="{{field.placeholder}}"></textarea>
+        class="form__field__control"></textarea>
     </div>
   </div>
   {% if item.description %}
@@ -135,7 +133,7 @@
 
 {% macro _label(item, field) %}
   {% if item.label %}
-  <label class="form__label">
+  <label class="form__field__label">
     {{_(item.label)}}
     {% if item.required %}
     <span class="required">*</span>
