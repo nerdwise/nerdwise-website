@@ -21,6 +21,7 @@
     "/components/workflow/workflow.html",
     "/content/data/footer.yaml",
     "/content/data/nav.yaml",
+    "/content/partials/form.yaml",
     "/dist/css/main.min.css",
     "/dist/js/main.min.js",
     "/static/images/favicon.png"
