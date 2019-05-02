@@ -4,35 +4,35 @@ items:
   fields:
   - field_type: TEXT
     name: entry.709035373
-    placeholder@: Name
+    placeholder@: Your answer
   label@: Name
   required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.1301712150
-    placeholder@: Company
+    placeholder@: Your answer
   label@: Company
   required: false
 - description: ''
   fields:
-  - field_type: EMAIL
+  - field_type: TEXT
     name: entry.465442047
-    placeholder@: Email
+    placeholder@: Your answer
   label@: Email
   required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.508162947
-    placeholder@: Budget
+    placeholder@: Your answer
   label@: Budget
   required: false
 - description: ''
   fields:
   - field_type: TEXTAREA
     name: entry.457207032
-    placeholder@: Tell us about your project...
+    placeholder@: Your answer
   label@: Message
   required: false
 title@: Nerdwise Project Contact Form
