@@ -103,7 +103,8 @@
           type="{{"email" if "email" in item.label.lower() else field.field_type|lower}}"
           {{"required" if item.required}}
           name="{{field.name}}"
-          class="form__field__control">
+          class="form__field__control"
+          placeholder="{{field.placeholder}}">
       {% endif %}
     </div>
   </div>
@@ -121,7 +122,8 @@
       <textarea
         {{"required" if item.required}}
         name="{{field.name}}"
-        class="form__field__control"></textarea>
+        class="form__field__control"
+        placeholder="{{field.placeholder}}"></textarea>
     </div>
   </div>
   {% if item.description %}

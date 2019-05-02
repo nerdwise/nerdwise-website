@@ -1,24 +1,24 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLScY2003v7ZupB7UMHKlLUKvHfe6YCqW0d2phqqNTf-oHZVZDQ/formResponse?hl=en
-class: contact__form contact__form--3
 items:
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.617208522
-    placeholder@: Name
+    placeholder@: Your answer
   label@: Name
-  required: true
+  required: false
 - description: ''
   fields:
-  - field_type: EMAIL
+  - field_type: TEXT
     name: entry.1213075532
-    placeholder@: Email
+    placeholder@: Your answer
   label@: Email
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXTAREA
     name: entry.1915984557
-    placeholder@: So what do you want to talk about?
+    placeholder@: Your answer
   label@: Message
-  required: true
+  required: false
+title@: Nerdwise Chat Form

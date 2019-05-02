@@ -1,24 +1,24 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA/formResponse?hl=en
-class: contact__form contact__form--2
 items:
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.955900110
-    placeholder@: Name
+    placeholder@: Your answer
   label@: Name
-  required: true
+  required: false
 - description: ''
   fields:
-  - field_type: EMAIL
+  - field_type: TEXT
     name: entry.1687256934
-    placeholder@: Email
+    placeholder@: Your answer
   label@: Email
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXTAREA
     name: entry.598564064
-    placeholder@: How do you like your coffee?
+    placeholder@: Your answer
   label@: Message
-  required: true
+  required: false
+title@: Nerdwise Coffee Form

@@ -1,38 +1,38 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg/formResponse?hl=en
-class: contact__form contact__form--1
 items:
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.709035373
-    placeholder@: Name
+    placeholder@: Your answer
   label@: Name
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.1301712150
-    placeholder@: Company (optional)
+    placeholder@: Your answer
   label@: Company
   required: false
 - description: ''
   fields:
-  - field_type: EMAIL
+  - field_type: TEXT
     name: entry.465442047
-    placeholder@: Email
+    placeholder@: Your answer
   label@: Email
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.508162947
-    placeholder@: Budget (optional)
+    placeholder@: Your answer
   label@: Budget
   required: false
 - description: ''
   fields:
   - field_type: TEXTAREA
     name: entry.457207032
-    placeholder@: Tell us about your project...
+    placeholder@: Your answer
   label@: Message
-  required: true
+  required: false
+title@: Nerdwise Project Contact Form
