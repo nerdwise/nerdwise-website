@@ -1,5 +1,4 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg/formResponse?hl=en
-class: contact__form contact__form--1
 items:
 - description: ''
   fields:
@@ -7,12 +6,12 @@ items:
     name: entry.709035373
     placeholder@: Name
   label@: Name
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.1301712150
-    placeholder@: Company (optional)
+    placeholder@: Company
   label@: Company
   required: false
 - description: ''
@@ -21,12 +20,12 @@ items:
     name: entry.465442047
     placeholder@: Email
   label@: Email
-  required: true
+  required: false
 - description: ''
   fields:
   - field_type: TEXT
     name: entry.508162947
-    placeholder@: Budget (optional)
+    placeholder@: Budget
   label@: Budget
   required: false
 - description: ''
@@ -35,4 +34,5 @@ items:
     name: entry.457207032
     placeholder@: Tell us about your project...
   label@: Message
-  required: true
+  required: false
+title@: Nerdwise Project Contact Form

@@ -1,4 +1,16 @@
 {
+  "/content/pages/colors.yaml": [
+    "/components/blocks/blocks.html",
+    "/components/colors/colors.html",
+    "/components/footer/footer.html",
+    "/components/nav/nav.html",
+    "/components/skewed-section/skewed-section.html",
+    "/content/data/footer.yaml",
+    "/content/data/nav.yaml",
+    "/dist/css/main.min.css",
+    "/dist/js/main.min.js",
+    "/static/images/favicon.png"
+  ],
   "/content/pages/home.yaml": [
     "/components/about/about.html",
     "/components/blocks/blocks.html",
