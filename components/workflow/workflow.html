@@ -9,22 +9,22 @@
   <div class="right">
     <h1 class="workflow__header">Workflow</h1>
     <h2 class="workflow__title">What We Do</h2>
+    {% for paragraph in component.what_we_do %}
     <p class="workflow__paragraph">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-      maiores provident esse illum possimus ipsam quasi reprehenderit architecto
-      ad quam! Eum aliquam quia alias sed debitis. Provident cum vitae adipisci!
+      {{ paragraph }}
     </p>
+    {% endfor %}
     <h2 class="workflow__title">How We Do It</h2>
+    {% for paragraph in component.how_we_do %}
     <p class="workflow__paragraph">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-      maiores provident esse illum possimus ipsam quasi reprehenderit architecto
-      ad quam! Eum aliquam quia alias sed debitis. Provident cum vitae adipisci!
+      {{ paragraph }}
     </p>
+    {% endfor %}
     <h2 class="workflow__title">Why We Do It</h2>
+    {% for paragraph in component.why_we_do %}
     <p class="workflow__paragraph">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-      maiores provident esse illum possimus ipsam quasi reprehenderit architecto
-      ad quam! Eum aliquam quia alias sed debitis. Provident cum vitae adipisci!
+      {{ paragraph }}
     </p>
+    {% endfor %}
   </div>
 </section>
