@@ -7,15 +7,16 @@ import { max } from '../../node_modules/toolbox-v2/src/toolbox/utils/array/max';
 class Nav {
   private sections_: HTMLElement[];
   private navLinks_: HTMLElement[];
+  private sectionToNavLink_: Map<HTMLElement, HTMLElement>;
 
   constructor() {
     this.sections_ = Array.from(document.querySelectorAll('.section'));
     this.navLinks_ = Array.from(document.querySelectorAll('.nav__link'));
 
-    const sectionToNavLink = new Map();
+    this.sectionToNavLink_ = new Map();
     // Explicitly map sections to respective nav links
     this.sections_.map((section, sectionIndex) => {
-      sectionToNavLink.set(section, this.navLinks_[sectionIndex]);
+      this.sectionToNavLink_.set(section, this.navLinks_[sectionIndex]);
     });
   }
 
@@ -24,8 +25,9 @@ class Nav {
   }
 
   private static scoreFn_(section: HTMLElement): number {
-    // Ignore positive values
-    return getVisibleDistanceFromRoot(section);
+    if (Math.sign(getVisibleDistanceFromRoot(section)) === -1) {
+      return getVisibleDistanceFromRoot(section);
+    }
   }
 
   private update_(): void {
@@ -37,7 +39,18 @@ class Nav {
       const activeElement = max<HTMLElement>(this.sections_, Nav.scoreFn_);
 
       renderLoop.anyMutate(() => {
-        // Map.get activeElement and add css classes
+        const navLinksToDeactivate = this.navLinks_.filter(
+          navLink => navLink !== activeNavLink
+        );
+        navLinksToDeactivate.forEach(navLink => {
+          // Select the specific class instead of class at index of 1
+          navLink.classList.remove(`${navLink.classList[1]}--active`);
+        });
+        const activeNavLink = this.sectionToNavLink_.get(activeElement);
+        if (activeNavLink) {
+          // Select the specific class instead of class at index of 1
+          activeNavLink.classList.add(`${activeNavLink.classList[1]}--active`);
+        }
       });
     });
   }
