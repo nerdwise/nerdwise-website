@@ -40,7 +40,7 @@ class Nav {
 
     this.sections_.forEach(section => {
       renderLoop.scrollMeasure(() => {
-        max<HTMLElement>(this.sections_, scoreFn(section));
+        max<HTMLElement>(this.sections_, scoreFn);
       });
     });
   }
