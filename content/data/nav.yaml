@@ -1,7 +1,4 @@
 component: nav
-logo:
-  url: /static/images/nerdwise-logo.svg
-  alt: Logo
 links:
   - name: Workflow
     url: /#workflow
