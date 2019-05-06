@@ -7,23 +7,26 @@
   width: 100%
 
 =block-color($start, $middle, $right)
-  .block__background
-    background: linear-gradient(to right, $color-white 50%, $start 60%, $middle 90%, $right 100%)
+  background: linear-gradient(to right, $color-white 50%, $start 60%, $middle 90%, $right 100%)
 
 .block--pink
-  +block-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
+  .block__background
+    +block-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
   .block__background--next
-    background: $block-right-color--orange
+    +block-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
 .block--orange
-  +block-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
+  .block__background
+    +block-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
   .block__background--next
-    background: $block-right-color--yellow
+    +block-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
 .block--yellow
-  +block-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
+  .block__background
+    +block-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
   .block__background--next
-    background: $block-right-color--cyan
+    +block-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
 .block--cyan
-  +block-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
+  .block__background
+    +block-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
 
 .block
   width: 100%
@@ -43,3 +46,4 @@
 
 .block__background--next
   opacity: 0
+  transform: translateX(-75%)
