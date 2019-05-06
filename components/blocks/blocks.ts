@@ -27,17 +27,30 @@ const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
 ];
 
 const NEXT_BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
-  [0.75, `opacity: 0`],
+  [0, `opacity: 0`],
   [1, `opacity: 1`]
 ];
 
 class Blocks {
   private readonly blockSpacers_: HTMLElement[];
+  private readonly nextBlockBackgrounds_: HTMLElement[];
+  private readonly blocksContainers_: HTMLElement[];
 
   constructor() {
     this.blockSpacers_ = <HTMLElement[]>(
       Array.from(document.querySelectorAll('.block-spacer'))
     );
+    this.nextBlockBackgrounds_ = <HTMLElement[]>(
+      Array.from(document.querySelectorAll('.block__background--next'))
+    );
+    this.blocksContainers_ = <HTMLElement[]>(
+      Array.from(document.querySelectorAll('.block'))
+    );
+  }
+
+  public init() {
+    this.startScrollEffect_();
+    this.crossFadeScrollEffect_();
   }
 
   private static getBlockTweens_(blockSpacer: HTMLElement): Tween[] {
@@ -45,19 +58,13 @@ class Blocks {
     const blockBackground = <HTMLElement>(
       block.querySelector('.block__background')
     );
-    const nextBlockBackground = <HTMLElement>(
-      block.querySelector('.block__background--next')
-    );
     return [
       new Tween(BLOCK_BACKGROUND_KEYFRAMES, { styleTarget: blockBackground }),
-      new Tween(BLOCK_KEYFRAMES, { styleTarget: block }),
-      new Tween(NEXT_BLOCK_BACKGROUND_KEYFRAMES, {
-        styleTarget: nextBlockBackground
-      })
+      new Tween(BLOCK_KEYFRAMES, { styleTarget: block })
     ];
   }
 
-  public startScrollEffect(): void {
+  private startScrollEffect_(): void {
     this.blockSpacers_.forEach(blocksContainer => {
       new ScrollEffect(blocksContainer, {
         effects: Blocks.getBlockTweens_(blocksContainer),
@@ -67,6 +74,35 @@ class Blocks {
       });
     });
   }
+
+  private crossFadeScrollEffect_(): void {
+    this.blocksContainers_.forEach((blocksContainer, index) => {
+      const nextBlockBackground: HTMLElement = blocksContainer.querySelector(
+        '.block__background--next'
+      );
+
+      const nextBlocksContainer: HTMLElement = document.querySelector(
+        `.block--${index + 2}`
+      );
+
+      if (index === this.blocksContainers_.length - 1) {
+        return;
+      }
+
+      new ScrollEffect(nextBlocksContainer, {
+        effects: [
+          new Tween(NEXT_BLOCK_BACKGROUND_KEYFRAMES, {
+            styleTarget: nextBlockBackground
+          })
+        ],
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: () => -window.innerHeight / 4,
+        endDistance: 0
+      });
+    });
+  }
+  // Use custom start and end distances
+  // Should take into account height of containers
 }
 
 export { Blocks };

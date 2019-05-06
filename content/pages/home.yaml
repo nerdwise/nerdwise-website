@@ -21,10 +21,12 @@ components:
     - Lorem ipsum dolor sit amet consectetur adipisicing elit?
     - Lorem ipsum dolor sit amet consectetur adipisicing elit?
     - Lorem ipsum dolor sit amet consectetur adipisicing elit?
+  wrap: False
 - component: workflow
   block_css_classes:
     - block--pink
     - block--reverse
+    - block--1
   what_we_do:
     - Deliver completely custom high-end bespoke websites.
     - Your business isn't a copy-paste, your site shouldn't be either.
@@ -63,6 +65,7 @@ components:
 - component: projects
   block_css_classes:
     - block--orange
+    - block--2
   projects:
     - name: Project
       about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
@@ -80,6 +83,7 @@ components:
   block_css_classes:
     - block--yellow
     - block--reverse
+    - block--3
   title: About
   staff:
     - name: Angus MacDonald
@@ -109,6 +113,7 @@ components:
   chatForm: !g.doc /content/partials/chatForm.yaml
   block_css_classes:
     - block--cyan
+    - block--4
   email: projects@nerdwise.ca
   topics:
     - name: Let's talk about a project
