@@ -97,12 +97,12 @@ class Blocks {
         ],
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight / 4,
-        endDistance: 0
+        endDistance: () =>
+          -getTanFromDegrees(Math.abs(START_DEGREE)) * 50 -
+          blocksContainer.clientHeight
       });
     });
   }
-  // Use custom start and end distances
-  // Should take into account height of containers
 }
 
 export { Blocks };
