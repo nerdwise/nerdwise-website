@@ -8,10 +8,12 @@ class Nav {
   private sections_: HTMLElement[];
   private navLinks_: HTMLElement[];
   private sectionToNavLink_: Map<HTMLElement, HTMLElement>;
+  private logo_: SVGElement;
 
   constructor() {
     this.sections_ = Array.from(document.querySelectorAll('.section'));
     this.navLinks_ = Array.from(document.querySelectorAll('.nav__link'));
+    this.logo_ = document.querySelector('.nav__logo');
 
     this.sectionToNavLink_ = new Map();
     // Explicitly map sections to respective nav links
@@ -42,14 +44,23 @@ class Nav {
         const navLinksToDeactivate = this.navLinks_.filter(
           navLink => navLink !== activeNavLink
         );
+
         navLinksToDeactivate.forEach(navLink => {
           // Select the specific class instead of class at index of 1
           navLink.classList.remove(`${navLink.classList[1]}--active`);
         });
+
+        this.sections_.forEach(section => {
+          this.logo_.classList.remove(`logo__${section.id}`);
+        });
+
         const activeNavLink = this.sectionToNavLink_.get(activeElement);
+
         if (activeNavLink) {
           // Select the specific class instead of class at index of 1
           activeNavLink.classList.add(`${activeNavLink.classList[1]}--active`);
+          this.logo_.classList.add(`logo__${activeElement.id}`);
+          this.logo_.classList.add(`logo__${activeElement.id}`);
         }
       });
     });
