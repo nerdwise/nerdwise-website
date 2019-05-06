@@ -12,10 +12,16 @@
 
 .block--pink
   +block-color($block-start-color--pink, $block-middle-color--pink, $block-right-color--pink)
+  .block__background--next
+    background: $block-right-color--orange
 .block--orange
   +block-color($block-start-color--orange, $block-middle-color--orange, $block-right-color--orange)
+  .block__background--next
+    background: $block-right-color--yellow
 .block--yellow
   +block-color($block-start-color--yellow, $block-middle-color--yellow, $block-right-color--yellow)
+  .block__background--next
+    background: $block-right-color--cyan
 .block--cyan
   +block-color($block-start-color--cyan, $block-middle-color--cyan, $block-right-color--cyan)
 
@@ -33,3 +39,7 @@
   position: absolute
   top: 0
   left: 0
+  z-index: -1
+
+.block__background--next
+  opacity: 0

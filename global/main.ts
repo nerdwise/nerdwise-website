@@ -7,7 +7,7 @@ import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
 
 const blocks = new Blocks();
-blocks.startScrollEffect();
+blocks.init();
 
 const nav = new Nav();
 nav.init();
