@@ -16,9 +16,11 @@ class Nav {
     this.logo_ = document.querySelector('.nav__logo');
 
     this.sectionToNavLink_ = new Map();
-    // Explicitly map sections to respective nav links
     this.sections_.map((section, sectionIndex) => {
-      this.sectionToNavLink_.set(section, this.navLinks_[sectionIndex]);
+      this.sectionToNavLink_.set(
+        section,
+        document.querySelector(`.${section.dataset.target}`)
+      );
     });
   }
 
