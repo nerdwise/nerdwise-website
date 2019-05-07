@@ -43,21 +43,15 @@ preprocessors:
   path: /content/partials/chatForm.yaml
 - kind: contentful
   autorun: true
-
-  space: exampleContentfulSpaceId
-  access_token: exampleContentfulProductionKey
-
+  inject: true
+  space: u4z8be9d4a38
+  access_token: I-LKjMCg9XN7_asyj-oDfWDOVx5EbbtTWEtBgSRhbHc
   # Uncomment to use the `preview` API.
-  # access_token: exampleContentfulPreviewKey
+  # access_token: 3-5IRDFzwCMmZRr9s0QmnXCS0pG3MaACT4Jp-N_4yKI
   # preview: true
-
   bind:
-  - collection: /content/exampleModel1/
-    content_type: exampleModel1
-    # Optional. The field used to generate the basename of the Grow document.
-    key: slug
-  - collection: /content/exampleModel2/
-    content_type: exampleModel2
+  - collection: /content/person/
+    content_type: person
 
 static_dirs:
 - static_dir: /static/
