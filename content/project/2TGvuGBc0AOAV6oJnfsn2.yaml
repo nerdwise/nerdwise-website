@@ -11,5 +11,5 @@ image:
     fileName: 500x900.png
     url: //images.ctfassets.net/u4z8be9d4a38/1lYZKKsZdzMsIOTkqr7bLt/66ee9d979631cef3098eea9c76726c6e/500x900.png
   title: project1
-info_class: project__info project__info--1
+info_css_class: project__info project__info--1
 name: Project 1
