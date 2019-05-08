@@ -1,3 +1,16 @@
 about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
+class: profile profile--2
+image:
+  description: Jonathan Loubert
+  file:
+    contentType: image/png
+    details:
+      image:
+        height: 600
+        width: 350
+      size: 1430
+    fileName: 350x600.png
+    url: //images.ctfassets.net/u4z8be9d4a38/5cQEqKdfWukZSu5TzsTXzb/d41ac442d22dc9143ecf03aa68153236/350x600.png
+  title: jonathan
 name: Jonathan Loubert
 position: Senior Developer

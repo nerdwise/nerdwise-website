@@ -1,3 +1,16 @@
 about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
+class: profile profile--1
+image:
+  description: Angus Macdonald
+  file:
+    contentType: image/png
+    details:
+      image:
+        height: 600
+        width: 350
+      size: 1430
+    fileName: 350x600.png
+    url: //images.ctfassets.net/u4z8be9d4a38/X5IV9ycRN4VLqpcMPCiuY/6e16daadc1bd5bdc7cb959d2e1f508ca/350x600.png
+  title: angus
 name: Angus MacDonald
 position: CEO

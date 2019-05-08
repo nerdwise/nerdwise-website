@@ -1,3 +1,16 @@
 about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
+class: profile profile--3
+image:
+  description: Kaden Zipfel
+  file:
+    contentType: image/png
+    details:
+      image:
+        height: 600
+        width: 350
+      size: 1430
+    fileName: 350x600.png
+    url: //images.ctfassets.net/u4z8be9d4a38/1hI3uCUE1DmnjRmuY65Ovr/1c657ec164b67b989d409ea5469eb56c/350x600.png
+  title: kaden
 name: Kaden Zipfel
 position: Associate Developer

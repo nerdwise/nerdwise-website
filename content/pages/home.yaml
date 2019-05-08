@@ -86,27 +86,9 @@ components:
     - block--3
   title: About
   staff:
-    - name: Angus MacDonald
-      position: CEO
-      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
-      image:
-        url: https://via.placeholder.com/350x600
-        alt: Angus MacDonald
-      class: profile profile--1
-    - name: Jonathan Loubert
-      position: Senior Developer
-      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
-      image:
-        url: https://via.placeholder.com/350x600
-        alt: Jonathan Loubert
-      class: profile profile--2
-    - name: Kaden Zipfel
-      position: Associate Developer
-      about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
-      image:
-        url: https://via.placeholder.com/350x600
-        alt: Kaden Zipfel
-      class: profile profile--3
+    - !g.doc /content/person/3UNp9MEanX65anIEd4r7rH.yaml
+    - !g.doc /content/person/70Aua1MoBohsAYiMkfUWo8.yaml
+    - !g.doc /content/person/1Q0hdZPsPznSL7uzwYh2k3.yaml
 - component: contact
   projectForm: !g.doc /content/partials/projectForm.yaml
   coffeeForm: !g.doc /content/partials/coffeeForm.yaml
