@@ -1,0 +1,15 @@
+about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
+image:
+  description: Project Image
+  file:
+    contentType: image/png
+    details:
+      image:
+        height: 900
+        width: 500
+      size: 1865
+    fileName: 500x900.png
+    url: //images.ctfassets.net/u4z8be9d4a38/5zHWJfoY3nNChSRiBdwd1u/8d64fb6350ac45f695ea7fbb79e94a32/500x900.png
+  title: project2
+info_class: project__info project__info--2
+name: Project 2

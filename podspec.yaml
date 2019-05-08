@@ -52,6 +52,8 @@ preprocessors:
   bind:
   - collection: /content/person/
     content_type: person
+  - collection: /content/project/
+    content_type: project
 
 static_dirs:
 - static_dir: /static/
