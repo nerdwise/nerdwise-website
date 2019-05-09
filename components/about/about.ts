@@ -1,5 +1,3 @@
-import { ActiveOnCondition } from '../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base';
-import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
 import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
@@ -20,7 +18,6 @@ const INFO_KEYFRAMES: [number, string][] = [
 ];
 
 class About {
-  private blockWatcher_: ActiveOnCondition = null;
   private scrollEffect_: ScrollEffect = null;
   private profiles_: HTMLElement[];
 
