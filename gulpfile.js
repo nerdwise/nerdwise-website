@@ -92,7 +92,7 @@ const clearOldTs = () => {
 gulp.task("clear-old-ts", clearOldTs);
 
 const buildNewTs = () => {
-  return gulp.src("./tsconfig.json").pipe(exec("tsc -p <%= file.path %>"));
+  return gulp.src("./tsconfig.json").pipe(exec("tsc <%= file.path %>"));
 };
 gulp.task("build-new-ts", buildNewTs);
 
@@ -100,7 +100,7 @@ const sleep = done => {
   exec("sleep 10");
   done();
 };
-const compileTs = gulp.series(clearOldTs, buildNewTs, sleep, compileJs);
+const compileTs = gulp.series(clearOldTs, sleep, buildNewTs, sleep, compileJs);
 gulp.task("compile-ts", compileTs);
 
 gulp.task("build", gulp.parallel(compileSass, compileTs));
