@@ -40,7 +40,16 @@ class Contact {
   submitForm(): void {
     this.contactForms_.forEach(form => {
       form.addEventListener('submit', e => {
-        const data = new FormData(form);
+        const data = [].slice
+          .call(form)
+          .map((input: HTMLInputElement) => {
+            return 'value' in input && input.name
+              ? input.name +
+                  '=' +
+                  (input.value === undefined ? '' : input.value)
+              : '';
+          })
+          .join('&');
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST', form.action, true);
