@@ -1,6 +1,6 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
 const FRAME_KEYFRAMES: [number, string][] = [
   [0, 'transform: scaleY(0)'],
@@ -33,9 +33,9 @@ class About {
 
       this.scrollEffect_ = new ScrollEffect(frame, {
         effects: [
-          new Tween(FRAME_KEYFRAMES, { styleTarget: frame }),
-          new Tween(IMAGE_KEYFRAMES, { styleTarget: image }),
-          new Tween(INFO_KEYFRAMES, { styleTarget: info })
+          new Tween(FRAME_KEYFRAMES, {styleTarget: frame}),
+          new Tween(IMAGE_KEYFRAMES, {styleTarget: image}),
+          new Tween(INFO_KEYFRAMES, {styleTarget: info})
         ],
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight / 2,
@@ -45,4 +45,4 @@ class About {
   }
 }
 
-export { About };
+export {About};
