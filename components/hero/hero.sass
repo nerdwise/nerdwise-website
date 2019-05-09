@@ -13,10 +13,18 @@
   justify-content: center
   perspective: 750px
 
+.hero__logo
+  display: inline
+  width: 30vw
+  margin-bottom: -1vw
+
+  .cls-3 // TODO(Angus) Sort this SVG OUT
+    stroke: none
+
 .hero__heading
   +font-secondary
-  +font-weight-bold
-  font-size: 17vw
+  +font-weight-extra-bold
+  font-size: 6vw
   color: $color-neutral-20
   background: -webkit-linear-gradient($hero-gradient-font-start-color, $hero-gradient-font-start-color 67%, $hero-gradient-font-end-color)
   -webkit-background-clip: text

@@ -8,7 +8,7 @@ class Hero {
   private particles_: HTMLVideoElement;
 
   constructor() {
-    this.header_ = document.querySelector('.hero__heading');
+    this.header_ = document.querySelector('.hero__content');
     this.particles_ = document.querySelector('.hero__video');
   }
 
