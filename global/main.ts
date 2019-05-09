@@ -1,16 +1,15 @@
 import { Blocks } from '../components/blocks/blocks';
-import { Nav } from '../components/nav/nav';
 import { About } from '../components/about/about';
 import { Hero } from '../components/hero/hero';
 import { Contact } from '../components/contact/contact';
 import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
+import {initNav} from "./ts-inits/init-nav";
 
 const blocks = new Blocks();
 blocks.init();
 
-const nav = new Nav();
-nav.init();
+initNav();
 
 const about = new About();
 about.blockReveal();

@@ -1,37 +1,35 @@
-import { ActiveOnCondition } from '../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base';
-import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
-import { renderLoop } from '../../node_modules/toolbox-v2/src/toolbox/utils/render-loop';
-import { getVisibleDistanceFromRoot } from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
-import { max } from '../../node_modules/toolbox-v2/src/toolbox/utils/array/max';
+import {renderLoop} from '../../node_modules/toolbox-v2/src/toolbox/utils/render-loop';
+import {getVisibleDistanceFromRoot} from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
+import {max} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/max';
+import {forEach} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/for-each';
+import {toggleClass} from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/class/toggle-class';
+
+class CssClass {
+  public static ACTIVE = 'nav__link--active';
+}
 
 class Nav {
-  private sections_: HTMLElement[];
-  private navLinks_: HTMLElement[];
-  private sectionToNavLink_: Map<HTMLElement, HTMLElement>;
-  private logo_: SVGElement;
+  private sectionToNavLink_: Map<Element, Element>;
 
-  constructor() {
-    this.sections_ = Array.from(document.querySelectorAll('.section'));
-    this.navLinks_ = Array.from(document.querySelectorAll('.nav__link'));
-    this.logo_ = document.querySelector('.nav__logo');
-
-    this.sectionToNavLink_ = new Map();
-    this.sections_.map((section, sectionIndex) => {
-      this.sectionToNavLink_.set(
-        section,
-        document.querySelector(`.${section.dataset.target}`)
-      );
-    });
+  constructor(sectionLinkMap: Map<Element, Element>) {
+    this.sectionToNavLink_ = sectionLinkMap;
   }
 
   public init(): void {
     this.update_();
   }
 
-  private static scoreFn_(section: HTMLElement): number {
-    if (Math.sign(getVisibleDistanceFromRoot(section)) === -1) {
-      return getVisibleDistanceFromRoot(section);
-    }
+  private static scoreFn_(section: Element): number {
+    const distance = getVisibleDistanceFromRoot(<HTMLElement>section);
+    return distance < 0 ? distance : Number.NEGATIVE_INFINITY;
+  }
+
+  private getSections_() {
+    return this.sectionToNavLink_.keys();
+  }
+
+  private getNavLinks_() {
+    return this.sectionToNavLink_.values();
   }
 
   private update_(): void {
@@ -40,33 +38,18 @@ class Nav {
         this.update_();
       });
 
-      const activeElement = max<HTMLElement>(this.sections_, Nav.scoreFn_);
+      const activeElement = max<Element>(this.getSections_(), Nav.scoreFn_);
+      const activeNavLink = this.sectionToNavLink_.get(activeElement);
 
       renderLoop.anyMutate(() => {
-        const navLinksToDeactivate = this.navLinks_.filter(
-          navLink => navLink !== activeNavLink
-        );
-
-        navLinksToDeactivate.forEach(navLink => {
-          // Select the specific class instead of class at index of 1
-          navLink.classList.remove(`${navLink.classList[1]}--active`);
-        });
-
-        this.sections_.forEach(section => {
-          this.logo_.classList.remove(`logo__${section.id}`);
-        });
-
-        const activeNavLink = this.sectionToNavLink_.get(activeElement);
-
-        if (activeNavLink) {
-          // Select the specific class instead of class at index of 1
-          activeNavLink.classList.add(`${activeNavLink.classList[1]}--active`);
-          this.logo_.classList.add(`logo__${activeElement.id}`);
-          this.logo_.classList.add(`logo__${activeElement.id}`);
-        }
+        forEach(
+          this.getNavLinks_(),
+          (navLink) => {
+            toggleClass(navLink, CssClass.ACTIVE, navLink === activeNavLink);
+          });
       });
     });
   }
 }
 
-export { Nav };
+export {Nav};

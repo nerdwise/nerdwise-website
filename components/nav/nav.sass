@@ -68,7 +68,7 @@
   right: -3rem
   z-index: -1
 
-=nav-link-active($color)
+.nav__link--active
   font-weight: 600
 
   &:after
@@ -77,15 +77,6 @@
   &:hover:after
     transform: translateY(-.5rem) rotate(45deg)
 
-.nav__link--about--active
-  +nav-link-active($nav-strikethrough-color--about)
-.nav__link--projects--active
-  +nav-link-active($nav-strikethrough-color--projects)
-.nav__link--workflow--active
-  +nav-link-active($nav-strikethrough-color--workflow)
-.nav__link--contact--active
-  +nav-link-active($nav-strikethrough-color--contact)
-
 // Logo styles
 
 .logo
@@ -93,7 +84,7 @@
 
 .logo__light
   fill: $logo-light-fill-color--pink
-  transition: 0.3s fill
+  transition: 1s fill ease-out
 
 .logo__workflow
   .logo__light
@@ -110,7 +101,8 @@
 
 .logo__dark
   fill: $logo-dark-fill-color--pink
-  transition: 0.3s fill
+  transition: 1s fill ease-in
+  transition-delay: .1s
 
 .logo__workflow
   .logo__dark
