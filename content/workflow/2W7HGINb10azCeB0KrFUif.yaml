@@ -1,0 +1,4 @@
+block_css_classes:
+- block--pink
+- block--reverse
+component: workflow
