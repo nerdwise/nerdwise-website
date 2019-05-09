@@ -1,9 +1,11 @@
 import {Nav} from "../../components/nav/nav";
+import {map} from "../../node_modules/toolbox-v2/src/toolbox/utils/node-list/map";
 
 function initNav() {
-  const sections = Array.from(document.querySelectorAll('.section'));
+  const sections = document.querySelectorAll('.section');
   const sectionNavLinkPairs =
-    <[Element, Element][]>sections.map(
+    map<Element, [Element, Element]>(
+      sections,
       (section) => {
         const target = (<HTMLElement>section).dataset.target;
         return [section, document.querySelector(`.${target}`)];

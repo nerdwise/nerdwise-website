@@ -1,7 +1,0 @@
-contentful_ext/__init__.py
-contentful_ext/contentful_ext.py
-grow_ext_contentful.egg-info/PKG-INFO
-grow_ext_contentful.egg-info/SOURCES.txt
-grow_ext_contentful.egg-info/dependency_links.txt
-grow_ext_contentful.egg-info/requires.txt
-grow_ext_contentful.egg-info/top_level.txt
