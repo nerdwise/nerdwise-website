@@ -1,9 +1,24 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+
+class CssClass {
+  public static BLOCK: string = 'block';
+}
 
 const START_DEGREE = 2;
 const END_DEGREE = -0.3;
+const COLOR_TWEEN_END_FUDGE_FACTOR = .05
+
+function generateColorTweenEndDistanceFn(block: HTMLElement): () => number {
+  console.log('Yo', block);
+  return () => {
+    const fudgeAmount = COLOR_TWEEN_END_FUDGE_FACTOR * window.innerWidth;
+    const angleOffset = -getTanFromDegrees(Math.abs(END_DEGREE)) * 50;
+    console.log(angleOffset - block.clientHeight);
+    return angleOffset - block.clientHeight - fudgeAmount;
+  };
+}
 
 function getTanFromDegrees(degrees: number): number {
   return Math.tan((degrees * Math.PI) / 180);
@@ -17,7 +32,8 @@ const BLOCK_KEYFRAMES: [number, string][] = [
   [0.75, `height: 1rem;`],
   [
     1,
-    `height: 7vh; transform: skewY(${END_DEGREE}deg) translateY(${END_TRANSLATE}vw)`
+    `height: 7vh; ` +
+    `transform: skewY(${END_DEGREE}deg) translateY(${END_TRANSLATE}vw)`
   ]
 ];
 
@@ -32,20 +48,12 @@ const NEXT_BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
 ];
 
 class Blocks {
-  private readonly blockSpacers_: HTMLElement[];
-  private readonly nextBlockBackgrounds_: HTMLElement[];
-  private readonly blocksContainers_: HTMLElement[];
+  private readonly blocks_: HTMLElement[];
 
   constructor() {
-    this.blockSpacers_ = <HTMLElement[]>(
-      Array.from(document.querySelectorAll('.block-spacer'))
-    );
-    this.nextBlockBackgrounds_ = <HTMLElement[]>(
-      Array.from(document.querySelectorAll('.block__background--next'))
-    );
-    this.blocksContainers_ = <HTMLElement[]>(
-      Array.from(document.querySelectorAll('.block'))
-    );
+    this.blocks_ =
+      Array.from(document.querySelectorAll(`.${CssClass.BLOCK}`));
+    console.log('BLOCKS!', `.${CssClass.BLOCK}`, this.blocks_);
   }
 
   public init() {
@@ -53,21 +61,22 @@ class Blocks {
     this.crossFadeScrollEffect_();
   }
 
-  private static getBlockTweens_(blockSpacer: HTMLElement): Tween[] {
-    const block = <HTMLElement>blockSpacer.nextElementSibling;
-    const blockBackground = <HTMLElement>(
-      block.querySelector('.block__background')
-    );
-    return [
-      new Tween(BLOCK_BACKGROUND_KEYFRAMES, { styleTarget: blockBackground }),
-      new Tween(BLOCK_KEYFRAMES, { styleTarget: block })
-    ];
-  }
-
   private startScrollEffect_(): void {
-    this.blockSpacers_.forEach(blocksContainer => {
-      new ScrollEffect(blocksContainer, {
-        effects: Blocks.getBlockTweens_(blocksContainer),
+    this.blocks_.forEach((block) => {
+      const blockBackground = <HTMLElement>(
+        block.querySelector('.block__background')
+      );
+      new ScrollEffect(block, {
+        effects: [
+          new Tween(
+            BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: blockBackground})
+        ],
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: () => -window.innerHeight,
+        endDistance: generateColorTweenEndDistanceFn(block),
+      });
+      new ScrollEffect(block, {
+        effects: [new Tween(BLOCK_KEYFRAMES, {styleTarget: block})],
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight,
         endDistance: 0
@@ -76,7 +85,7 @@ class Blocks {
   }
 
   private crossFadeScrollEffect_(): void {
-    this.blocksContainers_.forEach((blocksContainer, index) => {
+    this.blocks_.forEach((blocksContainer, index) => {
       const nextBlockBackground: HTMLElement = blocksContainer.querySelector(
         '.block__background--next'
       );
@@ -85,24 +94,22 @@ class Blocks {
         `.block--${index + 2}`
       );
 
-      if (index === this.blocksContainers_.length - 1) {
+      if (index === this.blocks_.length - 1) {
         return;
       }
 
       new ScrollEffect(nextBlocksContainer, {
         effects: [
-          new Tween(NEXT_BLOCK_BACKGROUND_KEYFRAMES, {
-            styleTarget: nextBlockBackground
-          })
+          new Tween(
+            NEXT_BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: nextBlockBackground})
         ],
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight / 4,
-        endDistance: () =>
-          -getTanFromDegrees(Math.abs(START_DEGREE)) * 50 -
-          blocksContainer.clientHeight
+        endDistance:
+          generateColorTweenEndDistanceFn(nextBlocksContainer),
       });
     });
   }
 }
 
-export { Blocks };
+export {Blocks};
