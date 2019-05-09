@@ -54,6 +54,8 @@ preprocessors:
     content_type: person
   - collection: /content/project/
     content_type: project
+  - collection: /content/why_us/
+    content_type: why_us
 
 static_dirs:
 - static_dir: /static/

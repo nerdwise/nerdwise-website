@@ -9,9 +9,9 @@
   <div class="modal">
     <div class="modal__content">
       <div class="modal__x">&times;</div>
-      <h2 class="modal__header">{{ component.modal.title }}</h2>
+      <h2 class="modal__header">{{ component.modal_title }}</h2>
       <ul class="modal__list">
-        {% for question in component.modal.questions %}
+        {% for question in component.modal_questions %}
         <li class="modal__question">{{ question }}</li>
         {% endfor %}
       </ul>
