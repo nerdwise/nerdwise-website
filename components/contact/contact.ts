@@ -1,6 +1,6 @@
 class Contact {
   private contactTopics_: HTMLElement[];
-  private contactForms_: HTMLElement[];
+  private contactForms_: HTMLFormElement[];
   constructor() {
     this.contactTopics_ = Array.from(
       document.querySelectorAll('.contact__topic')
@@ -8,6 +8,11 @@ class Contact {
     this.contactForms_ = Array.from(
       document.querySelectorAll('.contact__form')
     );
+  }
+
+  init(): void {
+    this.onClick();
+    this.submitForm();
   }
 
   removeRevealClasses(): void {
@@ -28,6 +33,28 @@ class Contact {
         );
         form.classList.add(`contact__form--${topicIndex + 1}--reveal`);
         topic.classList.add('contact__topic--active');
+      });
+    });
+  }
+
+  submitForm(): void {
+    this.contactForms_.forEach(form => {
+      form.addEventListener('submit', e => {
+        const data = new FormData(form);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader(
+          'Accept',
+          'application/xml, text/xml, */*; q=0.01'
+        );
+        xhr.setRequestHeader(
+          'Content-type',
+          'application/x-www-form-urlencoded; charset=UTF-8'
+        );
+        xhr.send(data);
+
+        e.preventDefault();
       });
     });
   }

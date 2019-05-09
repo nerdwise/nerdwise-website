@@ -12,7 +12,7 @@
   </div>
 
   <div class="contact__right">
-    {% import "/extensions/google_forms/google_forms.html" as google_forms with
+    <!-- {% import "/extensions/google_forms/google_forms.html" as google_forms with
     context %}
     <form
       action="{{ component.projectForm.action }}"
@@ -33,13 +33,35 @@
       <div class="form__group">
         <button type="submit" class="form__button">Send</button>
       </div>
-    </form>
+    </form> -->
     <form
       action="{{ component.chatForm.action }}"
-      method="POST"
       class="contact__form contact__form--3"
     >
-      {{ google_forms.render_fields(component.chatForm.items) }}
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          name="entry.617208522"
+          placeholder="Name"
+        />
+      </div>
+      <div class="form__group">
+        <input
+          type="email"
+          class="form__input"
+          name="entry.1213075532"
+          placeholder="Email"
+        />
+      </div>
+      <div class="form__group">
+        <textarea
+          type="text"
+          class="form__textarea"
+          name="entry.1915984557"
+          placeholder="Message"
+        ></textarea>
+      </div>
       <div class="form__group">
         <button type="submit" class="form__button">Send</button>
       </div>

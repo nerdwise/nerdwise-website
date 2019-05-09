@@ -4,7 +4,7 @@ import { Hero } from '../components/hero/hero';
 import { Contact } from '../components/contact/contact';
 import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
-import {initNav} from "./ts-inits/init-nav";
+import { initNav } from './ts-inits/init-nav';
 
 const blocks = new Blocks();
 blocks.init();
@@ -18,7 +18,7 @@ const hero = new Hero();
 hero.init();
 
 const contact = new Contact();
-contact.onClick();
+contact.init();
 
 const skewedSection = new SkewedSection();
 skewedSection.startScrollEffect();
