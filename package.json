@@ -12,7 +12,7 @@
     "gulp-exec": "^3.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
-    "toolbox-v2": "git+https://github.com/angusm/toolbox-v2.git#bcfe119cbab7cd8df0c74f9710f77cc6fd431969",
+    "toolbox-v2": "git+https://github.com/angusm/toolbox-v2.git#fa2fe455a323bd9af1296b4872084bf5ec864bab",
     "webpack": "4.20.2",
     "webpack-stream": "5.1.1"
   }

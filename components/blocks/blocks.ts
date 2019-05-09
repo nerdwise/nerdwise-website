@@ -1,23 +1,35 @@
 import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
 import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import {forEach} from '../../node_modules/toolbox-v2/src/toolbox/utils/node-list/for-each';
 
-class CssClass {
-  public static BLOCK: string = 'block';
+enum CssClass {
+  BLOCK = 'block',
+  BLOCK_BACKGROUND = 'block__background',
+  BLOCK_BACKGROUND_NEXT = 'block__background--next',
 }
 
 const START_DEGREE = 2;
 const END_DEGREE = -0.3;
-const COLOR_TWEEN_END_FUDGE_FACTOR = .05
+const COLOR_TWEEN_END_FUDGE_FACTOR = .05;
 
-function generateColorTweenEndDistanceFn(block: HTMLElement): () => number {
-  console.log('Yo', block);
+function generateColorTweenEndDistanceFn(block: Element): () => number {
   return () => {
     const fudgeAmount = COLOR_TWEEN_END_FUDGE_FACTOR * window.innerWidth;
     const angleOffset = -getTanFromDegrees(Math.abs(END_DEGREE)) * 50;
-    console.log(angleOffset - block.clientHeight);
     return angleOffset - block.clientHeight - fudgeAmount;
   };
+}
+
+function getNextBlock(currentBlock: Element): Element {
+  let next = currentBlock.nextElementSibling;
+  while (next) {
+    if (next.classList.contains(CssClass.BLOCK)) {
+      return next;
+    }
+    next = next.nextElementSibling;
+  }
+  return null;
 }
 
 function getTanFromDegrees(degrees: number): number {
@@ -27,7 +39,7 @@ function getTanFromDegrees(degrees: number): number {
 const START_TRANSLATE = getTanFromDegrees(Math.abs(START_DEGREE)) * 50;
 const END_TRANSLATE = -getTanFromDegrees(Math.abs(END_DEGREE)) * 50;
 
-const BLOCK_KEYFRAMES: [number, string][] = [
+const SKEW_KEYFRAMES: [number, string][] = [
   [0, `transform: skewY(${START_DEGREE}deg) translateY(${START_TRANSLATE}vw)`],
   [0.75, `height: 1rem;`],
   [
@@ -37,23 +49,21 @@ const BLOCK_KEYFRAMES: [number, string][] = [
   ]
 ];
 
-const BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
+const TRANSLATE_BACKGROUND_KEYFRAMES: [number, string][] = [
   [0, `transform: translateX(0)`],
   [1, `transform: translateX(-75%)`]
 ];
 
-const NEXT_BLOCK_BACKGROUND_KEYFRAMES: [number, string][] = [
+const NEXT_BACKGROUND_KEYFRAMES: [number, string][] = [
   [0, `opacity: 0`],
   [1, `opacity: 1`]
 ];
 
 class Blocks {
-  private readonly blocks_: HTMLElement[];
+  private readonly blocks_: NodeListOf<Element>;
 
   constructor() {
-    this.blocks_ =
-      Array.from(document.querySelectorAll(`.${CssClass.BLOCK}`));
-    console.log('BLOCKS!', `.${CssClass.BLOCK}`, this.blocks_);
+    this.blocks_ = document.querySelectorAll(`.${CssClass.BLOCK}`);
   }
 
   public init() {
@@ -62,51 +72,55 @@ class Blocks {
   }
 
   private startScrollEffect_(): void {
-    this.blocks_.forEach((block) => {
-      const blockBackground = <HTMLElement>(
-        block.querySelector('.block__background')
-      );
-      new ScrollEffect(block, {
-        effects: [
-          new Tween(
-            BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: blockBackground})
-        ],
-        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-        startDistance: () => -window.innerHeight,
-        endDistance: generateColorTweenEndDistanceFn(block),
+    forEach<Element>(
+      this.blocks_,
+      (block) => {
+        const background =
+          <HTMLElement>(block.querySelector(`.${CssClass.BLOCK_BACKGROUND}`));
+        new ScrollEffect(block, {
+          effects: Blocks.getBackgroundTweens_(background),
+          getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+          startDistance: () => -window.innerHeight,
+          endDistance: generateColorTweenEndDistanceFn(block),
+        });
+        new ScrollEffect(block, {
+          effects: Blocks.getSkewTweens_(<HTMLElement>block),
+          getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+          startDistance: () => -window.innerHeight,
+          endDistance: 0
+        });
       });
-      new ScrollEffect(block, {
-        effects: [new Tween(BLOCK_KEYFRAMES, {styleTarget: block})],
-        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-        startDistance: () => -window.innerHeight,
-        endDistance: 0
-      });
-    });
+  }
+
+  private static getCrossFadeTweens_(nextBackground: HTMLElement): Tween[] {
+    return [
+      new Tween(NEXT_BACKGROUND_KEYFRAMES, {styleTarget: nextBackground})];
+  }
+
+  private static getBackgroundTweens_(background: HTMLElement): Tween[] {
+    return [
+      new Tween(TRANSLATE_BACKGROUND_KEYFRAMES, {styleTarget: background})];
+  }
+
+  private static getSkewTweens_(block: HTMLElement): Tween[] {
+    return [new Tween(SKEW_KEYFRAMES, {styleTarget: block})];
   }
 
   private crossFadeScrollEffect_(): void {
-    this.blocks_.forEach((blocksContainer, index) => {
-      const nextBlockBackground: HTMLElement = blocksContainer.querySelector(
-        '.block__background--next'
-      );
-
-      const nextBlocksContainer: HTMLElement = document.querySelector(
-        `.block--${index + 2}`
-      );
-
-      if (index === this.blocks_.length - 1) {
+    this.blocks_.forEach((block) => {
+      const nextBlock: Element = getNextBlock(block);
+      if (!nextBlock) {
         return;
       }
 
-      new ScrollEffect(nextBlocksContainer, {
-        effects: [
-          new Tween(
-            NEXT_BLOCK_BACKGROUND_KEYFRAMES, {styleTarget: nextBlockBackground})
-        ],
+      const nextBlockBackground: HTMLElement =
+        block.querySelector(`.${CssClass.BLOCK_BACKGROUND_NEXT}`);
+
+      new ScrollEffect(nextBlock, {
+        effects: Blocks.getCrossFadeTweens_(nextBlockBackground),
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight / 4,
-        endDistance:
-          generateColorTweenEndDistanceFn(nextBlocksContainer),
+        endDistance: generateColorTweenEndDistanceFn(nextBlock),
       });
     });
   }
