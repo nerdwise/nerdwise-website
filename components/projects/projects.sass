@@ -1,3 +1,7 @@
+@import ../../global/sass-config/line-height
+@import ../../global/sass-config/spacing
+@import ../../global/sass-mixins/sub-header
+
 .projects
   padding-top: calc(12vh + 10vw)
   padding-bottom: 10vw
@@ -38,14 +42,7 @@
 
 .project__name
   margin-bottom: $spacing-60
-  +font-secondary
-  +font-weight-bold
-  font-size: $project-name-font-size
-  color: $project-name-font-color
-  background: -webkit-linear-gradient($project-gradient-font-start-color, $project-gradient-font-start-color 67%, $project-gradient-font-end-color)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  padding-bottom: 0.3rem
+  +sub-header($project-gradient-font-start-color, $project-gradient-font-end-color)
 
 .project__about
   +font-secondary

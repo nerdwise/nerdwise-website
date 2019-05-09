@@ -1,4 +1,6 @@
 @import ../../global/sass-config/colors
+@import ../../global/sass-config/line-height
+@import ../../global/sass-mixins/sub-header
 @import ../../global/sass-mixins/typography
 
 .about
@@ -43,6 +45,7 @@
 
 .profile__name
   +sub-header
+  margin-bottom: $spacing-20
 
 .profile__position
   margin-bottom: $spacing-60
