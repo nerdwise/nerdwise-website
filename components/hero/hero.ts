@@ -26,7 +26,7 @@ class Hero {
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
       startDistance: () => 0,
-      endDistance: window.innerHeight / 3
+      endDistance: window.innerHeight * 2 / 3
     });
   }
 

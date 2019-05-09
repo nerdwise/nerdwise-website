@@ -10,22 +10,38 @@ import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/compon
 enum CssClass {
   NAV_CONTENT = 'nav__content',
   ACTIVE_NAV_LINK = 'nav__link--active',
+  NAV_BRAND = 'nav__brand',
   BLOCK = 'block',
 }
 
 class Nav {
   private readonly sectionToNavLink_: Map<Element, Element>;
   private readonly firstBlock_: Element;
+  private readonly navBrand_: HTMLElement;
   private readonly navContent_: HTMLElement;
 
   constructor(sectionLinkMap: Map<Element, Element>) {
     this.sectionToNavLink_ = sectionLinkMap;
     this.firstBlock_ = document.querySelector(`.${CssClass.BLOCK}`);
+    this.navBrand_ = document.querySelector(`.${CssClass.NAV_BRAND}`);
     this.navContent_ = document.querySelector(`.${CssClass.NAV_CONTENT}`);
   }
 
   public init(): void {
     this.update_();
+
+    new ScrollEffect(
+      this.navBrand_,
+      {
+        effects: [
+          new Tween(
+            [[0, 'opacity: 0'], [1, 'opacity: 1']],
+            {styleTarget: this.navBrand_})],
+        getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
+        startDistance: () => window.innerHeight * .1,
+        endDistance: window.innerHeight * .5,
+      }
+    );
 
     new ScrollEffect(
       this.firstBlock_,

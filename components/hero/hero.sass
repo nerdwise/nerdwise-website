@@ -13,12 +13,20 @@
   justify-content: center
   perspective: 750px
 
+.hero__content
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
 .hero__logo
   display: inline
-  width: 45vw
-  max-width: 80vh
-  margin-bottom: -1vw
+  width: 35vw
+  width: 70vmin
+  max-width: 70vh
+  max-width: 70vmin
   margin-top: -1.5vw
+  margin-top: -1.5vmin
 
   .cls-3 // TODO(Angus) Sort this SVG OUT
     stroke: none
@@ -27,18 +35,13 @@
   +font-secondary
   +font-weight-extra-bold
   font-size: 6.5vw
+  font-size: 6.5vmax
   text-align: center
   color: $color-neutral-20
   background: -webkit-linear-gradient($hero-gradient-font-start-color, $hero-gradient-font-end-color 30%, $hero-gradient-font-end-color)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
   margin: $spacing-20
-  +media(tablet-landscape)
-    font-size: $font-size-90
-  +media(tablet-portrait)
-    font-size: $font-size-80
-  +media(mobile)
-    font-size: $font-size-60
 
 .hero__subheading
   +font-primary
