@@ -1,3 +1,6 @@
+@import ../../global/sass-config/colors
+@import ../../global/sass-mixins/typography
+
 .about
   padding-top: calc(15vh + 10vw)
   padding-bottom: 10vw
@@ -39,15 +42,7 @@
   margin: 0 $spacing-60
 
 .profile__name
-  margin-bottom: $spacing-20
-  +font-primary
-  +font-weight-bold
-  font-size: $profile-name-font-size
-  color: $profile-name-font-color
-  background: -webkit-linear-gradient($about-gradient-font-start-color, $about-gradient-font-start-color 67%, $about-gradient-font-end-color)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  padding-bottom: 0.3rem
+  +sub-header
 
 .profile__position
   margin-bottom: $spacing-60
@@ -59,6 +54,6 @@
 .profile__about
   +font-primary
   +font-weight-regular
-  font-size: $profile-about-font-size
+  font-size: $body-font-size
   color: $profile-about-font-color
   line-height: $profile-about-line-height

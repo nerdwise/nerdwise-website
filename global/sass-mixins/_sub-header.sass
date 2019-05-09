@@ -1,0 +1,15 @@
+@import ../sass-config/colors
+@import ../sass-config/font-sizes
+@import ../sass-config/spacing
+@import ./typography
+
+=sub-header($start-color, $end-color)
+  margin-bottom: $spacing-20
+  +font-primary
+  +font-weight-bold
+  font-size: $sub-header-font-size
+  color: $sub-header-fallback-color
+  background: -webkit-linear-gradient($start-color, $start-color 67%, $end-color)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  padding-bottom: 0.3rem

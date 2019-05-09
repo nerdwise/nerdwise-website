@@ -53,6 +53,9 @@ jobs:
     - run: *grow_install
     - save_cache: *cache_save
     - run:
+        name: Gulp
+        command: gulp
+    - run:
         name: Deploy Firebase
         command: make build-prod
     - run:

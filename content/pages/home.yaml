@@ -26,7 +26,6 @@ components:
   block_css_classes:
     - block--pink
     - block--reverse
-    - block--1
   what_we_do:
     - Deliver completely custom high-end bespoke websites.
     - Your business isn't a copy-paste, your site shouldn't be either.
@@ -65,7 +64,6 @@ components:
 - component: projects
   block_css_classes:
     - block--orange
-    - block--2
   projects:
     - !g.doc /content/project/2TGvuGBc0AOAV6oJnfsn2.yaml
     - !g.doc /content/project/5Dc7L1BJRocnXwodze4LSf.yaml
@@ -73,7 +71,6 @@ components:
   block_css_classes:
     - block--yellow
     - block--reverse
-    - block--3
   title: About
   staff:
     - !g.doc /content/person/3UNp9MEanX65anIEd4r7rH.yaml
@@ -85,7 +82,6 @@ components:
   chatForm: !g.doc /content/partials/chatForm.yaml
   block_css_classes:
     - block--cyan
-    - block--4
   email: projects@nerdwise.ca
   topics:
     - name: Let's talk about a project
