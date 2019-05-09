@@ -1,6 +1,7 @@
 import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
 import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import {map} from '../../node_modules/toolbox-v2/src/toolbox/utils/node-list/map';
 
 const FRAME_KEYFRAMES: [number, string][] = [
   [0, 'transform: scaleY(0)'],
@@ -18,15 +19,15 @@ const INFO_KEYFRAMES: [number, string][] = [
 ];
 
 class About {
+  private readonly profiles_: NodeListOf<Element>;
   private scrollEffect_: ScrollEffect = null;
-  private profiles_: HTMLElement[];
 
   constructor() {
-    this.profiles_ = Array.from(document.querySelectorAll('.profile'));
+    this.profiles_ = document.querySelectorAll('.profile');
   }
 
   blockReveal(): void {
-    this.profiles_.map(profile => {
+    map(this.profiles_, profile => {
       const frame: HTMLElement = profile.querySelector('.profile__frame');
       const image: HTMLElement = profile.querySelector('.profile__image');
       const info: HTMLElement = profile.querySelector('.profile__info');
