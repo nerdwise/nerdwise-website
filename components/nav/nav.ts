@@ -3,20 +3,42 @@ import {getVisibleDistanceFromRoot} from '../../node_modules/toolbox-v2/src/tool
 import {max} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/max';
 import {forEach} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/for-each';
 import {toggleClass} from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/class/toggle-class';
+import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
-class CssClass {
-  public static ACTIVE = 'nav__link--active';
+enum CssClass {
+  NAV_CONTENT = 'nav__content',
+  ACTIVE_NAV_LINK = 'nav__link--active',
+  BLOCK = 'block',
 }
 
 class Nav {
-  private sectionToNavLink_: Map<Element, Element>;
+  private readonly sectionToNavLink_: Map<Element, Element>;
+  private readonly firstBlock_: Element;
+  private readonly navContent_: HTMLElement;
 
   constructor(sectionLinkMap: Map<Element, Element>) {
     this.sectionToNavLink_ = sectionLinkMap;
+    this.firstBlock_ = document.querySelector(`.${CssClass.BLOCK}`);
+    this.navContent_ = document.querySelector(`.${CssClass.NAV_CONTENT}`);
   }
 
   public init(): void {
     this.update_();
+
+    new ScrollEffect(
+      this.firstBlock_,
+      {
+        effects: [
+          new Tween(
+            [[0, 'opacity: 0'], [1, 'opacity: 1']],
+            {styleTarget: this.navContent_})],
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: -100,
+        endDistance: 0,
+      }
+    );
   }
 
   private static scoreFn_(section: Element): number {
@@ -45,7 +67,7 @@ class Nav {
         forEach(
           this.getNavLinks_(),
           (navLink) => {
-            toggleClass(navLink, CssClass.ACTIVE, navLink === activeNavLink);
+            toggleClass(navLink, CssClass.ACTIVE_NAV_LINK, navLink === activeNavLink);
           });
       });
     });
