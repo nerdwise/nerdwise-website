@@ -92,7 +92,7 @@ const clearOldTs = () => {
 gulp.task("clear-old-ts", clearOldTs);
 
 const buildNewTs = () => {
-  return gulp.src("./tsconfig.json").pipe(exec("tsc <%= file.path %>"));
+  return gulp.src("./tsconfig.json").pipe(exec("tsc -p <%= file.path %>"));
 };
 gulp.task("build-new-ts", buildNewTs);
 

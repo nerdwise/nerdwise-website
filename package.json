@@ -14,6 +14,7 @@
     "gulp-sass": "^4.0.1",
     "toolbox-v2": "git+https://github.com/angusm/toolbox-v2.git#fa2fe455a323bd9af1296b4872084bf5ec864bab",
     "tsc": "^1.20150623.0",
+    "typescript": "^3.4.5",
     "webpack": "4.20.2",
     "webpack-stream": "5.1.1"
   }
