@@ -1,6 +1,7 @@
 import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
 import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { chromeOnlyJsScroll } from '../../node_modules/toolbox-v2/src/toolbox/components/js-scroll/chrome-only-js-scroll';
 
 class Hero {
   private readonly header_: HTMLElement;
@@ -31,6 +32,7 @@ class Hero {
 
   init(): void {
     this.tweenHeader();
+    chromeOnlyJsScroll.init();
   }
 }
 

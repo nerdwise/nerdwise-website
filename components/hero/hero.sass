@@ -15,8 +15,10 @@
 
 .hero__logo
   display: inline
-  width: 30vw
+  width: 45vw
+  max-width: 80vh
   margin-bottom: -1vw
+  margin-top: -1.5vw
 
   .cls-3 // TODO(Angus) Sort this SVG OUT
     stroke: none
@@ -24,9 +26,10 @@
 .hero__heading
   +font-secondary
   +font-weight-extra-bold
-  font-size: 6vw
+  font-size: 6.5vw
+  text-align: center
   color: $color-neutral-20
-  background: -webkit-linear-gradient($hero-gradient-font-start-color, $hero-gradient-font-start-color 67%, $hero-gradient-font-end-color)
+  background: -webkit-linear-gradient($hero-gradient-font-start-color, $hero-gradient-font-end-color 30%, $hero-gradient-font-end-color)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
   margin: $spacing-20
