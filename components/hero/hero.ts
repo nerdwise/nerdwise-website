@@ -3,14 +3,12 @@ import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scro
 import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
 class Hero {
+  private readonly header_: HTMLElement;
   private scrollEffect_: ScrollEffect = null;
-  private header_: HTMLElement;
-  private overlay_: HTMLElement;
   private particles_: HTMLVideoElement;
 
   constructor() {
     this.header_ = document.querySelector('.hero__heading');
-    this.overlay_ = document.querySelector('.hero__overlay');
     this.particles_ = document.querySelector('.hero__video');
   }
 
@@ -23,10 +21,7 @@ class Hero {
             1,
             'opacity: 0; transform: scale(0.9) rotateX(3deg) translateY(10vh)'
           ]
-        ]),
-        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
-          styleTarget: this.overlay_
-        })
+        ])
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
       startDistance: () => 0,
@@ -34,24 +29,7 @@ class Hero {
     });
   }
 
-  loadVideo(videoUrl: string): Promise<HTMLVideoElement> {
-    return new Promise((resolve, reject) => {
-      const video = document.createElement('video');
-      video.addEventListener('canplay', () => resolve(video), { once: true });
-      video.addEventListener('error', () => reject(video), { once: true });
-      video.src = videoUrl;
-    });
-  }
-
-  loadParticles(): void {
-    const videoUrl = '/static/images/particle.mp4';
-    this.loadVideo(videoUrl).then(() => {
-      this.particles_.src = videoUrl;
-    });
-  }
-
   init(): void {
-    this.loadParticles();
     this.tweenHeader();
   }
 }
