@@ -37,6 +37,12 @@ jobs:
     - run: *grow_install
     - save_cache: *cache_save
     - run:
+        name: Compile Sass
+        command: gulp compile-sass
+    - run:
+        name: Compile Typescript
+        command: gulp compile-ts
+    - run:
         name: Stage Firebase
         command: make build-staging
     - run:
@@ -53,8 +59,11 @@ jobs:
     - run: *grow_install
     - save_cache: *cache_save
     - run:
-        name: Gulp
-        command: gulp
+        name: Compile Sass
+        command: gulp compile-sass
+    - run:
+        name: Compile Typescript
+        command: gulp compile-ts
     - run:
         name: Deploy Firebase
         command: make build-prod
