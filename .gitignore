@@ -4,3 +4,4 @@ build
 /tmp
 .firebase
 extensions
+dist
