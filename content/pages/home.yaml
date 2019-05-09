@@ -11,17 +11,7 @@ components:
 - component: hero
   header: Hero Header
   wrap: False
-- component: why-us
-  header: Why Us?
-  tagline: Because we are really good at this.
-  button: Click Here
-  modal:
-    title: Questions you should ask your developer before you sign.
-    questions:
-    - Lorem ipsum dolor sit amet consectetur adipisicing elit?
-    - Lorem ipsum dolor sit amet consectetur adipisicing elit?
-    - Lorem ipsum dolor sit amet consectetur adipisicing elit?
-  wrap: False
+- !g.doc /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
 - component: workflow
   block_css_classes:
     - block--pink

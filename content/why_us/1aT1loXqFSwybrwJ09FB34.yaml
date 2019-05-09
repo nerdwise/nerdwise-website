@@ -1,0 +1,10 @@
+button: Click Here
+component: why-us
+header: Why Us?
+modal_questions:
+- Lorem ipsum dolor sit amet consectetur adipisicing elit?
+- Lorem ipsum dolor sit amet consectetur adipisicing elit?
+- Lorem ipsum dolor sit amet consectetur adipisicing elit?
+modal_title: Questions you should ask your developer before you sign.
+tagline: Because we're really good at this.
+wrap: false
