@@ -1,0 +1,17 @@
+action: https://docs.google.com/forms/d/e/1FAIpQLScY2003v7ZupB7UMHKlLUKvHfe6YCqW0d2phqqNTf-oHZVZDQ/formResponse?hl=en
+css_class: contact__form contact__form--3
+fields:
+- label: Name
+  name: entry.709035373
+  placeholder: Name
+  type:
+    input: text
+- label: Email
+  name: entry.46544204
+  placeholder: Email
+  type:
+    input: email
+- label: Message
+  name: entry.457207032
+  placeholder: So what do you want to talk about?
+  type: textarea

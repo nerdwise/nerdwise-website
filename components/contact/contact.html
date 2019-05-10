@@ -12,130 +12,32 @@
   </div>
 
   <div class="contact__right">
-    <form
-      action="{{ component.projectForm.action }}"
-      class="contact__form contact__form--1"
-    >
+    {% for form in component.forms %}
+    <form action="{{ form.action }}" class="{{ form.css_class }}">
+      {% for field in form.fields %} {% if field.type == 'textarea' %}
+      <label for="{{ field.name }}" class="form__field__label">{{
+        field.label
+      }}</label>
+      <textarea
+        name="{{ field.name }}"
+        class="form__field__control"
+        placeholder="{{ field.placeholder }}"
+      ></textarea>
+      {% endif %} {% if field.type.input %}
+      <label for="{{ field.name }}" class="form__field__label">{{
+        field.label
+      }}</label>
+      <input
+        type="{{ field.type.input }}"
+        class="form__field__control"
+        name="{{ field.name }}"
+        placeholder="{{ field.placeholder }}"
+      />
+      {% endif %} {% endfor %}
       <div class="form__group">
-        <label for="entry.709035373" class="form__field__label">Name</label>
-        <input
-          type="text"
-          class="form__field__control"
-          name="entry.709035373"
-          placeholder="Name"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.1301712150" class="form__field__label">Company</label>
-        <input
-          type="text"
-          class="form__field__control"
-          name="entry.1301712150"
-          placeholder="Company"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.465442047" class="form__field__label">Email</label>
-        <input
-          type="email"
-          class="form__field__control"
-          name="entry.465442047"
-          placeholder="Email"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.508162947" class="form__field__label">Budget</label>
-        <input
-          type="text"
-          class="form__field__control"
-          name="entry.508162947"
-          placeholder="Budget"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.457207032" class="form__field__label">Message</label>
-        <textarea
-          type="text"
-          class="form__field__control"
-          name="entry.457207032"
-          placeholder="Tell us about your project."
-        ></textarea>
-      </div>
-      <div class="form__group">
-        <button type="submit" class="form__button">Send</button>
+        <button type="submit" class="form__button">Submit</button>
       </div>
     </form>
-
-    <form
-      action="{{ component.coffeeForm.action }}"
-      class="contact__form contact__form--2"
-    >
-      <div class="form__group">
-        <label for="entry.955900110" class="form__field__label">Name</label>
-        <input
-          type="text"
-          class="form__field__control"
-          name="entry.955900110"
-          placeholder="Name"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.1687256934" class="form__field__label">Email</label>
-        <input
-          type="email"
-          class="form__field__control"
-          name="entry.1687256934"
-          placeholder="Email"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.598564064" class="form__field__label">Message</label>
-        <textarea
-          type="text"
-          class="form__field__control"
-          name="entry.598564064"
-          placeholder="How do you like your coffee?"
-        ></textarea>
-      </div>
-      <div class="form__group">
-        <button type="submit" class="form__button">Send</button>
-      </div>
-    </form>
-
-    <form
-      action="{{ component.chatForm.action }}"
-      class="contact__form contact__form--3"
-    >
-      <div class="form__group">
-        <label for="entry.617208522" class="form__field__label">Name</label>
-        <input
-          type="text"
-          class="form__field__control"
-          name="entry.617208522"
-          placeholder="Name"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.1213075532" class="form__field__label">Email</label>
-        <input
-          type="email"
-          class="form__field__control"
-          name="entry.1213075532"
-          placeholder="Email"
-        />
-      </div>
-      <div class="form__group">
-        <label for="entry.1915984557" class="form__field__label">Message</label>
-        <textarea
-          type="text"
-          class="form__field__control"
-          name="entry.1915984557"
-          placeholder="So what do you want to talk about?"
-        ></textarea>
-      </div>
-      <div class="form__group">
-        <button type="submit" class="form__button">Send</button>
-      </div>
-    </form>
+    {% endfor %}
   </div>
 </section>

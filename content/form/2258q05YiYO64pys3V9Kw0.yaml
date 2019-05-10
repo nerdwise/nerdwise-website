@@ -1,0 +1,17 @@
+action: https://docs.google.com/forms/d/e/1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA/formResponse?hl=en
+css_class: contact__form contact__form--2
+fields:
+- label: Name
+  name: entry.709035373
+  placeholder: Name
+  type:
+    input: text
+- label: Email
+  name: entry.46544204
+  placeholder: Email
+  type:
+    input: email
+- label: Message
+  name: entry.457207032
+  placeholder: How do you like your coffee?
+  type: textarea
