@@ -42,7 +42,7 @@ preprocessors:
   id: 1FAIpQLScY2003v7ZupB7UMHKlLUKvHfe6YCqW0d2phqqNTf-oHZVZDQ
   path: /content/partials/chatForm.yaml
 - kind: contentful
-  autorun: true
+  autorun: false
   inject: true
   space: u4z8be9d4a38
   access_token: I-LKjMCg9XN7_asyj-oDfWDOVx5EbbtTWEtBgSRhbHc

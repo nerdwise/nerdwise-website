@@ -1,7 +1,9 @@
 $title: Home
 $path: /{root}/
+$path@env.prod: ~
 $localization:
   path: /{locale}/{root}/
+  path@env.prod: ~
 $order: -1
 description: Creating bespoke interactive media.
 
