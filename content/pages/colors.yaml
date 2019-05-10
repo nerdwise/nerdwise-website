@@ -1,6 +1,9 @@
 $title: Colors
 $order: -1
 description: Color palette
+$path@env.prod: ~
+$localization@env.prod:
+  path: ~
 
 ng_controller: ColorController
 

@@ -1,21 +1,15 @@
 {
-  "/content/data/footer.yaml": [
-    "/content/data/nav-anchor-links.yaml"
-  ],
-  "/content/data/nav.yaml": [
-    "/content/data/nav-anchor-links.yaml"
-  ],
-  "/content/pages/colors.yaml": [
-    "/components/colors/colors.html",
+  "/content/pages/home.yaml": [
+    "/components/about/about.html",
+    "/components/contact/contact.html",
     "/components/footer/footer.html",
+    "/components/hero/hero.html",
     "/components/nav/nav.html",
+    "/components/projects/projects.html",
+    "/components/why-us/why-us.html",
+    "/components/workflow/workflow.html",
     "/content/data/footer.yaml",
     "/content/data/nav.yaml",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/images/favicon.png"
-  ],
-  "/content/pages/home.yaml": [
     "/content/partials/chatForm.yaml",
     "/content/partials/coffeeForm.yaml",
     "/content/partials/projectForm.yaml",
@@ -27,6 +21,9 @@
     "/content/topic/1eA77p04SD1pUQAPM24rWk.yaml",
     "/content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml",
     "/content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml",
-    "/content/why_us/1aT1loXqFSwybrwJ09FB34.yaml"
+    "/content/why_us/1aT1loXqFSwybrwJ09FB34.yaml",
+    "/dist/css/main.min.css",
+    "/dist/js/main.min.js",
+    "/static/images/favicon.png"
   ]
 }
