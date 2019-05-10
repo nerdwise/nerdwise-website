@@ -1,11 +1,13 @@
 {
   "/content/pages/home.yaml": [
     "/components/about/about.html",
+    "/components/blocks/blocks.html",
     "/components/contact/contact.html",
     "/components/footer/footer.html",
     "/components/hero/hero.html",
     "/components/nav/nav.html",
     "/components/projects/projects.html",
+    "/components/skewed-section/skewed-section.html",
     "/components/why-us/why-us.html",
     "/components/workflow/workflow.html",
     "/content/data/footer.yaml",

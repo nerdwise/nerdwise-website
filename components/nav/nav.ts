@@ -25,6 +25,8 @@ class Nav {
     this.firstBlock_ = document.querySelector(`.${CssClass.BLOCK}`);
     this.navBrand_ = document.querySelector(`.${CssClass.NAV_BRAND}`);
     this.navContent_ = document.querySelector(`.${CssClass.NAV_CONTENT}`);
+
+    console.log(this.firstBlock_, this.navBrand_);
   }
 
   public init(): void {

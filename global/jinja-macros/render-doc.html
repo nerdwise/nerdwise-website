@@ -7,10 +7,12 @@
     {% do components.append(g.yaml('/content/data/footer.yaml')) %}
 
     {% for component in components %}
-      {% if component.wrap_with_skewed_section == True %}
-        {% set component_filename = '/components/skewed-section/skewed-section.html' %}
-      {% else %}
+      {# Checks against False, because the absence of the property in the #}
+      {# yaml file is assumed to imply that wrapping should be used. #}
+      {% if component.wrap_with_skewed_section == False %}
         {% set component_filename = '/components/' + component.component + '/' + component.component.split('/')[-1] + '.html' %}
+      {% else %}
+        {% set component_filename = '/components/skewed-section/skewed-section.html' %}
       {% endif %}
       {% include component_filename with context %}
     {% endfor %}
