@@ -2,7 +2,6 @@ $title: Home
 $path: /{root}/
 $localization:
   path: /{locale}/{root}/
-$order: -1
 description: Creating bespoke interactive media.
 
 ng_controller: BaseController
