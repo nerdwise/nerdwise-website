@@ -75,3 +75,66 @@ components:
     - !g.doc /content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml
     - !g.doc /content/topic/1eA77p04SD1pUQAPM24rWk.yaml
     - !g.doc /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml
+  forms:
+    - action: https://docs.google.com/forms/d/e/1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg/formResponse?hl=en
+      css_class: contact__form contact__form--1
+      fields:
+        - label: Name
+          name: entry.709035373
+          placeholder: Name
+          type:
+            input: text
+        - label: Company
+          name: entry.1301712150
+          placeholder: Company
+          type:
+            input: text
+        - label: Email
+          name: entry.46544204
+          placeholder: Email
+          type:
+            input: email
+        - label: Budget
+          name: entry.508162947
+          placeholder: Budget
+          type:
+            input: text
+        - label: Message
+          name: entry.457207032
+          placeholder: Tell us about your project.
+          type: textarea
+    - action: https://docs.google.com/forms/d/e/1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA/formResponse?hl=en
+      css_class: contact__form contact__form--2
+      fields:
+        - label: Name
+          name: entry.709035373
+          placeholder: Name
+          type:
+            input: text
+        - label: Email
+          name: entry.46544204
+          placeholder: Email
+          type:
+            input: email
+        - label: Message
+          name: entry.457207032
+          placeholder: How do you like your coffee?
+          type: textarea
+    - action: https://docs.google.com/forms/d/e/1FAIpQLScY2003v7ZupB7UMHKlLUKvHfe6YCqW0d2phqqNTf-oHZVZDQ/formResponse?hl=en
+      css_class: contact__form contact__form--3
+      fields:
+        - label: Name
+          name: entry.709035373
+          placeholder: Name
+          type:
+            input: text
+        - label: Email
+          name: entry.46544204
+          placeholder: Email
+          type:
+            input: email
+        - label: Message
+          name: entry.457207032
+          placeholder: So what do you want to talk about?
+          type: textarea
+

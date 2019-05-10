@@ -58,6 +58,8 @@ preprocessors:
     content_type: why_us
   - collection: /content/topic/
     content_type: topic
+  - collection: /content/form/
+    content_type: form
 
 static_dirs:
 - static_dir: /static/
