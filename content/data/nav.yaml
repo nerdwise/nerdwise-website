@@ -2,13 +2,5 @@ component: nav
 logo:
   url: /static/images/nerdwise-logo.svg
   alt: Logo
-links:
-  - name: Workflow
-    url: /#workflow
-  - name: Projects
-    url: /#projects
-  - name: About
-    url: /#about
-  - name: Contact
-    url: /#contact
+links: !g.yaml /content/data/nav-anchor-links.yaml
 wrap_with_skewed_section: False

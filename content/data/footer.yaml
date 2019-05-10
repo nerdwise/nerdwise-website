@@ -2,13 +2,5 @@ component: footer
 logo:
   url: /static/images/nerdwise-logo.svg
   alt: Logo
-links:
-  - name: About
-    url: /#about
-  - name: Projects
-    url: /#projects
-  - name: Workflow
-    url: /#workflow
-  - name: Contact
-    url: /#contact
+links: !g.yaml /content/data/nav-anchor-links.yaml
 wrap_with_skewed_section: False
