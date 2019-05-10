@@ -11,4 +11,4 @@ links:
     url: /#about
   - name: Contact
     url: /#contact
-wrap: False
+wrap_with_skewed_section: False

@@ -7,10 +7,10 @@
     {% do components.append(g.yaml('/content/data/footer.yaml')) %}
 
     {% for component in components %}
-      {% if component.wrap == False %}
-        {% set component_filename = '/components/' + component.component + '/' + component.component.split('/')[-1] + '.html' %}
-      {% else %}
+      {% if component.wrap_with_skewed_section == True %}
         {% set component_filename = '/components/skewed-section/skewed-section.html' %}
+      {% else %}
+        {% set component_filename = '/components/' + component.component + '/' + component.component.split('/')[-1] + '.html' %}
       {% endif %}
       {% include component_filename with context %}
     {% endfor %}

@@ -7,4 +7,4 @@ modal_questions:
 - Lorem ipsum dolor sit amet consectetur adipisicing elit?
 modal_title: Questions you should ask your developer before you sign.
 tagline: Because we're really good at this.
-wrap: false
+wrap_with_skewed_section: False
