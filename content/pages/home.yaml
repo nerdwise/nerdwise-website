@@ -15,40 +15,20 @@ components:
     - block--pink
     - block--reverse
   what_we_do:
-    - Deliver completely custom high-end bespoke websites.
-    - Your business isn't a copy-paste, your site shouldn't be either.
+    - Deliver custom high-end bespoke websites.
   how_we_do:
-    - Built with intent every step of the way.
-    - We take pride in creating valuable sites for our clients. You didn't set
-      out to create a website for its own sake. Your site is a tool in your
-      business's arsenal to help drive sales and build customer engagement. We
-      get that, we had the same motivations when we built this site :)
-    - Any project we start will kick off with a meeting to discuss budgets,
-      timelines, priorities and the desired final product.
-    - We'll come back to you shortly thereafter with an actionable plan
-      outlining what we can deliver.
-    - Then, once we've received your go-ahead, we'll setup a GitHub repo to work
-      on your project. If that doesn't sound familiar, don't worry, we'll run
-      you through it. In short, it's where you'll be able to set priorities and
-      manage progress in real time.
-    - At the same time we'll set you up with access to our content management
-      system (CMS), where you'll have complete control over what goes on your
-      site.
-    - As we work you'll have access to a staging server where you can see
-      the changes we're making as we make them.
-    - Once we get to a point where you're happy to go live, we'll push the
-      button and your site will be visible to the world.
-    - After the launch, if you'd like, you can monitor the performance of what
-      we've built with Google Analytics and adjust the site as needed to really
-      cater to your customers.
-    - Our relationship doesn't have to end after the first launch either, we can
-      continue to deliver post-launch pages and designs as well as setting you
-      up with scheduled builds so that you can edit content in the CMS and see
-      it live on the site automatically.
+    - A kick-off meeting will outline your goals, sort out budgets, timelines,
+      priorities and the desired final product. This is where we'll find out if
+      we're the right team for your needs.
+    - After coming back to you with an action plan, we'll set you up with tools
+      to set priorities, track progress, directly control the words and images
+      on your site and see live updates.
+    - Once you're happy we'll launch! And if you're into it, kick off planning
+      post-launch campaign updates and performance monitoring.
     - Now all that's left is to give us a shout and kick this process off! :)
   why_we_do:
-    - We're nerds and we love what we do, marrying beautiful designs with
-      high performance code.
+    - We're nerds. We love marrying beautiful designs with high performance
+      code.
 - component: projects
   block_css_classes:
     - block--orange
