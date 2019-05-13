@@ -2,6 +2,7 @@
 @import ../../global/sass-config/line-height
 @import ../../global/sass-mixins/sub-header
 @import ../../global/sass-mixins/typography
+@import ../../global/sass-mixins/breakpoints
 
 .about
   padding-top: calc(15vh + 10vw)
@@ -10,6 +11,8 @@
   flex-direction: column
   align-items: center
   justify-content: flex-start
+  +media(tablet-landscape)
+    padding-top: calc(6vh + 10vw)
 
 .about__header
   display: none
@@ -19,15 +22,26 @@
   align-items: flex-start
   justify-content: center
   margin: $spacing-50 0
+  +media(tablet-portrait)
+    flex-direction: column
+    align-items: center
+  +media(mobile)
+    margin: $spacing-30 0
 
 .profile:nth-of-type(even)
   flex-direction: row-reverse
+  +media(tablet-portrait)
+    flex-direction: column
 
 .profile__frame
   overflow: hidden
   transform-origin: bottom
   background: $profile-block-color
   margin: 0 $spacing-60
+  +media(tablet-landscape)
+    margin: 0 $spacing-40
+  +media(tablet-portrait)
+    max-width: 90vw
 
 .profile__image
   width: 100%
@@ -42,10 +56,20 @@
   justify-content: flex-start
   width: 30rem
   margin: 0 $spacing-60
+  +media(tablet-landscape)
+    margin: 0 $spacing-40
+  +media(tablet-portrait)
+    align-items: center
+    margin: $spacing-30
 
 .profile__name
   +sub-header($about-gradient-font-start-color, $about-gradient-font-end-color)
   margin-bottom: $spacing-20
+  +media(tablet-portrait)
+    font-size: $font-size-60
+    margin-bottom: 0
+  +media(mobile)
+    font-size: $font-size-50
 
 .profile__position
   margin-bottom: $spacing-60
@@ -53,6 +77,11 @@
   +font-weight-light
   font-size: $profile-position-font-size
   color: $profile-position-font-color
+  +media(tablet-portrait)
+    font-size: $font-size-50
+    margin-bottom: $spacing-30
+  +media(mobile)
+    font-size: $font-size-40
 
 .profile__about
   +font-primary
@@ -60,3 +89,10 @@
   font-size: $body-font-size
   color: $profile-about-font-color
   line-height: $profile-about-line-height
+  +media(tablet-portrait)
+    text-align: center
+  +media(mobile)
+    font-size: $font-size-20
+    max-width: 90vw
+    line-height: $spacing-40
+    margin-top: $spacing-20
