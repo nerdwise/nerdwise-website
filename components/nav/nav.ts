@@ -29,6 +29,7 @@ class Nav {
 
   public init(): void {
     this.update_();
+    this.expandMobileNavOnClick();
 
     new ScrollEffect(this.navBrand_, {
       effects: [
@@ -84,6 +85,18 @@ class Nav {
           );
         });
       });
+    });
+  }
+
+  private expandMobileNavOnClick(): void {
+    const navMenu: HTMLElement = document.querySelector('.nav__menu');
+    const mobileNav: HTMLElement = document.querySelector(
+      '.nav__content--mobile'
+    );
+
+    navMenu.addEventListener('click', () => {
+      mobileNav.classList.toggle('display-nav');
+      navMenu.classList.toggle('x');
     });
   }
 }
