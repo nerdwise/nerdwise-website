@@ -2,6 +2,7 @@
 @import ../../global/sass-config/font-sizes
 @import ../../global/sass-config/spacing
 @import ../../global/sass-mixins/typography
+@import ../../global/sass-mixins/breakpoints
 
 .contact
   min-height: 100vh
@@ -10,11 +11,18 @@
   display: flex
   align-items: center
   justify-content: center
+  +media(tablet-landscape)
+    padding-top: calc(6vh + 10vw)
+    padding-bottom: 0
+  +media(tablet-portrait)
+    flex-direction: column
 
 .contact__header
   font-size: $font-size-70
   +font-weight-bold
   color: $contact-header-color
+  +media(mobile)
+    font-size: $font-size-60
 
 .contact__email
   color: $contact-email-color
@@ -24,6 +32,8 @@
   border-bottom: 1px solid $contact-email-border-color
   padding-bottom: 0.2rem
   +font-weight-light
+  +media(mobile)
+    font-size: $font-size-40
 
 .contact__info
   display: flex
@@ -33,6 +43,9 @@
   height: 65vh
   width: 50%
   margin: 0 $spacing-60
+  +media(tablet-portrait)
+    width: 100%
+    align-items: center
 
 .contact__topics
   display: flex
@@ -41,6 +54,8 @@
   justify-content: space-evenly
   height: 40%
   font-size: $font-size-40
+  +media(mobile)
+    font-size: $font-size-30
 
 .contact__topic
   color: $contact-topic-color
@@ -61,6 +76,11 @@
   height: 65vh
   width: 50%
   margin: 0 $spacing-60
+  +media(tablet-portrait)
+    height: auto
+  +media(mobile)
+    width: 85vw
+    margin: 0 auto
 
 .contact__form
   height: 100%
@@ -69,11 +89,16 @@
   align-items: flex-start
   justify-content: center
   display: none
+  +media(mobile)
+    align-items: center
 
 .form__group
   display: flex
+  align-items: flex-start
   flex-direction: column
   margin: $spacing-20 0
+  +media(mobile)
+    max-width: 100%
 
 .form__field__control,
 textarea.form__field__control,
@@ -87,6 +112,8 @@ textarea.form__field__control,
 textarea.form__field__control
   border: 1px solid $contact-border-color
   width: 24rem
+  +media(mobile)
+    max-width: 94%
 
 .form__field__control
   height: 3rem
