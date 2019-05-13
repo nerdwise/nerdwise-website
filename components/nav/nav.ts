@@ -1,17 +1,17 @@
-import {renderLoop} from '../../node_modules/toolbox-v2/src/toolbox/utils/render-loop';
-import {getVisibleDistanceFromRoot} from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
-import {max} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/max';
-import {forEach} from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/for-each';
-import {toggleClass} from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/class/toggle-class';
-import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { renderLoop } from '../../node_modules/toolbox-v2/src/toolbox/utils/render-loop';
+import { getVisibleDistanceFromRoot } from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
+import { max } from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/max';
+import { forEach } from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/for-each';
+import { toggleClass } from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/class/toggle-class';
+import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
 
 enum CssClass {
   NAV_CONTENT = 'nav__content',
   ACTIVE_NAV_LINK = 'nav__link--active',
   NAV_BRAND = 'nav__brand',
-  BLOCK = 'block',
+  BLOCK = 'block'
 }
 
 class Nav {
@@ -25,38 +25,32 @@ class Nav {
     this.firstBlock_ = document.querySelector(`.${CssClass.BLOCK}`);
     this.navBrand_ = document.querySelector(`.${CssClass.NAV_BRAND}`);
     this.navContent_ = document.querySelector(`.${CssClass.NAV_CONTENT}`);
-
-    console.log(this.firstBlock_, this.navBrand_);
   }
 
   public init(): void {
     this.update_();
 
-    new ScrollEffect(
-      this.navBrand_,
-      {
-        effects: [
-          new Tween(
-            [[0, 'opacity: 0'], [1, 'opacity: 1']],
-            {styleTarget: this.navBrand_})],
-        getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
-        startDistance: () => window.innerHeight * .1,
-        endDistance: window.innerHeight * .5,
-      }
-    );
+    new ScrollEffect(this.navBrand_, {
+      effects: [
+        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
+          styleTarget: this.navBrand_
+        })
+      ],
+      getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
+      startDistance: () => window.innerHeight * 0.1,
+      endDistance: window.innerHeight * 0.5
+    });
 
-    new ScrollEffect(
-      this.firstBlock_,
-      {
-        effects: [
-          new Tween(
-            [[0, 'opacity: 0'], [1, 'opacity: 1']],
-            {styleTarget: this.navContent_})],
-        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-        startDistance: -100,
-        endDistance: 0,
-      }
-    );
+    new ScrollEffect(this.firstBlock_, {
+      effects: [
+        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
+          styleTarget: this.navContent_
+        })
+      ],
+      getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+      startDistance: -100,
+      endDistance: 0
+    });
   }
 
   private static scoreFn_(section: Element): number {
@@ -82,14 +76,16 @@ class Nav {
       const activeNavLink = this.sectionToNavLink_.get(activeElement);
 
       renderLoop.anyMutate(() => {
-        forEach(
-          this.getNavLinks_(),
-          (navLink) => {
-            toggleClass(navLink, CssClass.ACTIVE_NAV_LINK, navLink === activeNavLink);
-          });
+        forEach(this.getNavLinks_(), navLink => {
+          toggleClass(
+            navLink,
+            CssClass.ACTIVE_NAV_LINK,
+            navLink === activeNavLink
+          );
+        });
       });
     });
   }
 }
 
-export {Nav};
+export { Nav };
