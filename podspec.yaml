@@ -50,6 +50,8 @@ preprocessors:
     content_type: topic
   - collection: /content/form/
     content_type: form
+  - collection: /content/section/
+    content_type: section
 
 static_dirs:
 - static_dir: /static/
