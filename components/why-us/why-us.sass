@@ -63,15 +63,15 @@
   transform: translateY(0)
 
 .modal__content
-  width: 50rem
-  height: 25rem
+  max-width: 90vw
+  height: 30rem
   display: flex
   flex-direction: column
   align-items: center
   justify-content: space-evenly
-  background: $color-white
-  position: fixed
   background: $modal-background-color
+  padding: $spacing-50 $spacing-70
+  overflow-y: scroll
 
 .modal__x
   position: absolute
@@ -88,9 +88,24 @@
   +font-weight-bold
   margin: $spacing-60 0
 
+.modal__info
+  font-size: $font-size-30
+  line-height: $spacing-40
+  color: $modal-question-color
+  +font-secondary
+  +font-weight-regular
+  margin-bottom: $spacing-60
+
+.modal__list
+  list-style: none
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+
 .modal__question
   color: $modal-question-color
   font-size: $font-size-30
   +font-secondary
   +font-weight-regular
-  margin-bottom: $spacing-60
+  margin-bottom: $spacing-50

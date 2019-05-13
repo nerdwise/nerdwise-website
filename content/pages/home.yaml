@@ -9,7 +9,7 @@ ng_controller: BaseController
 components:
 - component: hero
   wrap_with_skewed_section: False
-- !g.doc /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
+- !g.yaml /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
 - component: workflow
   block_css_classes:
     - block--pink

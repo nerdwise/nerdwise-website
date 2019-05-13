@@ -10,10 +10,11 @@
     <div class="modal__content">
       <div class="modal__x">&times;</div>
       <h2 class="modal__header">{{ component.modal_title }}</h2>
+      <h4 class="modal__info">{{ component.modal_copy }}</h4>
       <ul class="modal__list">
-        {%- for question in component.modal_questions -%}
-        <li class="modal__question">{{ question }}</li>
-        {%- endfor -%}
+        {% for question in component.modal_questions %}
+        <li class="modal__question">{{ question.question }}</li>
+        {% endfor %}
       </ul>
     </div>
   </div>
