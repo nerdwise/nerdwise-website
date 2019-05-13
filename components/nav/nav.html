@@ -51,4 +51,21 @@
     </a>
     {%- endfor -%}
   </ul>
+  <div class="nav__menu">
+    <div class="nav__bar nav__bar--1"></div>
+    <div class="nav__bar nav__bar--2"></div>
+    <div class="nav__bar nav__bar--3"></div>
+  </div>
+  <ul class="nav__content--mobile">
+    {% for link in component.links %}
+    <a
+      href="{{ link.url }}"
+      class="nav__link nav__link--{{ link.name.lower() }} nav__link--mobile"
+    >
+      <li class="nav__item nav__item--mobile">
+        {{ link.name }}
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
 </nav>

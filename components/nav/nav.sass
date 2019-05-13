@@ -2,6 +2,7 @@
 @import ../../global/sass-config/font-sizes
 @import ../../global/sass-config/spacing
 @import ../../global/sass-mixins/typography
+@import ../../global/sass-mixins/breakpoints
 
 .nav
   +font-primary
@@ -32,6 +33,10 @@
   justify-content: space-between
   width: 50%
   height: 100%
+  +media(tablet-landscape)
+    margin-right: 7rem
+  +media(tablet-portrait)
+    display: none
 
 .nav__link
   background: rgba($color-black, 0)
@@ -58,6 +63,8 @@
     margin: auto
     transform: translateY(-1.25rem) rotate(45deg)
     transition: transform .2s
+    +media(tablet-portrait)
+      display: none
 
 .nav__link:hover
   color: $nav-font-hover-color
@@ -70,7 +77,6 @@
   width: calc(100% + 3rem)
   position: absolute
   right: -3rem
-  z-index: -1
 
 .nav__link--active
   font-size: 1.5rem
@@ -81,6 +87,62 @@
 
   &:hover:after
     transform: translateY(-.5rem) rotate(45deg)
+
+// Mobile menu
+.nav__menu
+  display: none
+  margin-right: 1rem
+  z-index: 2
+  +media(tablet-portrait)
+    display: block
+
+.nav__bar
+  width: 2rem
+  height: .3rem
+  background-color: $nav-menu-color
+  margin: .4rem
+  transition-property: transform, opacity
+  transition-duration: .3s
+
+.x
+  .nav__bar--1
+    transform: rotate(-135deg) translate(-.35rem, -.64rem)
+
+  .nav__bar--2
+    opacity: 0
+
+  .nav__bar--3
+    transform: rotate(135deg) translate(-.35rem, .6rem)
+
+// Mobile
+.nav__content--mobile
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+  position: absolute
+  left: 0
+  top: 6vh
+  background: $nav-background-color--mobile
+  width: 100vw
+  list-style: none
+  padding: $spacing-40 0
+  z-index: -1
+  transform: translateY(-100%)
+  opacity: 0
+  transition-property: transform, opacity
+  transition-duration: 0.3s
+
+.display-nav
+  transform: translateY(0)
+  opacity: 1
+
+.nav__link--mobile
+  margin: $spacing-40
+  color: $nav-font-color--mobile
+
+.nav__link--mobile:hover
+  color: $nav-font-color--mobile
 
 // Logo styles
 .logo
