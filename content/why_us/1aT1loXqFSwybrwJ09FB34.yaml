@@ -1,10 +1,145 @@
-button: Click Here
+button: What?
 component: why-us
 header: Why Us?
+modal_copy: '
+
+  Hiring the wrong developer could see you shelling out for a site, that though it exists, does nothing for your business.
+
+
+  One concern is speed. Users don''t wait, you can check out numbers [here](https://www.machmetrics.com/speed-blog/how-does-page-load-time-affect-your-site-revenue/ "How does page load time affect your site revenue") but the short version is that people start dropping after waiting for as little as a second and it gets worse from there.
+
+
+  Regardless of who you hire (though, c''mon Nerdwise is great) you want to make sure they have real answers for how they''re going to deliver a speedy site and handle other technical aspects. To help you out here are some good questions you might want to ask, why you might want to ask them and the kinds of answers you should expect.'
 modal_questions:
-- Lorem ipsum dolor sit amet consectetur adipisicing elit?
-- Lorem ipsum dolor sit amet consectetur adipisicing elit?
-- Lorem ipsum dolor sit amet consectetur adipisicing elit?
-modal_title: Questions you should ask your developer before you sign.
-tagline: Because we're really good at this.
-wrap_with_skewed_section: False
+- _content_type: faq
+  _id: RfiwXwmt4A1WQeKVle6yp
+  answer: '[Slow sites are bad for business](https://www.machmetrics.com/speed-blog/how-does-page-load-time-affect-your-site-revenue/). There''s a [variety](https://gtmetrix.com/) [of](https://www.thinkwithgoogle.com/feature/testmysite) [tools](https://developers.google.com/speed/pagespeed/insights/) out there to measure site speed and your developers should be to prove they can deliver top-performing sites.
+
+
+    They should be mentioning things like:
+
+    - Image Compression - Shrinking the download size of images without hurting quality
+
+    - Minifying Code - Removing unnecessary content from code so it downloads faster
+
+    - Responsive Images - Making sure visitors get images sized appropriately for their device.
+
+    - Lazy-loading - Not forcing the user to wait for content at the bottom of the page to download before they can start using the site.
+
+    - Layout-thrashing - A common culprit for choppy performance on sites. Your developers should have a strategy to handle this.'
+  question: How is site performance considered?
+- _content_type: faq
+  _id: 55YTnQRcTSHCCieTdbRtto
+  answer: 'A CMS is a Content Management System and it''s how you''ll be able to make updates to your site without needing to e-mail a developer if you want to move some words around.
+
+
+    Contentful is a great CMS that we use at Nerdwise. Other common ones are Wordpress, Drupal and Joomla. The specific CMS used is less important than being sure you have access to one. You don''t want to pay a developer for small changes to the words and images on your site.'
+  question: What CMS is used?
+- _content_type: faq
+  _id: CfTCTIu06seFMwLB6VZ7H
+  answer: "This is where less ethical development firms will likely try and gouge you.\n\nThe actual costs of keeping sites live should be low and on-going SEO services are really nothing more than a cash grab. Your site's ranking on Google is going to be determined by a few things:\n\n- Meta tags, set once when the site is developed.\n- The amount of reputable sources elsewhere on the internet linking to your site.\n - Some firms will create fake pages to link to your site, this may work or you may get caught and have your search ranking removed or lowered.\n- The actual performance of your site. Google doesn't want to serve users sites that are going to take a long time to load or perform badly."
+  question: What about ongoing maintenance and SEO?
+- _content_type: faq
+  _id: 5EtVye88GlpFnEHwrfGrCE
+  answer: 'CI is Continuous Integration. In short it''s an efficient way for you to be able to preview changes of your site without accidentally leaking incomplete or secret information to your live site. Your developer should be leveraging version control to handle branching your site and a CI server to build them automatically.
+
+
+    If they don''t have a CI server setup it means that they''re doing all of this work manually. This is bad for a few reasons:
+
+
+    - You''re paying for extra work they wouldn''t be doing if they were working smarter.
+
+    - If this work is being done by people it''s prone to human errors a CI server wouldn''t make.
+
+    - A developer is needed to push content live, meaning you have to hope they check their e-mail in time when you need an update rolled out quickly.
+
+    '
+  question: What CI setup will be used?
+- _content_type: faq
+  _id: 5vqgFcX7W7ubUiClxG47oI
+  answer: 'Of course nobody wants to make a mistake, but the only thing more foolish than mistakes is not preparing for them. With that in mind...
+
+
+    Where can you go to look at old content for your pages?
+
+
+    How quickly can your site be rolled back to a previous version if a launch goes horribly wrong?
+
+
+    What happens if the computer my site is on crashes?
+
+
+    If your developer doesn''t start talking about version history for content, version control for code and redundant servers that''s a big red flag. You might want to wrap up the meeting.
+
+
+    Version history for content lets you know who changed what content on your site and when.
+
+
+    Version control for code does the same thing for your developers, so if god forbid they ever make a mistake, they can roll back to a working version quickly so your visitors aren''t starting at a broken page. You should expect to hear Git, GitHub, GitLabs, SVN or Subversion mentioned here.
+
+
+    Redundant servers is more straightforward, your site should be hosted reliably in the cloud by a company like Firebase, Amazon or Google so that the server that keeps your site up is looked after by qualified IT technicians at a reasonable price. If this isn''t the case your developer might be sending you a large monthly bill for sub-par reliability.
+
+    '
+  question: What happens when things go wrong?
+- _content_type: faq
+  _id: 1IOGuaz52ZQ1zUIGdmuLxP
+  answer: 'A good developer won''t hold your site hostage. Once you''ve paid for it you should expect to have full access to everything you''ve paid for. That means your developer should be giving you usernames and passwords to any servers, content management systems, databases and code repositories your site uses. You may not know what to do with them, but if things sour with your current developer your next one will need them.
+
+
+    If a developer has an issue with this, it could be an indication that they might be aiming to hold your site hostage to keep you on the hook for expensive maintenance plans.
+
+
+    Another consideration is how much of the code on your site is going to be proprietary vs. open source. Open Source code is code that is made freely available on the internet for anyone to use and study. Another developer will probably have an easier time taking over a site that uses open source code than they would taking over a site built on proprietary code.'
+  question: What happens if you switch developers?
+- _content_type: faq
+  _id: 4cRiqFW64lxzkYXwNtVEEv
+  answer: 'XSS is Cross-site Scripting and the short version is it is a way a hacker can put content on your site and deliver it to other visitors. If you''ve ever seen a site taken over by ads for Viagra, this is probably how it happened.
+
+
+    To prevent against it your developer should talk about things like:
+
+
+    - "Sanitizing User Input" or "Escaping Code" Stripping code out of user submissions and ensuring it''s not executed.
+
+    - "Generating a Static Site" Removing the need for a backend, meaning the user can''t attack it or store their data on the site at all.
+
+    '
+  question: Can you tell me about XSS and how you're handling it?
+- _content_type: faq
+  _id: stRzHLD1GbPdArNMYfH9k
+  answer: 'It''s a poor craftsman that blames their tools, to be sure. You can make great sites using a variety of tools but some are used more often by novices than others.
+
+
+    For our part, Nerdwise uses Git, Grow, Jinja, Typescript, Gulp, NPM, YAML and CircleCI. We believe in these tools enough to build our own site on them.
+
+
+    An exhaustive list of great tools would take too long, so here''s a few tools and what they might mean for your site.
+
+
+    Wordpress, Drupal and PHP in general tend to be used by sweat-shop studios where your site will likely be a copy-paste stamp of another site and given minimal attention by underpaid developers who aren''t allowed to spend enough time on your site to really care. This isn''t a universal truth but I wouldn''t call it uncommon.
+
+
+    Java, C#, Perl and CoffeeScript are more novel tools. There''s nothing wrong with them, but it may be harder and more expensive to find someone to take over these projects if you ever switch developers.
+
+
+    Even if you don''t bring Nerdwise on for your project our founder Angus would be happy to give you an honest second opinion on the tools your potential hires are looking to use. Shoot him an e-mail at [angus@nerdwise.ca](mailto:angus@nerdwise.ca "Founder''s E-Mail"). '
+  question: What language and tools are you using?
+- _content_type: faq
+  _id: 6voyfqizRY4GsO0XatwMct
+  answer: 'Developers will often use code provided by others. It''s common, we do it sometimes, and there''s nothing inherently wrong with it if handled properly. The main concern, is that if your developers didn''t write it, they might not know about its problems and could be bringing someone else''s bugs and security issues into your site.
+
+
+    Any developer you hire should be able to point to a short list of libraries they use frequently and criteria they check against before bringing in third party code or plugins.
+
+
+    A common one to watch out for is jQuery. It''s a library used all over the place, but it''s not without it''s drawbacks. It does a lot, which means it has a lot of code, which means your visitors would be downloading more code than they should. Ideally your developers are using module-based libraries to avoid these kinds of situations, so your visitors have to wait the shortest possible amount of time to see your site up and running.
+
+
+    For Nerdwise''s part, we mainly rely on [Toolbox](https://github.com/angusm/toolbox-v2 "Toolbox GitHub Repository"), a library put together by our CEO Angus, pieces of which have been used on major corporate sites. We''ll also leverage vetted industry staples like Angular and React to add app-like functionality to your site when needed.
+
+    '
+  question: How is 3rd party code handled?
+modal_title: Sifting through developer bullshit
+tagline: Stupid good talent without the bullshit.
+wrap: false

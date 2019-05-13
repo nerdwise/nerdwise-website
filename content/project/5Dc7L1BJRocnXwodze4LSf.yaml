@@ -1,15 +1,21 @@
-about: Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam harum ipsum illum ratione amet! Maxime ipsum modi amet error.
+about: '[nerdwise.dev](https://nerdwise.dev)
+
+
+  You''re looking at it right now. We wanted to show off a little bit with subtle parallax effects, skewed sections at interesting angles and scroll-based transitions for gradient colors and scale.
+
+
+  More copy TBD before launch.'
 image:
-  description: Project Image
+  description: A screenshot of the hero for the Nerdwise website.
   file:
     contentType: image/png
     details:
       image:
-        height: 900
-        width: 500
-      size: 1865
-    fileName: 500x900.png
-    url: //images.ctfassets.net/u4z8be9d4a38/5zHWJfoY3nNChSRiBdwd1u/8d64fb6350ac45f695ea7fbb79e94a32/500x900.png
-  title: project2
+        height: 1098
+        width: 2000
+      size: 99921
+    fileName: screenshot-localhost-8080-1557687323764.png
+    url: //images.ctfassets.net/u4z8be9d4a38/5zHWJfoY3nNChSRiBdwd1u/e379b8ac1d4ad1a4e10e5ea427bf8c0e/screenshot-localhost-8080-1557687323764.png
+  title: Nerdwise Website Screenshot
 info_css_class: project__info project__info--2
-name: Project 2
+name: Nerdwise

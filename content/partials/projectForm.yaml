@@ -1,35 +1,30 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLScwaRJQb1xXNsWYUPCFWz74jEdUKl5V7Uh3QgIC8aqygMuHyg/formResponse?hl=en
 items:
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.709035373
     placeholder@: Your answer
   label@: Name
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.1301712150
     placeholder@: Your answer
   label@: Company
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.465442047
     placeholder@: Your answer
   label@: Email
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.508162947
     placeholder@: Your answer
   label@: Budget
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXTAREA
     name: entry.457207032
     placeholder@: Your answer
