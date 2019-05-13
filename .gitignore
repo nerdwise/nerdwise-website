@@ -5,8 +5,4 @@ build
 .firebase
 extensions
 dist
-<<<<<<< HEAD
 .idea/
-=======
-.idea/
->>>>>>> a15c282... Refactor contact forms without contentful

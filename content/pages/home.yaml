@@ -45,9 +45,6 @@ components:
     - !g.doc /content/person/70Aua1MoBohsAYiMkfUWo8.yaml
     - !g.doc /content/person/1Q0hdZPsPznSL7uzwYh2k3.yaml
 - component: contact
-  projectForm: !g.doc /content/partials/projectForm.yaml
-  coffeeForm: !g.doc /content/partials/coffeeForm.yaml
-  chatForm: !g.doc /content/partials/chatForm.yaml
   block_css_classes:
     - block--cyan
   email: projects@nerdwise.ca
