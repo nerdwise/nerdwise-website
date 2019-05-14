@@ -6,13 +6,6 @@ home: /content/pages/home.yaml
 
 localization:
   default_locale: en
-  locales:
-    - en_ca
-    - fr_ca
-    - fr_fr
-    - ko_ko
-    - ko
-    - de_au
 
 meta:
   google_analytics_id: ""
