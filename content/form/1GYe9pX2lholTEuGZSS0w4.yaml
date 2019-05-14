@@ -4,6 +4,7 @@ fields:
 - label: Name
   name: entry.709035373
   placeholder: Name
+  required: 'true'
   type:
     input: text
 - label: Company
@@ -14,6 +15,7 @@ fields:
 - label: Email
   name: entry.46544204
   placeholder: Email
+  required: 'true'
   type:
     input: email
 - label: Budget
@@ -24,4 +26,5 @@ fields:
 - label: Message
   name: entry.457207032
   placeholder: Tell us about your project.
+  required: 'true'
   type: textarea

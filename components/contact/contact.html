@@ -23,6 +23,9 @@
           name="{{ field.name }}"
           class="form__field__control"
           placeholder="{{ field.placeholder }}"
+          {%- if field.required == 'true' -%}
+          required="true"
+          {%- endif -%}
         ></textarea>
       </div>
       {%- endif -%} {%- if field.type.input -%}
@@ -35,6 +38,9 @@
           class="form__field__control"
           name="{{ field.name }}"
           placeholder="{{ field.placeholder }}"
+          {%- if field.required == 'true' -%}
+          required="true"
+          {%- endif -%}
         />
       </div>
       {%- endif -%} {%- endfor -%}

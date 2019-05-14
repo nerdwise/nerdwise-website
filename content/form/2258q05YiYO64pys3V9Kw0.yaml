@@ -4,14 +4,17 @@ fields:
 - label: Name
   name: entry.709035373
   placeholder: Name
+  required: 'true'
   type:
     input: text
 - label: Email
   name: entry.46544204
   placeholder: Email
+  required: 'true'
   type:
     input: email
 - label: Message
   name: entry.457207032
   placeholder: How do you like your coffee?
+  required: 'true'
   type: textarea
