@@ -13,22 +13,22 @@
   <div class="right">
     <h1 class="workflow__header">Workflow</h1>
     <h2 class="workflow__title">What We Do</h2>
-    {% for paragraph in component.what_we_do %}
+    {%- for paragraph in component.what_we_do -%}
     <p class="workflow__paragraph">
       {{ paragraph }}
     </p>
-    {% endfor %}
+    {%- endfor -%}
     <h2 class="workflow__title">How We Do It</h2>
-    {% for paragraph in component.how_we_do %}
+    {%- for paragraph in component.how_we_do -%}
     <p class="workflow__paragraph">
       {{ paragraph }}
     </p>
-    {% endfor %}
+    {%- endfor -%}
     <h2 class="workflow__title">Why We Do It</h2>
-    {% for paragraph in component.why_we_do %}
+    {%- for paragraph in component.why_we_do -%}
     <p class="workflow__paragraph">
       {{ paragraph }}
     </p>
-    {% endfor %}
+    {%- endfor -%}
   </div>
 </section>

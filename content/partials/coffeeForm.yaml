@@ -1,21 +1,18 @@
 action: https://docs.google.com/forms/d/e/1FAIpQLSfWQpC8IHG0vqKbOCRyFyzROuNlds27Vy8tVKzkXAdbnrH3hA/formResponse?hl=en
 items:
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.955900110
     placeholder@: Your answer
   label@: Name
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXT
     name: entry.1687256934
     placeholder@: Your answer
   label@: Email
   required: false
-- description: ''
-  fields:
+- fields:
   - field_type: TEXTAREA
     name: entry.598564064
     placeholder@: Your answer

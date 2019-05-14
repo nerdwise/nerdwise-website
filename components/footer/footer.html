@@ -8,12 +8,12 @@
     />
   </div>
   <ul class="footer__content">
-    {% for link in component.links %}
+    {%- for link in component.links -%}
     <a href="{{ link.url }}" class="footer__link">
       <li class="footer__item">
         {{ link.name }}
       </li>
     </a>
-    {% endfor %}
+    {%- endfor -%}
   </ul>
 </footer>
