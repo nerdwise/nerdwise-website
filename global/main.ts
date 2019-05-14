@@ -13,7 +13,7 @@ blocks.init();
 initNav();
 
 const about = new About();
-about.blockReveal();
+about.init();
 
 const hero = new Hero();
 hero.init();
