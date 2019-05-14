@@ -1,5 +1,5 @@
 {
-  "name": "project_name",
+  "name": "nerdwise-website",
   "private": true,
   "dependencies": {
     "babel-loader": "^8.0.4",
