@@ -5,16 +5,16 @@
       component.email
     }}</a>
     <div class="contact__topics">
-      {% for topic in component.topics %}
+      {%- for topic in component.topics -%}
       <a class="{{ topic.css_class }}">{{ topic.name }} &#10141;</a>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </div>
 
   <div class="contact__right">
-    {% for form in component.forms %}
+    {%- for form in component.forms -%}
     <form action="{{ form.action }}" class="{{ form.css_class }}">
-      {% for field in form.fields %} {% if field.type == 'textarea' %}
+      {%- for field in form.fields -%} {%- if field.type == 'textarea' -%}
       <label for="{{ field.name }}" class="form__field__label">{{
         field.label
       }}</label>
@@ -23,7 +23,7 @@
         class="form__field__control"
         placeholder="{{ field.placeholder }}"
       ></textarea>
-      {% endif %} {% if field.type.input %}
+      {%- endif -%} {%- if field.type.input -%}
       <label for="{{ field.name }}" class="form__field__label">{{
         field.label
       }}</label>
@@ -33,11 +33,11 @@
         name="{{ field.name }}"
         placeholder="{{ field.placeholder }}"
       />
-      {% endif %} {% endfor %}
+      {%- endif -%} {%- endfor -%}
       <div class="form__group">
         <button type="submit" class="form__button">Submit</button>
       </div>
     </form>
-    {% endfor %}
+    {%- endfor -%}
   </div>
 </section>

@@ -2,7 +2,7 @@
   <h1 class="about__header">
     {{ component.title }}
   </h1>
-  {% for person in component.staff %}
+  {%- for person in component.staff -%}
   <div class="{{ person.css_class }}">
     <div class="profile__frame">
       <img
@@ -19,5 +19,5 @@
       </p>
     </div>
   </div>
-  {% endfor %}
+  {%- endfor -%}
 </section>

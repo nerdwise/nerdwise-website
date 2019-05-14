@@ -1,8 +1,8 @@
-{% include '/components/blocks/blocks.html' with context %}
+{%- include '/components/blocks/blocks.html' with context -%}
 <section class="skewed-section">
   <div class="skewed-section__content">
-    {% set component_filename = '/components/' + component.component + '/' +
-    component.component.split('/')[-1] + '.html' %} {% include
-    component_filename with context %}
+    {%- set component_filename = '/components/' + component.component + '/' +
+    component.component.split('/')[-1] + '.html' -%} {%- include
+    component_filename with context -%}
   </div>
 </section>
