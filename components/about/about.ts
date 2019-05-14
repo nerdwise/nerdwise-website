@@ -32,11 +32,11 @@ class About {
   }
 
   init(): void {
-    this.blockReveal();
-    this.lazyLoad();
+    this.blockReveal_();
+    this.lazyLoad_();
   }
 
-  blockReveal(): void {
+  private blockReveal_(): void {
     map(this.profiles_, profile => {
       const frame: HTMLElement = profile.querySelector('.profile__frame');
       const image: HTMLElement = profile.querySelector('.profile__image');
@@ -55,7 +55,7 @@ class About {
     });
   }
 
-  lazyLoad(): void {
+  private lazyLoad_(): void {
     this.aboutImages_.forEach(image => {
       const imageUrl: string = image.dataset.src;
       loadImage(imageUrl).then(() => {

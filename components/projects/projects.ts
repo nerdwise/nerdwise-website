@@ -10,10 +10,10 @@ class Projects {
   }
 
   init(): void {
-    this.lazyLoad();
+    this.lazyLoad_();
   }
 
-  lazyLoad(): void {
+  private lazyLoad_(): void {
     this.projectImages_.forEach(image => {
       const imageUrl: string = image.dataset.src;
       loadImage(imageUrl).then(() => {
