@@ -5,6 +5,7 @@ import { Contact } from '../components/contact/contact';
 import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
 import { initNav } from './ts-inits/init-nav';
+import { Projects } from '../components/projects/projects';
 
 const blocks = new Blocks();
 blocks.init();
@@ -25,3 +26,6 @@ skewedSection.startScrollEffect();
 
 const whyUs = new WhyUs();
 whyUs.init();
+
+const projects = new Projects();
+projects.init();
