@@ -19,17 +19,26 @@ class Nav {
   private readonly firstBlock_: Element;
   private readonly navBrand_: HTMLElement;
   private readonly navContent_: HTMLElement;
+  private readonly navMenu_: HTMLElement;
+  private readonly mobileNav_: HTMLElement;
+  private readonly mobileNavLink_: HTMLElement[];
 
   constructor(sectionLinkMap: Map<Element, Element>) {
     this.sectionToNavLink_ = sectionLinkMap;
     this.firstBlock_ = document.querySelector(`.${CssClass.BLOCK}`);
     this.navBrand_ = document.querySelector(`.${CssClass.NAV_BRAND}`);
     this.navContent_ = document.querySelector(`.${CssClass.NAV_CONTENT}`);
+    this.navMenu_ = document.querySelector('.nav__menu');
+    this.mobileNav_ = document.querySelector('.nav__content--mobile');
+    this.mobileNavLink_ = Array.from(
+      document.querySelectorAll('.nav__link--mobile')
+    );
   }
 
   public init(): void {
     this.update_();
     this.expandMobileNavOnClick();
+    this.closeMobileNavOnClick();
 
     new ScrollEffect(this.navBrand_, {
       effects: [
@@ -89,14 +98,18 @@ class Nav {
   }
 
   private expandMobileNavOnClick(): void {
-    const navMenu: HTMLElement = document.querySelector('.nav__menu');
-    const mobileNav: HTMLElement = document.querySelector(
-      '.nav__content--mobile'
-    );
+    this.navMenu_.addEventListener('click', () => {
+      this.mobileNav_.classList.toggle('display-nav');
+      this.navMenu_.classList.toggle('x');
+    });
+  }
 
-    navMenu.addEventListener('click', () => {
-      mobileNav.classList.toggle('display-nav');
-      navMenu.classList.toggle('x');
+  private closeMobileNavOnClick(): void {
+    this.mobileNavLink_.forEach(link => {
+      link.addEventListener('click', () => {
+        this.mobileNav_.classList.toggle('display-nav');
+        this.navMenu_.classList.toggle('x');
+      });
     });
   }
 }
