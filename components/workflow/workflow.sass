@@ -2,6 +2,7 @@
 @import ../../global/sass-config/font-sizes
 @import ../../global/sass-config/spacing
 @import ../../global/sass-mixins/typography
+@import ../../global/sass-mixins/breakpoints
 
 .workflow
   display: flex
@@ -20,6 +21,8 @@
   display: flex
   align-items: center
   justify-content: center
+  +media(tablet-portrait)
+    display: none
 
 .right
   display: flex
@@ -28,6 +31,13 @@
   justify-content: center
   padding: 10rem 5rem
   background-color: $workflow-background-color
+  +media(tablet-landscape)
+    padding: 5rem 3rem
+  +media(tablet-portrait)
+    align-items: center
+    width: 100%
+  +media(mobile)
+    padding: 2rem 1rem
 
 .workflow__title
   color: $workflow-title-color
@@ -45,6 +55,10 @@
   line-height: $spacing-40
   margin-bottom: $spacing-30
   max-width: 40rem
+  +media(tablet-portrait)
+    text-align: center
+  +media(mobile)
+    font-size: $font-size-20
 
 .workflow__image
   height: 100%
