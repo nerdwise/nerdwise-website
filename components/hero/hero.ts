@@ -32,7 +32,8 @@ class Hero {
 
   init(): void {
     this.tweenHeader();
-    chromeOnlyJsScroll.init();
+    // TODO(Angus): Fix chromeOnlyJsScroll's interaction with scroll-behavior
+    // chromeOnlyJsScroll.init();
   }
 }
 
