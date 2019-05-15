@@ -14,6 +14,8 @@ class Projects {
   }
 
   private lazyLoad_(): void {
+    console.log(this.projectImages_);
+    console.log(this);
     this.projectImages_.forEach(image => {
       const imageUrl: string = image.dataset.src;
       loadImage(imageUrl).then(() => {
