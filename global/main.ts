@@ -6,7 +6,7 @@ import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
 import { initNav } from './ts-inits/init-nav';
 import { Projects } from '../components/projects/projects';
-import { onDomContentLoad } from '../../toolbox-v2/src/toolbox/utils/dom/on-dom-content-load';
+import { onDomContentLoad } from '../node_modules/toolbox-v2/src/toolbox/utils/dom/on-dom-content-load';
 
 onDomContentLoad(() => {
   const blocks = new Blocks();
