@@ -40,16 +40,14 @@ class Contact {
   submitForm(): void {
     this.contactForms_.forEach(form => {
       form.addEventListener('submit', e => {
-        const data = [].slice
-          .call(form)
-          .map((input: HTMLInputElement) => {
-            return 'value' in input && input.name
-              ? input.name +
-                  '=' +
-                  (input.value === undefined ? '' : input.value)
-              : '';
-          })
-          .join('&');
+        let mappedInput: string[] = [];
+        Array.from(form).map((input: HTMLInputElement) => {
+          if (input.name && input.value !== undefined) {
+            mappedInput.push(`${input.name}=${input.value}`);
+          }
+          return mappedInput;
+        });
+        const data = mappedInput.join('&');
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST', form.action, true);
