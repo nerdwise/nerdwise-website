@@ -8,14 +8,13 @@ class Projects {
   }
 
   init(): void {
-    this.projectImages_ =
-      Array.from(document.querySelectorAll('img.project__image'));
+    this.projectImages_ = Array.from(
+      document.querySelectorAll('img.project__image')
+    );
     this.lazyLoad_();
   }
 
   private lazyLoad_(): void {
-    console.log(this.projectImages_);
-    console.log(this);
     this.projectImages_.forEach(image => {
       const imageUrl: string = image.dataset.src;
       loadImage(imageUrl).then(() => {
