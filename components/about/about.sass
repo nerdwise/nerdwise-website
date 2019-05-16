@@ -38,9 +38,16 @@
   transform-origin: bottom
   background: $profile-block-color
   margin: 0 $spacing-60
+  max-height: 80vh
+  max-width: 30%
+  display: flex
+  align-items: center
   +media(tablet-landscape)
     margin: 0 $spacing-40
+    max-width: 50vw
   +media(tablet-portrait)
+    max-width: 60vw
+  +media(mobile)
     max-width: 90vw
 
 .profile__image

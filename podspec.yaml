@@ -45,6 +45,8 @@ preprocessors:
     content_type: form
   - collection: /content/section/
     content_type: section
+  - collection: /content/workflow/
+    content_type: workflow
 
 static_dirs:
 - static_dir: /static/
