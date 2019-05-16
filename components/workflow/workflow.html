@@ -14,9 +14,9 @@
     <h1 class="workflow__header">Workflow</h1>
     {% for section in component.sections %}
     <h2 class="workflow__title">{{ section.header }}</h2>
-    <p class="workflow__paragraph">
-      {{ section.body }}
-    </p>
+    <div class="workflow__paragraph">
+      {{ section.body | markdown | safe }}
+    </div>
     {%- endfor -%}
   </div>
 </section>

@@ -1,5 +1,6 @@
 @import ../../global/sass-config/line-height
 @import ../../global/sass-config/spacing
+@import ../../global/sass-config/font-sizes
 @import ../../global/sass-mixins/sub-header
 @import ../../global/sass-mixins/breakpoints
 
@@ -72,7 +73,7 @@
     max-width: 90vw
 
 .project__name
-  margin-bottom: $spacing-60
+  margin-bottom: $spacing-40
   +sub-header($project-gradient-font-start-color, $project-gradient-font-end-color)
   +media(tablet-portrait)
     margin: 0 auto
@@ -91,3 +92,28 @@
   +media(mobile)
     font-size: $font-size-20
     line-height: $spacing-40
+
+.project__about p 
+  margin-bottom: $spacing-30
+
+.project__about p a
+  text-decoration: none
+  color: $project-about-font-color
+  font-size: $font-size-50
+  position: relative
+
+.project__about p a:before
+  content: " "
+  position: absolute
+  width: 100%
+  height: 2px
+  bottom: -2px
+  left: 0
+  background-color: $project-about-font-color
+  visibility: hidden
+  transform: scaleX(0)
+  transition: transform 0.3s, visibility 0.3s
+
+.project__about p a:hover:before
+  visibility: visible
+  transform: scaleX(1)

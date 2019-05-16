@@ -14,9 +14,9 @@
     <div class="profile__info">
       <h2 class="profile__name">{{ person.name }}</h2>
       <h4 class="profile__position">{{ person.position }}</h4>
-      <p class="profile__about">
-        {{ person.about }}
-      </p>
+      <div class="profile__about">
+        {{ person.about | markdown | safe }}
+      </div>
     </div>
   </div>
   {%- endfor -%}
