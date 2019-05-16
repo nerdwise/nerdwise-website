@@ -15,6 +15,6 @@ fields:
     input: email
 - label: Message
   name: entry.457207032
-  placeholder: How do you like your coffee?
+  placeholder: What's your beverage of choice?
   required: 'true'
   type: textarea
