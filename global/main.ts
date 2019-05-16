@@ -8,27 +8,29 @@ import { initNav } from './ts-inits/init-nav';
 import { Projects } from '../components/projects/projects';
 import { onDomContentLoad } from '../node_modules/toolbox-v2/src/toolbox/utils/dom/on-dom-content-load';
 
-onDomContentLoad(() => {
-  const blocks = new Blocks();
-  blocks.init();
+const projects = new Projects();
 
-  initNav();
+// No need to use the returned promise
+const _unused =
+  onDomContentLoad(() => {
+    const blocks = new Blocks();
+    blocks.init();
 
-  const about = new About();
-  about.init();
+    initNav();
 
-  const hero = new Hero();
-  hero.init();
+    const about = new About();
+    about.init();
 
-  const contact = new Contact();
-  contact.init();
+    const hero = new Hero();
+    hero.init();
 
-  const skewedSection = new SkewedSection();
-  skewedSection.startScrollEffect();
+    const contact = new Contact();
+    contact.init();
 
-  const whyUs = new WhyUs();
-  whyUs.init();
+    const skewedSection = new SkewedSection();
+    skewedSection.startScrollEffect();
 
-  const projects = new Projects();
-  projects.init();
-});
+    const whyUs = new WhyUs();
+    whyUs.init();
+    projects.init();
+  });

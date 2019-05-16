@@ -3,13 +3,13 @@ import { loadImage } from '../../node_modules/toolbox-v2/src/toolbox/utils/loadi
 class Projects {
   private projectImages_: HTMLImageElement[];
 
-  constuctor() {
-    this.projectImages_ = Array.from(
-      document.querySelectorAll('.project__image')
-    );
+  constructor() {
+    this.projectImages_ = [];
   }
 
   init(): void {
+    this.projectImages_ =
+      Array.from(document.querySelectorAll('img.project__image'));
     this.lazyLoad_();
   }
 
