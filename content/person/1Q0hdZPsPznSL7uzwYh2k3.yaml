@@ -3,14 +3,14 @@ css_class: profile profile--3
 image:
   description: Kaden Zipfel
   file:
-    contentType: image/png
+    contentType: image/jpeg
     details:
       image:
-        height: 600
-        width: 350
-      size: 1430
-    fileName: 350x600.png
-    url: //images.ctfassets.net/u4z8be9d4a38/1hI3uCUE1DmnjRmuY65Ovr/1c657ec164b67b989d409ea5469eb56c/350x600.png
+        height: 1200
+        width: 700
+      size: 27850
+    fileName: kaden.jpg
+    url: //images.ctfassets.net/u4z8be9d4a38/1hI3uCUE1DmnjRmuY65Ovr/0e2ccfa30d33ec61af94685170f649de/kaden.jpg
   title: kaden
 name: Kaden Zipfel
 position: Associate Developer

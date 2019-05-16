@@ -10,14 +10,7 @@ components:
 - component: hero
   wrap_with_skewed_section: False
 - !g.yaml /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
-- component: workflow
-  block_css_classes:
-    - block--pink
-    - block--reverse
-  sections: 
-    - !g.yaml /content/section/5i6XqTjqALZ5N1dVuewJ72.yaml
-    - !g.yaml /content/section/aGNHlyTzn1Il3cHG3glay.yaml
-    - !g.yaml /content/section/2J892UnNqDlWWOzmPjIAls.yaml
+- !g.yaml /content/workflow/2W7HGINb10azCeB0KrFUif.yaml
 - component: projects
   block_css_classes:
     - block--orange

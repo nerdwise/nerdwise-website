@@ -1,4 +1,38 @@
 block_css_classes:
 - block--pink
 - block--reverse
-component: workflow
+component: Workflow
+hero_image:
+  description: The Nerdwise team at the Go-Kart track
+  file:
+    contentType: image/jpeg
+    details:
+      image:
+        height: 2160
+        width: 1920
+      size: 189524
+    fileName: TempHero.jpg
+    url: //images.ctfassets.net/u4z8be9d4a38/7B16DIVLDr3sKnaNgVedQD/d223b178452e44eca07f9cc53d62754c/TempHero.jpg
+  title: The Nerdwise team at the Go-Kart track
+sections:
+- _content_type: section
+  _id: 5i6XqTjqALZ5N1dVuewJ72
+  body: Deliver custom high-end bespoke websites.
+  header: What We Do
+- _content_type: section
+  _id: aGNHlyTzn1Il3cHG3glay
+  body: 'A kick-off meeting will outline your goals, sort out budgets, timelines, priorities and the desired final product. This is where we''ll find out if we''re the right team for your needs.
+
+
+    After coming back to you with an action plan, we''ll set you up with tools to set priorities, track progress, directly control the words and images on your site and see live updates.
+
+
+    Once you''re happy we''ll launch! And if you''re into it, kick off planning post-launch campaign updates and performance monitoring.
+
+
+    Now all that''s left is to give us a shout and kick this process off!'
+  header: How We Do It
+- _content_type: section
+  _id: 2J892UnNqDlWWOzmPjIAls
+  body: We're nerds. Implementing beautiful designs with high performance code.
+  header: Why We Do It
