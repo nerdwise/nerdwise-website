@@ -47,14 +47,23 @@
     margin-bottom: $spacing-40
     align-items: center
 
-.project__image
+.project__frame
   margin: 0 $spacing-60
   max-width: 50%
+  background: linear-gradient(
+    to top right, 
+    $project-frame-gradient-start-color, 
+    $project-frame-gradient-end-color
+  )
   +media(tablet-landscape)
     max-width: 40%
   +media(tablet-portrait)
     max-width: 90%
     margin: 0
+
+.project__image
+  height: 99%
+  width: 99%
 
 .project__info--1--pause
   position: fixed

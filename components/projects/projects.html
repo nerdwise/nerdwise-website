@@ -6,11 +6,13 @@
   <h1 class="projects__header">Projects</h1>
   {%- for project in component.projects -%}
   <div class="project">
-    <img
-      src="{{ project.image.file.url }}"
-      alt="{{ project.image.description }}"
-      class="project__image"
-    />
+    <div class="project__frame">
+      <img
+        src="{{ project.image.file.url }}"
+        alt="{{ project.image.description }}"
+        class="project__image"
+      />
+    </div>
     <div class="{{ project.info_css_class }}">
       <h2 class="project__name">{{ project.name }}</h2>
       <p class="project__about">
