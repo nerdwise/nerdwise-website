@@ -38,10 +38,10 @@ components:
     - block--cyan
   email: projects@nerdwise.ca
   topics:
-    - !g.doc /content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml
-    - !g.doc /content/topic/1eA77p04SD1pUQAPM24rWk.yaml
     - !g.doc /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml
+    - !g.doc /content/topic/1eA77p04SD1pUQAPM24rWk.yaml
+    - !g.doc /content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml
   forms:
-    - !g.yaml /content/form/1GYe9pX2lholTEuGZSS0w4.yaml
-    - !g.yaml /content/form/2258q05YiYO64pys3V9Kw0.yaml
     - !g.yaml /content/form/6Ya9OrzRhLexRNO35A92DQ.yaml
+    - !g.yaml /content/form/2258q05YiYO64pys3V9Kw0.yaml
+    - !g.yaml /content/form/1GYe9pX2lholTEuGZSS0w4.yaml

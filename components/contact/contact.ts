@@ -16,22 +16,22 @@ class Contact {
   }
 
   removeRevealClasses(): void {
-    this.contactForms_.map((form, formIndex) => {
-      form.classList.remove(`contact__form--${formIndex + 1}--reveal`);
+    this.contactForms_.forEach((form, formIndex) => {
+      form.classList.remove(`contact__form--reveal`);
     });
-    this.contactTopics_.map(topic => {
+    this.contactTopics_.forEach(topic => {
       topic.classList.remove('contact__topic--active');
     });
   }
 
   onClick(): void {
-    this.contactTopics_.map((topic, topicIndex) => {
+    this.contactTopics_.forEach((topic, topicIndex) => {
       topic.addEventListener('click', () => {
         this.removeRevealClasses();
         const form = document.querySelector(
           `.contact__form--${topicIndex + 1}`
         );
-        form.classList.add(`contact__form--${topicIndex + 1}--reveal`);
+        form.classList.add(`contact__form--reveal`);
         topic.classList.add('contact__topic--active');
       });
     });
