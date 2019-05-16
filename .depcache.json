@@ -1,6 +1,5 @@
 {
   "/content/pages/home.yaml": [
-    "/components/Workflow/Workflow.html",
     "/components/about/about.html",
     "/components/blocks/blocks.html",
     "/components/contact/contact.html",

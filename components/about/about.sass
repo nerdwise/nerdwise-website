@@ -1,5 +1,6 @@
 @import ../../global/sass-config/colors
 @import ../../global/sass-config/line-height
+@import ../../global/sass-config/spacing
 @import ../../global/sass-mixins/sub-header
 @import ../../global/sass-mixins/typography
 @import ../../global/sass-mixins/breakpoints
@@ -90,12 +91,13 @@
   +media(mobile)
     font-size: $font-size-40
 
-.profile__about
+.profile__about p
   +font-primary
   +font-weight-regular
   font-size: $body-font-size
   color: $profile-about-font-color
   line-height: $profile-about-line-height
+  margin-bottom: $spacing-30
   +media(tablet-portrait)
     text-align: center
   +media(mobile)
