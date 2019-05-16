@@ -1,11 +1,11 @@
-import { renderLoop } from '../../node_modules/toolbox-v2/src/toolbox/utils/render-loop';
-import { getVisibleDistanceFromRoot } from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
-import { max } from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/max';
-import { forEach } from '../../node_modules/toolbox-v2/src/toolbox/utils/iterable-iterator/for-each';
-import { toggleClass } from '../../node_modules/toolbox-v2/src/toolbox/utils/dom/class/toggle-class';
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { renderLoop } from 'toolbox/utils/render-loop';
+import { getVisibleDistanceFromRoot } from 'toolbox/utils/dom/position/vertical/get-visible-distance-from-root';
+import { max } from 'toolbox/utils/iterable-iterator/max';
+import { forEach } from 'toolbox/utils/iterable-iterator/for-each';
+import { toggleClass } from 'toolbox/utils/dom/class/toggle-class';
+import { ScrollEffect } from 'toolbox/components/scroll-effect/base';
+import { Tween } from 'toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from 'toolbox/components/scroll-effect/distance-function';
 
 enum CssClass {
   NAV_CONTENT = 'nav__content',

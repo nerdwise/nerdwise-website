@@ -1,5 +1,5 @@
 import {Nav} from "../../components/nav/nav";
-import {map} from "../../node_modules/toolbox-v2/src/toolbox/utils/node-list/map";
+import {map} from "toolbox/utils/node-list/map";
 
 function initNav() {
   const sections = document.querySelectorAll('.section');

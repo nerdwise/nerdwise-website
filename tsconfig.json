@@ -7,6 +7,10 @@
     "removeComments": true,
     "target": "es5",
     "outDir": "./tmp/js/",
-    "module": "es6"
+    "module": "es6",
+    "baseUrl": "./",
+    "paths": {
+      "toolbox/*": ["node_modules/toolbox-v2/src/toolbox/*"]
+    }
   }
 }

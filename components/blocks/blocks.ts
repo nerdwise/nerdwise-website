@@ -1,7 +1,7 @@
-import {ScrollEffect} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import {Tween} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import {DistanceFunction} from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
-import {forEach} from '../../node_modules/toolbox-v2/src/toolbox/utils/node-list/for-each';
+import {ScrollEffect} from 'toolbox/components/scroll-effect/base';
+import {Tween} from 'toolbox/components/scroll-effect/effects/tween/tween';
+import {DistanceFunction} from 'toolbox/components/scroll-effect/distance-function';
+import {forEach} from 'toolbox/utils/node-list/for-each';
 
 enum CssClass {
   BLOCK = 'block',

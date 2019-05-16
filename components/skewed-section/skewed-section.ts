@@ -1,6 +1,6 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { ScrollEffect } from 'toolbox/components/scroll-effect/base';
+import { Tween } from 'toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from 'toolbox/components/scroll-effect/distance-function';
 
 const START_DEGREE = 2;
 const END_DEGREE = -0.3;

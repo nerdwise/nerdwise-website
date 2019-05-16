@@ -1,4 +1,4 @@
-import { loadImage } from '../../node_modules/toolbox-v2/src/toolbox/utils/loading/load-image';
+import { loadImage } from 'toolbox/utils/loading/load-image';
 
 class Projects {
   private projectImages_: HTMLImageElement[];

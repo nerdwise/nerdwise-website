@@ -7,6 +7,7 @@ const sass = require("gulp-sass");
 const webpack = require("webpack");
 const webpackStream = require("webpack-stream");
 const exec = require("gulp-exec");
+const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const config = {
   TS_SOURCES: ["./global/*.ts", "./components/**/*.ts"],
@@ -29,6 +30,11 @@ const webpackConfig = {
   output: {
     path: path.resolve(__dirname, config.JS_OUT_DIR),
     filename: "[name].min.js"
+  },
+  resolve: {
+    alias: {
+      "toolbox": path.join(__dirname, "tmp/js/node_modules/toolbox-v2/src/toolbox"),
+    }
   }
 };
 

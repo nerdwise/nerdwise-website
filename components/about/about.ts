@@ -1,8 +1,8 @@
-import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
-import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
-import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
-import { map } from '../../node_modules/toolbox-v2/src/toolbox/utils/node-list/map';
-import { loadImage } from '../../node_modules/toolbox-v2/src/toolbox/utils/loading/load-image';
+import { ScrollEffect } from 'toolbox/components/scroll-effect/base';
+import { Tween } from 'toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from 'toolbox/components/scroll-effect/distance-function';
+import { map } from 'toolbox/utils/node-list/map';
+import { loadImage } from 'toolbox/utils/loading/load-image';
 
 const FRAME_KEYFRAMES: [number, string][] = [
   [0, 'transform: scaleY(0)'],
