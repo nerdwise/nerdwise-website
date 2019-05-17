@@ -4,19 +4,19 @@ import { DistanceFunction } from 'toolbox/components/scroll-effect/distance-func
 import { map } from 'toolbox/utils/node-list/map';
 import { loadImage } from 'toolbox/utils/loading/load-image';
 
-const FRAME_KEYFRAMES: [number, string][] = [
-  [0, 'transform: scaleY(0)'],
-  [1, 'transform: scaleY(1)']
-];
-
-const IMAGE_KEYFRAMES: [number, string][] = [
-  [0.5, 'transform: scaleY(0)'],
-  [1, 'transform: scaleY(1)']
-];
-
 const INFO_KEYFRAMES: [number, string][] = [
   [0, 'transform: translateY(50%); opacity: 0'],
   [1, 'transform: translateY(0); opacity: 1']
+];
+
+const BLOCK_KEYFRAMES: [number, string][] = [
+  [0.5, 'transform: translateY(0)'],
+  [1, 'transform: translateY(-100%)']
+];
+
+const FRAME_KEYFRAMES: [number, string][] = [
+  [0, 'transform: translateY(100%)'],
+  [0.5, 'transform: translateY(0)']
 ];
 
 class About {
@@ -32,28 +32,28 @@ class About {
   }
 
   init(): void {
-    // this.blockReveal_();
     this.lazyLoad_();
+    this.blockReveal_();
   }
 
-  // private blockReveal_(): void {
-  //   map(this.profiles_, profile => {
-  //     const frame: HTMLElement = profile.querySelector('.profile__frame');
-  //     const image: HTMLElement = profile.querySelector('.profile__image');
-  //     const info: HTMLElement = profile.querySelector('.profile__info');
+  private blockReveal_(): void {
+    map(this.profiles_, profile => {
+      const info: HTMLElement = profile.querySelector('.profile__info');
+      const block: HTMLElement = profile.querySelector('.profile__block');
+      const frame: HTMLElement = profile.querySelector('.profile__frame');
 
-  //     this.scrollEffect_ = new ScrollEffect(frame, {
-  //       effects: [
-  //         new Tween(FRAME_KEYFRAMES, { styleTarget: frame }),
-  //         new Tween(IMAGE_KEYFRAMES, { styleTarget: image }),
-  //         new Tween(INFO_KEYFRAMES, { styleTarget: info })
-  //       ],
-  //       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-  //       startDistance: () => -window.innerHeight / 2,
-  //       endDistance: -window.innerHeight / 3
-  //     });
-  //   });
-  // }
+      this.scrollEffect_ = new ScrollEffect(profile, {
+        effects: [
+          new Tween(INFO_KEYFRAMES, { styleTarget: info }),
+          new Tween(BLOCK_KEYFRAMES, { styleTarget: block }),
+          new Tween(FRAME_KEYFRAMES, { styleTarget: frame })
+        ],
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: () => -window.innerHeight / 2,
+        endDistance: -window.innerHeight / 3
+      });
+    });
+  }
 
   private lazyLoad_(): void {
     this.profiles_.forEach(profile => {
