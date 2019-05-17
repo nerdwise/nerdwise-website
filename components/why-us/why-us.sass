@@ -1,17 +1,24 @@
 @import ../../global/sass-config/colors
 @import ../../global/sass-config/font-sizes
 @import ../../global/sass-config/spacing
+@import ../../global/sass-config/line-height
 @import ../../global/sass-mixins/typography
 @import ../../global/sass-mixins/breakpoints
 
 .why-us
-  background: $color-neutral-100
   min-height: 100vh
   padding: 10vh 0
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
+
+.why-us__content
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  transition: visibility 0.2s, opacity 0.2s, transform 0.2s
 
 .why-us__header
   font-size: $font-size-60
@@ -52,11 +59,10 @@
   background: $why-us-button-color
 
 .modal
-  position: fixed
+  position: relative
   top: 0
   left: 0
   z-index: 1
-  height: 100vh
   width: 100vw
   background: rgba(0, 0, 0, 0.25)
   display: flex
@@ -72,22 +78,28 @@
   visibility: visible
   opacity: 1
   transform: translateY(0)
+  height: 100vh
+
+.hide
+  visibility: hidden
+  opacity: 0
+  transform: translateY(-50%)
 
 .modal__content
   max-width: 90vw
-  height: 30rem
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: space-evenly
+  max-height: 90vh
   background: $modal-background-color
   padding: $spacing-50 $spacing-70
   overflow-y: scroll
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
 
 .modal__x
   position: absolute
   font-size: $font-size-40
-  color: $modal-header-color
+  color: $modal-x-color
   cursor: pointer
   top: 0.5rem
   right: 1rem
@@ -108,7 +120,11 @@
   color: $modal-question-color
   +font-secondary
   +font-weight-regular
-  margin-bottom: $spacing-60
+  margin-bottom: $spacing-40
+  text-align: center
+
+.modal__info p
+  margin-bottom: $spacing-30
 
 .modal__list
   list-style: none
@@ -119,10 +135,22 @@
 
 .modal__question
   color: $modal-question-color
-  font-size: $font-size-30
+  font-size: $font-size-40
   +font-secondary
   +font-weight-regular
-  margin-bottom: $spacing-60
+  margin-top: $spacing-60
+  margin-bottom: $spacing-40
   text-align: center
   +media(mobile)
     font-size: $font-size-20
+
+.modal__answer
+  font-size: $font-size-20
+  +font-secondary
+  +font-weight-regular
+  text-align: center
+  color: $modal-question-color
+  line-height: $line-height-10
+
+.modal__answer p
+  margin-bottom: $spacing-20
