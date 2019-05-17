@@ -61,18 +61,18 @@
   color: $contact-topic-color
   text-decoration: none
   cursor: pointer
-  transition: transform 0.3s
+  transition: margin-right 0.3s
   +font-weight-light
+  margin-right: 1rem
 
-.contact__topic:hover
-  transform: translateX(0.5rem)
+.contact__topic:hover:not(.contact__topic--active)
+  // transform: translateX(0.5rem)
+  margin-right: 0.5rem
 
 .contact__topic--active
-  transform: translateX(1rem)
+  // transform: translateX(1rem)
+  margin-right: 0
   +font-weight-bold
-
-.contact__topic--active:hover
-  transform: translateX(1rem)
 
 .contact__right
   height: 65vh
