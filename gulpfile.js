@@ -1,46 +1,50 @@
-const extend = require("deep-extend");
-const gulp = require("gulp");
-const gulpAutoprefixer = require("gulp-autoprefixer");
-const path = require("path");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const webpack = require("webpack");
-const webpackStream = require("webpack-stream");
-const exec = require("gulp-exec");
-const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const extend = require('deep-extend');
+const gulp = require('gulp');
+const gulpAutoprefixer = require('gulp-autoprefixer');
+const path = require('path');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const exec = require('gulp-exec');
+// Commented out because it was erroring and doesn't appear to be used at all
+// const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const config = {
-  TS_SOURCES: ["./global/*.ts", "./components/**/*.ts"],
-  JS_SOURCE_FILE: "./tmp/js/global/main.js",
-  JS_SOURCES: ["./tmp/js/**/*.js"],
-  JS_OUT_DIR: "./dist/js/",
+  TS_SOURCES: ['./global/*.ts', './components/**/*.ts'],
+  JS_SOURCE_FILE: './tmp/js/global/main.js',
+  JS_SOURCES: ['./tmp/js/**/*.js'],
+  JS_OUT_DIR: './dist/js/',
   JS_OPTIONS: {
     uglify: {
       mangle: false
     }
   },
-  SASS_SOURCE_FILE: "./global/main.sass",
-  SASS_SOURCES: ["./global/**/*.{sass,scss}", "./components/**/*.{sass,scss}"],
-  SASS_OUT_DIR: "./dist/css/"
+  SASS_SOURCE_FILE: './global/main.sass',
+  SASS_SOURCES: ['./global/**/*.{sass,scss}', './components/**/*.{sass,scss}'],
+  SASS_OUT_DIR: './dist/css/'
 };
 
 const webpackConfig = {
   entry: { main: config.JS_SOURCE_FILE },
-  mode: "development",
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, config.JS_OUT_DIR),
-    filename: "[name].min.js"
+    filename: '[name].min.js'
   },
   resolve: {
     alias: {
-      "toolbox": path.join(__dirname, "tmp/js/node_modules/toolbox-v2/src/toolbox"),
+      toolbox: path.join(
+        __dirname,
+        'tmp/js/node_modules/toolbox-v2/src/toolbox'
+      )
     }
   }
 };
 
 const webpackProdConfig = extend(
   {
-    mode: "production"
+    mode: 'production'
   },
   webpackConfig
 );
@@ -51,25 +55,25 @@ const compileJs = () => {
     .pipe(webpackStream(webpackProdConfig, webpack))
     .pipe(gulp.dest(config.JS_OUT_DIR));
 };
-gulp.task("compile-js", compileJs);
+gulp.task('compile-js', compileJs);
 
 const buildNewSass = () => {
   return gulp
     .src(config.SASS_SOURCE_FILE)
     .pipe(
       sass({
-        outputStyle: "compressed"
+        outputStyle: 'compressed'
       })
     )
-    .on("error", sass.logError)
+    .on('error', sass.logError)
     .pipe(
       rename(function(path) {
-        path.basename += ".min";
+        path.basename += '.min';
       })
     )
     .pipe(
       gulpAutoprefixer({
-        browsers: ["last 1 version", "last 2 iOS versions"]
+        browsers: ['last 1 version', 'last 2 iOS versions']
       })
     )
     .pipe(gulp.dest(config.SASS_OUT_DIR));
@@ -77,38 +81,38 @@ const buildNewSass = () => {
 
 const touchSass = () => {
   return gulp
-    .src("./dist/css/main.min.css", { allowEmpty: true })
-    .pipe(exec("touch <%= file.path %>"));
+    .src('./dist/css/main.min.css', { allowEmpty: true })
+    .pipe(exec('touch <%= file.path %>'));
 };
 
 const compileSass = gulp.series(buildNewSass, touchSass);
-gulp.task("compile-sass", compileSass);
+gulp.task('compile-sass', compileSass);
 
 const watchSass = () => gulp.watch(config.SASS_SOURCES, compileSass);
-gulp.task("watch-sass", watchSass);
+gulp.task('watch-sass', watchSass);
 
 const watchTs = () => gulp.watch(config.TS_SOURCES, compileTs);
-gulp.task("watch-ts", watchTs);
+gulp.task('watch-ts', watchTs);
 
 const clearOldTs = () => {
   return gulp
-    .src("./tmp/js", { allowEmpty: true })
-    .pipe(exec("rm -rf <%= file.path %>"));
+    .src('./tmp/js', { allowEmpty: true })
+    .pipe(exec('rm -rf <%= file.path %>'));
 };
-gulp.task("clear-old-ts", clearOldTs);
+gulp.task('clear-old-ts', clearOldTs);
 
 const buildNewTs = () => {
-  return gulp.src("./tsconfig.json").pipe(exec("tsc -p <%= file.path %>"));
+  return gulp.src('./tsconfig.json').pipe(exec('tsc -p <%= file.path %>'));
 };
-gulp.task("build-new-ts", buildNewTs);
+gulp.task('build-new-ts', buildNewTs);
 
 const sleep = done => {
-  exec("sleep 10");
+  exec('sleep 10');
   done();
 };
 const compileTs = gulp.series(clearOldTs, sleep, buildNewTs, sleep, compileJs);
-gulp.task("compile-ts", compileTs);
+gulp.task('compile-ts', compileTs);
 
-gulp.task("build", gulp.parallel(compileSass, compileTs));
-gulp.task("grow-build", gulp.parallel(compileSass));
-gulp.task("default", gulp.parallel(compileSass, compileTs, watchSass, watchTs));
+gulp.task('build', gulp.parallel(compileSass, compileTs));
+gulp.task('grow-build', gulp.parallel(compileSass));
+gulp.task('default', gulp.parallel(compileSass, compileTs, watchSass, watchTs));
