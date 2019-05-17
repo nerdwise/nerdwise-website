@@ -32,34 +32,39 @@ class About {
   }
 
   init(): void {
-    this.blockReveal_();
+    // this.blockReveal_();
     this.lazyLoad_();
   }
 
-  private blockReveal_(): void {
-    map(this.profiles_, profile => {
-      const frame: HTMLElement = profile.querySelector('.profile__frame');
-      const image: HTMLElement = profile.querySelector('.profile__image');
-      const info: HTMLElement = profile.querySelector('.profile__info');
+  // private blockReveal_(): void {
+  //   map(this.profiles_, profile => {
+  //     const frame: HTMLElement = profile.querySelector('.profile__frame');
+  //     const image: HTMLElement = profile.querySelector('.profile__image');
+  //     const info: HTMLElement = profile.querySelector('.profile__info');
 
-      this.scrollEffect_ = new ScrollEffect(frame, {
-        effects: [
-          new Tween(FRAME_KEYFRAMES, { styleTarget: frame }),
-          new Tween(IMAGE_KEYFRAMES, { styleTarget: image }),
-          new Tween(INFO_KEYFRAMES, { styleTarget: info })
-        ],
-        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
-        startDistance: () => -window.innerHeight / 2,
-        endDistance: -window.innerHeight / 3
-      });
-    });
-  }
+  //     this.scrollEffect_ = new ScrollEffect(frame, {
+  //       effects: [
+  //         new Tween(FRAME_KEYFRAMES, { styleTarget: frame }),
+  //         new Tween(IMAGE_KEYFRAMES, { styleTarget: image }),
+  //         new Tween(INFO_KEYFRAMES, { styleTarget: info })
+  //       ],
+  //       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+  //       startDistance: () => -window.innerHeight / 2,
+  //       endDistance: -window.innerHeight / 3
+  //     });
+  //   });
+  // }
 
   private lazyLoad_(): void {
-    this.aboutImages_.forEach(image => {
+    this.profiles_.forEach(profile => {
+      const block: HTMLElement = profile.querySelector('.profile__block');
+
+      const image: HTMLImageElement = profile.querySelector('.profile__image');
       const imageUrl: string = image.dataset.src;
+
       loadImage(imageUrl).then(() => {
         image.src = imageUrl;
+        block.className += ` ${block.className}--reveal`;
       });
     });
   }
