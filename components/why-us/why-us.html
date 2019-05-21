@@ -17,8 +17,10 @@
       </div>
       <ul class="modal__list">
         {% for question in component.modal_questions %}
-        <li class="modal__question">{{ question.question }}</li>
-        <li class="modal__answer">{{ question.answer | markdown | safe }}</li>
+        <div class="modal__item">
+          <li class="modal__question">{{ question.question }}</li>
+          <li class="modal__answer">{{ question.answer | markdown | safe }}</li>
+        </div>
         {% endfor %}
       </ul>
     </div>
