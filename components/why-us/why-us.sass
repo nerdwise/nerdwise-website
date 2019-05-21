@@ -99,7 +99,7 @@
 .modal__x
   position: absolute
   font-size: $font-size-60
-  color: white
+  color: $modal-x-color
   cursor: pointer
   top: 0.5rem
   right: 1rem
@@ -125,6 +125,12 @@
 
 .modal__info p
   margin-bottom: $spacing-30
+
+.modal__info p a,
+.modal__info p a:hover,
+.modal__info p a:focus,
+.modal__info p a:active
+  color: $modal-question-color
 
 .modal__list
   list-style: none
@@ -154,3 +160,9 @@
 
 .modal__answer p
   margin-bottom: $spacing-20
+
+.modal__answer p a,
+.modal__answer p a:hover,
+.modal__answer p a:focus,
+.modal__answer p a:active
+  color: $modal-question-color
