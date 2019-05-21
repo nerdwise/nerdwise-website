@@ -142,4 +142,4 @@ modal_questions:
   question: How is 3rd party code handled?
 modal_title: Sifting through developer bullshit
 tagline: Stupid good talent without the bullshit.
-wrap: false
+wrap_with_skewed_section: false
