@@ -1,6 +1,8 @@
 class Contact {
   private contactTopics_: HTMLElement[];
   private contactForms_: HTMLFormElement[];
+  private buttons_: HTMLElement[];
+
   constructor() {
     this.contactTopics_ = Array.from(
       document.querySelectorAll('.contact__topic')
@@ -8,6 +10,7 @@ class Contact {
     this.contactForms_ = Array.from(
       document.querySelectorAll('.contact__form')
     );
+    this.buttons_ = Array.from(document.querySelectorAll('.form__button'));
   }
 
   init(): void {
@@ -60,6 +63,17 @@ class Contact {
           'application/x-www-form-urlencoded; charset=UTF-8'
         );
         xhr.send(data);
+
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4) {
+            this.buttons_.forEach(button => {
+              const cssClass = button.classList;
+              const modifiedCssClass = `${cssClass}--success`;
+              button.classList.add(modifiedCssClass);
+              button.innerHTML = 'Message Sent';
+            });
+          }
+        };
 
         e.preventDefault();
       });

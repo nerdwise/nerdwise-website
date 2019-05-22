@@ -30,6 +30,7 @@ components:
   block_css_classes:
     - block--cyan
   email: projects@nerdwise.ca
+  success_message: Message sent!
   topics:
     - !g.doc /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml
     - !g.doc /content/topic/1eA77p04SD1pUQAPM24rWk.yaml
