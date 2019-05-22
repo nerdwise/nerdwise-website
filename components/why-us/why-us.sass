@@ -157,6 +157,13 @@
   text-align: center
   color: $modal-question-color
   line-height: $line-height-10
+  max-height: 20rem
+  transition: visibility 0.2s, opacity 0.2s, max-height 0.2s
+
+.modal__answer--hidden
+  visibility: hidden
+  opacity: 0
+  max-height: 0
 
 .modal__answer p
   margin-bottom: $spacing-20
