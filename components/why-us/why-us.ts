@@ -37,7 +37,7 @@ class WhyUs {
 
   accordion(): void {
     new Accordion(this.modalContent_, {
-      contentSelector: 'modal__list',
+      contentSelector: 'modal__answer',
       itemSelector: 'modal__item',
       toggleSelector: 'modal__question'
     });
