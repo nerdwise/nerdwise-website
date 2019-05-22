@@ -18,9 +18,9 @@
       <ul class="modal__list">
         {% for question in component.modal_questions %}
         <li class="modal__item modal__item--hidden">
-          <div class="modal__question modal__question--hidden">
+          <p class="modal__question modal__question--hidden">
             {{ question.question }}
-          </div>
+          </p>
           <div class="modal__answer modal__answer--hidden">
             {{ question.answer | markdown | safe }}
           </div>
