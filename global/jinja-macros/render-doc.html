@@ -4,7 +4,6 @@
     {%- set components = [] -%}
     {%- do components.append(g.yaml('/content/data/nav.yaml')) -%}
     {%- set components = components + doc_to_render.components -%}
-    {%- do components.append(g.yaml('/content/data/footer.yaml')) -%}
 
     {%- for component in components -%}
       {# Checks against False, because the absence of the property in the #}
