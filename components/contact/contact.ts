@@ -2,6 +2,7 @@ class Contact {
   private contactTopics_: HTMLElement[];
   private contactForms_: HTMLFormElement[];
   private buttons_: HTMLElement[];
+  private formFields_: HTMLInputElement[];
 
   constructor() {
     this.contactTopics_ = Array.from(
@@ -11,6 +12,9 @@ class Contact {
       document.querySelectorAll('.contact__form')
     );
     this.buttons_ = Array.from(document.querySelectorAll('.form__button'));
+    this.formFields_ = Array.from(
+      document.querySelectorAll('.form__field__control')
+    );
   }
 
   init(): void {
@@ -71,6 +75,10 @@ class Contact {
               const modifiedCssClass = `${cssClass}--success`;
               button.classList.add(modifiedCssClass);
               button.innerHTML = 'Message Sent';
+            });
+
+            this.formFields_.forEach(field => {
+              field.value = '';
             });
           }
         };
