@@ -55,6 +55,9 @@ class Nav {
       effects: [
         new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
           styleTarget: this.navContent_
+        }),
+        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
+          styleTarget: this.navMenu_
         })
       ],
       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
