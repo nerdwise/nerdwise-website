@@ -55,12 +55,24 @@ class Nav {
 
     new ScrollEffect(this.firstBlock_, {
       effects: [
-        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
-          styleTarget: this.navContent_
-        }),
-        new Tween([[0, 'opacity: 0'], [1, 'opacity: 1']], {
-          styleTarget: this.navMenu_
-        })
+        new Tween(
+          [
+            [0, 'opacity: 0; transform: translateY(-100%)'],
+            [1, 'opacity: 1; transform: translateY(0)']
+          ],
+          {
+            styleTarget: this.navContent_
+          }
+        ),
+        new Tween(
+          [
+            [0, 'opacity: 0; transform: translateY(-100%)'],
+            [1, 'opacity: 1; transform: translateY(0)']
+          ],
+          {
+            styleTarget: this.navMenu_
+          }
+        )
       ],
       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
       startDistance: -100,
