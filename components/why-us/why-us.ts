@@ -13,25 +13,32 @@ class WhyUs {
     this.modalContent_ = document.querySelector('.modal__content');
   }
 
-  openModal(): void {
-    this.button_.addEventListener('click', () => {
-      this.modal_.classList.add('display');
-      this.whyUsContent_.classList.add('hide');
-    });
-    this.closeModal();
+  private openModal_(): void {
+    this.modal_.classList.add('display');
+    this.whyUsContent_.classList.add('hide');
   }
 
-  closeModal(): void {
+  private closeModal_(): void {
+    this.modal_.classList.remove('display');
+    this.whyUsContent_.classList.remove('hide');
+  }
+
+  private openModalOnClick_(): void {
+    this.button_.addEventListener('click', () => {
+      this.openModal_();
+    });
+    this.closeModalOnClick_();
+  }
+
+  private closeModalOnClick_(): void {
     window.addEventListener('click', event => {
       if (event.target == this.modal_) {
-        this.modal_.classList.remove('display');
-        this.whyUsContent_.classList.remove('hide');
+        this.closeModal_();
       }
     });
     const x: HTMLElement = document.querySelector('.modal__x');
     x.addEventListener('click', () => {
-      this.modal_.classList.remove('display');
-      this.whyUsContent_.classList.remove('hide');
+      this.closeModal_();
     });
   }
 
@@ -44,7 +51,7 @@ class WhyUs {
   }
 
   init(): void {
-    this.openModal();
+    this.openModalOnClick_();
     this.accordion();
   }
 }
