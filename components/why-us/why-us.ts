@@ -42,7 +42,7 @@ class WhyUs {
     });
   }
 
-  accordion(): void {
+  private accordion_(): void {
     new Accordion(this.modalContent_, {
       contentSelector: 'modal__answer',
       itemSelector: 'modal__item',
@@ -50,9 +50,9 @@ class WhyUs {
     });
   }
 
-  init(): void {
+  public init(): void {
     this.openModalOnClick_();
-    this.accordion();
+    this.accordion_();
   }
 }
 
