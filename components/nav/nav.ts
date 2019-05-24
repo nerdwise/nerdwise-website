@@ -136,7 +136,6 @@ class Nav {
 
   private closeMobileNavOnWindowResize_(): void {
     window.addEventListener('resize', () => {
-      console.log('Resized');
       if (this.mobileNav_.classList.contains('display-nav')) {
         this.toggleNav_();
       }
