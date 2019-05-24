@@ -9,27 +9,21 @@ import { Projects } from '../components/projects/projects';
 import { onDomContentLoad } from 'toolbox/utils/dom/on-dom-content-load';
 
 const projects = new Projects();
+const blocks = new Blocks();
+const about = new About();
+const hero = new Hero();
+const contact = new Contact();
+const skewedSection = new SkewedSection();
+const whyUs = new WhyUs();
 
 // No need to use the returned promise
 const _unused = onDomContentLoad(() => {
-  const blocks = new Blocks();
   blocks.init();
-
   initNav();
-
-  const about = new About();
   about.init();
-
-  const hero = new Hero();
   hero.init();
-
-  const contact = new Contact();
   contact.init();
-
-  const skewedSection = new SkewedSection();
   skewedSection.startScrollEffect();
-
-  const whyUs = new WhyUs();
   whyUs.init();
   projects.init();
 });
