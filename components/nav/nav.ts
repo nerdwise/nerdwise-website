@@ -41,6 +41,7 @@ class Nav {
     this.update_();
     this.expandMobileNavOnClick_();
     this.closeMobileNavOnLinkClick_();
+    this.closeMobileNavOnWindowResize_();
 
     new ScrollEffect(this.navBrand_, {
       effects: [
@@ -114,19 +115,31 @@ class Nav {
     });
   }
 
+  private toggleNav_(): void {
+    this.mobileNav_.classList.toggle('display-nav');
+    this.navMenu_.classList.toggle('x');
+  }
+
   private expandMobileNavOnClick_(): void {
     this.navMenu_.addEventListener('click', () => {
-      this.mobileNav_.classList.toggle('display-nav');
-      this.navMenu_.classList.toggle('x');
+      this.toggleNav_();
     });
   }
 
   private closeMobileNavOnLinkClick_(): void {
     this.mobileNavLink_.forEach(link => {
       link.addEventListener('click', () => {
-        this.mobileNav_.classList.toggle('display-nav');
-        this.navMenu_.classList.toggle('x');
+        this.toggleNav_();
       });
+    });
+  }
+
+  private closeMobileNavOnWindowResize_(): void {
+    window.addEventListener('resize', () => {
+      console.log('Resized');
+      if (this.mobileNav_.classList.contains('display-nav')) {
+        this.toggleNav_();
+      }
     });
   }
 }
