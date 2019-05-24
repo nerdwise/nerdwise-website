@@ -6,11 +6,9 @@ import { chromeOnlyJsScroll } from 'toolbox/components/js-scroll/chrome-only-js-
 class Hero {
   private readonly header_: HTMLElement;
   private scrollEffect_: ScrollEffect = null;
-  private particles_: HTMLVideoElement;
 
   constructor() {
     this.header_ = document.querySelector('.hero__content');
-    this.particles_ = document.querySelector('.hero__video');
   }
 
   tweenHeader(): void {
@@ -26,7 +24,7 @@ class Hero {
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
       startDistance: () => 0,
-      endDistance: window.innerHeight * 2 / 3
+      endDistance: (window.innerHeight * 2) / 3
     });
   }
 
