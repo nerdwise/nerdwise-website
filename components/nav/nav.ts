@@ -118,7 +118,6 @@ class Nav {
     this.navMenu_.addEventListener('click', () => {
       this.mobileNav_.classList.toggle('display-nav');
       this.navMenu_.classList.toggle('x');
-      this.closeMobileNavOnClickAway_();
     });
   }
 
@@ -128,15 +127,6 @@ class Nav {
         this.mobileNav_.classList.toggle('display-nav');
         this.navMenu_.classList.toggle('x');
       });
-    });
-  }
-
-  private closeMobileNavOnClickAway_(): void {
-    window.addEventListener('click', event => {
-      if (event.target !== this.navMenu_) {
-        this.mobileNav_.classList.remove('display-nav');
-        this.navMenu_.classList.remove('x');
-      }
     });
   }
 }
