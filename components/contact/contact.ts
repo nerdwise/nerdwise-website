@@ -1,8 +1,8 @@
 class Contact {
-  private contactTopics_: HTMLElement[];
-  private contactForms_: HTMLFormElement[];
-  private buttons_: HTMLElement[];
-  private formFields_: HTMLInputElement[];
+  private readonly contactTopics_: HTMLElement[];
+  private readonly contactForms_: HTMLFormElement[];
+  private readonly buttons_: HTMLElement[];
+  private readonly formFields_: HTMLInputElement[];
 
   constructor() {
     this.contactTopics_ = Array.from(
@@ -17,12 +17,12 @@ class Contact {
     );
   }
 
-  init(): void {
-    this.onClick();
-    this.submitForm();
+  public init(): void {
+    this.onClick_();
+    this.submitForm_();
   }
 
-  removeRevealClasses(): void {
+  private removeRevealClasses_(): void {
     this.contactForms_.forEach((form, formIndex) => {
       form.classList.remove(`contact__form--reveal`);
     });
@@ -31,10 +31,10 @@ class Contact {
     });
   }
 
-  onClick(): void {
+  private onClick_(): void {
     this.contactTopics_.forEach((topic, topicIndex) => {
       topic.addEventListener('click', () => {
-        this.removeRevealClasses();
+        this.removeRevealClasses_();
         const form = document.querySelector(
           `.contact__form--${topicIndex + 1}`
         );
@@ -44,7 +44,7 @@ class Contact {
     });
   }
 
-  submitForm(): void {
+  private submitForm_(): void {
     this.contactForms_.forEach(form => {
       form.addEventListener('submit', e => {
         let mappedInput: string[] = [];
