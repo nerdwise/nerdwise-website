@@ -1,5 +1,4 @@
 import { Accordion } from 'toolbox/components/accordion/base';
-import { ActiveOnCondition } from 'toolbox/components/active-on-condition/base';
 import { ScrollLockService } from 'toolbox/components/scroll-lock-service/scroll-lock-service';
 
 class WhyUs {
@@ -18,17 +17,18 @@ class WhyUs {
   public init(): void {
     this.openModalOnClick_();
     this.accordion_();
-    // this.lockScroll_();
   }
 
   private openModal_(): void {
     this.modal_.classList.add('display');
     this.whyUsContent_.classList.add('hide');
+    ScrollLockService.getSingleton().lockScroll();
   }
 
   private closeModal_(): void {
     this.modal_.classList.remove('display');
     this.whyUsContent_.classList.remove('hide');
+    ScrollLockService.getSingleton().unlockScroll();
   }
 
   private openModalOnClick_(): void {
@@ -57,9 +57,6 @@ class WhyUs {
       toggleSelector: 'modal__question'
     });
   }
-
-  // lockScroll
-  private lockScroll_(): void {}
 }
 
 export { WhyUs };
