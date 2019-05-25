@@ -1,4 +1,6 @@
 import { Accordion } from 'toolbox/components/accordion/base';
+import { ActiveOnCondition } from 'toolbox/components/active-on-condition/base';
+import { ScrollLockService } from 'toolbox/components/scroll-lock-service/scroll-lock-service';
 
 class WhyUs {
   private readonly modal_: HTMLElement;
@@ -11,6 +13,12 @@ class WhyUs {
     this.button_ = document.querySelector('.why-us__button');
     this.whyUsContent_ = document.querySelector('.why-us__content');
     this.modalContent_ = document.querySelector('.modal__content');
+  }
+
+  public init(): void {
+    this.openModalOnClick_();
+    this.accordion_();
+    // this.lockScroll_();
   }
 
   private openModal_(): void {
@@ -50,10 +58,8 @@ class WhyUs {
     });
   }
 
-  public init(): void {
-    this.openModalOnClick_();
-    this.accordion_();
-  }
+  // lockScroll
+  private lockScroll_(): void {}
 }
 
 export { WhyUs };
