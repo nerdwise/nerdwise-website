@@ -4,6 +4,7 @@
 @import ../../global/sass-config/line-height
 @import ../../global/sass-mixins/typography
 @import ../../global/sass-mixins/breakpoints
+@import ../../global/sass-mixins/sub-header
 
 .why-us
   min-height: 100vh
@@ -59,10 +60,10 @@
   background: $why-us-button-color
 
 .modal
-  position: relative
+  position: fixed
   top: 0
   left: 0
-  z-index: 1
+  z-index: 3
   width: 100vw
   background: rgba(0, 0, 0, 0.25)
   display: flex
@@ -89,6 +90,7 @@
   width: 95%
   height: 95%
   background: $modal-background-color
+  border: 15px solid $modal-border-color
   padding: $spacing-50 $spacing-70
   overflow-y: scroll
   position: fixed
@@ -105,17 +107,14 @@
   font-size: $font-size-60
   color: $modal-x-color
   cursor: pointer
-  top: 0.5rem
-  right: 3rem
+  top: 1rem
+  right: 2rem
   z-index: 4
   +media(mobile)
     right: 1rem
 
 .modal__header
-  color: $modal-header-color
-  font-size: $font-size-40
-  +font-primary
-  +font-weight-bold
+  +sub-header($modal-title-start-color, $modal-title-end-color)
   margin: $spacing-60 0
   text-align: center
   +media(mobile)
