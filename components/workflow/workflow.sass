@@ -3,6 +3,7 @@
 @import ../../global/sass-config/spacing
 @import ../../global/sass-mixins/typography
 @import ../../global/sass-mixins/breakpoints
+@import ../../global/sass-mixins/sub-header
 
 .workflow
   display: flex
@@ -12,7 +13,7 @@
     padding: 15vw 0
 
 .workflow__header
-  display: none
+  +sub-header($workflow-header-start-color, $workflow-header-end-color)
 
 .left,
 .right
