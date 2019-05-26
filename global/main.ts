@@ -7,7 +7,7 @@ import { WhyUs } from '../components/why-us/why-us';
 import { initNav } from './ts-inits/init-nav';
 import { onDomContentLoad } from 'toolbox/utils/dom/on-dom-content-load';
 import { forEach } from 'toolbox/utils/node-list/for-each';
-import { LazyLoadedImage } from 'toolbox/components/lazy-loaded-image/lazy-loaded-image';
+import { LazyLoadedBackgroundImage } from 'toolbox/components/lazy-loaded-image/lazy-loaded-background-image';
 import { generateContentfulImageUrl } from 'toolbox/utils/contentful/generate-contentful-image-url';
 
 const blocks = new Blocks();
@@ -18,7 +18,7 @@ const skewedSection = new SkewedSection();
 const whyUs = new WhyUs();
 
 forEach(document.querySelectorAll('.lazy-load'), image => {
-  LazyLoadedImage.fireAndForget(
+  LazyLoadedBackgroundImage.fireAndForget(
     <HTMLImageElement>image,
     generateContentfulImageUrl((<HTMLImageElement>image).dataset.src)
   );

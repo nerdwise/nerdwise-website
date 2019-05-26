@@ -1,3 +1,6 @@
+{%- import "/global/jinja-macros/render-contentful-image.html" as
+render_contentful_image with context -%}
+
 <section class="about section" id="about" data-target="nav__link--about">
   <h1 class="about__header">
     {{ component.title }}
@@ -5,11 +8,11 @@
   {%- for person in component.staff -%}
   <div class="{{ person.css_class }}">
     <div class="profile__frame">
-      <img
-        data-src="{{ person.image.file.url }}"
-        alt="{{ person.image.description }}"
-        class="profile__image lazy-load"
-      />
+      {{
+        render_contentful_image.render_contentful_image(person.image, {
+          'css_class': 'profile__image'
+        })
+      }}
       <div class="profile__block"></div>
     </div>
     <div class="profile__info">
