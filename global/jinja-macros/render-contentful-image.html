@@ -1,0 +1,13 @@
+{%- macro render_contentful_image(image, options={}) -%}
+<div
+  data-src="{{ image.file.url }}"
+  aria-label="{{ image.description }}"
+  class="{{ options.css_class or '' }} lazy-load"
+>
+  {%- set dimensions = image.file.details.image -%}
+  <svg
+    viewBox="0 0 {{ dimensions.width }} {{ dimensions.height }}"
+    width="100%"
+  ></svg>
+</div>
+{%- endmacro -%}
