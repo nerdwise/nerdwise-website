@@ -7,6 +7,8 @@ import { WhyUs } from '../components/why-us/why-us';
 import { initNav } from './ts-inits/init-nav';
 import { Projects } from '../components/projects/projects';
 import { onDomContentLoad } from 'toolbox/utils/dom/on-dom-content-load';
+import { forEach } from 'toolbox/utils/node-list/for-each';
+import { LazyLoadedImage } from 'toolbox/components/lazy-loaded-image/lazy-loaded-image';
 
 const projects = new Projects();
 const blocks = new Blocks();
@@ -15,6 +17,13 @@ const hero = new Hero();
 const contact = new Contact();
 const skewedSection = new SkewedSection();
 const whyUs = new WhyUs();
+
+forEach(document.querySelectorAll('.lazy-load'), image => {
+  new LazyLoadedImage(
+    <HTMLImageElement>image,
+    (<HTMLImageElement>image).dataset.src
+  );
+});
 
 // No need to use the returned promise
 const _unused = onDomContentLoad(() => {

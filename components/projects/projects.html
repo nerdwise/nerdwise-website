@@ -10,13 +10,13 @@
       <img
         data-src="{{ project.image.file.url }}"
         alt="{{ project.image.description }}"
-        class="project__image"
+        class="project__image lazy-load"
       />
     </div>
     <div class="{{ project.info_css_class }}">
       <h2 class="project__name">{{ project.name }}</h2>
       <div class="project__about">
-        {{ project.about|markdown|safe }}
+        {{ project.about | markdown | safe }}
       </div>
     </div>
   </div>
