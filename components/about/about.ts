@@ -32,7 +32,6 @@ class About {
   }
 
   init(): void {
-    this.lazyLoad_();
     this.blockReveal_();
   }
 
@@ -51,20 +50,6 @@ class About {
         getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
         startDistance: () => -window.innerHeight / 2,
         endDistance: -window.innerHeight / 3
-      });
-    });
-  }
-
-  private lazyLoad_(): void {
-    this.profiles_.forEach(profile => {
-      const block: HTMLElement = profile.querySelector('.profile__block');
-
-      const image: HTMLImageElement = profile.querySelector('.profile__image');
-      const imageUrl: string = image.dataset.src;
-
-      loadImage(imageUrl).then(() => {
-        image.src = imageUrl;
-        block.className += ` ${block.className}--reveal`;
       });
     });
   }

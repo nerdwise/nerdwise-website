@@ -5,12 +5,10 @@ import { Contact } from '../components/contact/contact';
 import { SkewedSection } from '../components/skewed-section/skewed-section';
 import { WhyUs } from '../components/why-us/why-us';
 import { initNav } from './ts-inits/init-nav';
-import { Projects } from '../components/projects/projects';
 import { onDomContentLoad } from 'toolbox/utils/dom/on-dom-content-load';
 import { forEach } from 'toolbox/utils/node-list/for-each';
 import { LazyLoadedImage } from 'toolbox/components/lazy-loaded-image/lazy-loaded-image';
 
-const projects = new Projects();
 const blocks = new Blocks();
 const about = new About();
 const hero = new Hero();
@@ -34,5 +32,4 @@ const _unused = onDomContentLoad(() => {
   contact.init();
   skewedSection.startScrollEffect();
   whyUs.init();
-  projects.init();
 });
