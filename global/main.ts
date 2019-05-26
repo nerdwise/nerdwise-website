@@ -17,7 +17,7 @@ const skewedSection = new SkewedSection();
 const whyUs = new WhyUs();
 
 forEach(document.querySelectorAll('.lazy-load'), image => {
-  new LazyLoadedImage(
+  LazyLoadedImage.fireAndForget(
     <HTMLImageElement>image,
     (<HTMLImageElement>image).dataset.src
   );
