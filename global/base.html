@@ -41,10 +41,9 @@
       href="{{ g.static(podspec.meta.favicon_path).url.path }}"
     />
     {%- endif -%}
-    <link
-      href="{{ g.static('/dist/css/main.min.css').url.path }}"
-      rel="stylesheet"
-    />
+    <style>
+      {% include 'dist/css/main.min.css' %}
+    </style>
     <base href="/" />
   </head>
   <body class="body">
