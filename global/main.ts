@@ -8,6 +8,7 @@ import { initNav } from './ts-inits/init-nav';
 import { onDomContentLoad } from 'toolbox/utils/dom/on-dom-content-load';
 import { forEach } from 'toolbox/utils/node-list/for-each';
 import { LazyLoadedImage } from 'toolbox/components/lazy-loaded-image/lazy-loaded-image';
+import { generateContentfulImageUrl } from 'toolbox/utils/contentful/generate-contentful-image-url';
 
 const blocks = new Blocks();
 const about = new About();
@@ -19,7 +20,7 @@ const whyUs = new WhyUs();
 forEach(document.querySelectorAll('.lazy-load'), image => {
   LazyLoadedImage.fireAndForget(
     <HTMLImageElement>image,
-    (<HTMLImageElement>image).dataset.src
+    generateContentfulImageUrl((<HTMLImageElement>image).dataset.src)
   );
 });
 
