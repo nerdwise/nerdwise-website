@@ -2,6 +2,7 @@ block_css_classes:
 - block--pink
 - block--reverse
 component: workflow
+header: Workflow
 hero_image:
   description: The Nerdwise team at the Go-Kart track
   file:

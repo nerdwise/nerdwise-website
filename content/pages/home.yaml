@@ -7,8 +7,7 @@ description: Creating bespoke interactive media.
 ng_controller: BaseController
 
 components:
-- component: hero
-  wrap_with_skewed_section: False
+- !g.yaml /content/hero/4REsFfzN8nw8zRzHJnupw3.yaml
 - !g.yaml /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
 - !g.yaml /content/workflow/2W7HGINb10azCeB0KrFUif.yaml
 - component: projects

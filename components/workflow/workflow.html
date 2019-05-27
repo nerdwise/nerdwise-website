@@ -14,7 +14,7 @@ render_contentful_image with context -%}
     }}
   </div>
   <div class="right">
-    <h1 class="workflow__header">Workflow</h1>
+    <h1 class="workflow__header">{{ component.header }}</h1>
     {% for section in component.sections %}
     <h2 class="workflow__title">{{ section.header }}</h2>
     <div class="workflow__paragraph">
