@@ -51,17 +51,23 @@
 .project__frame
   margin: 0 $spacing-60
   max-width: 50%
+  width: 60rem
   background: linear-gradient(to top right, $project-frame-gradient-start-color, $project-frame-gradient-end-color)
   +media(tablet-landscape)
     max-width: 40%
+    width: 25rem
   +media(tablet-portrait)
     max-width: 90%
+    width: 35rem
     margin: 0
+  +media(mobile)
+    width: 20rem
 
 .project__image
   height: 100%
-  width: 100%
+  width: 99%
   transform: translateY(2.5%)
+  background-size: cover
 
 .project__info--1--pause
   position: fixed

@@ -1,14 +1,17 @@
+{%- import "/global/jinja-macros/render-contentful-image.html" as
+render_contentful_image with context -%}
+
 <section
   class="workflow section"
   id="workflow"
   data-target="nav__link--workflow"
 >
   <div class="left">
-    <img
-      src="{{ component.hero_image.file.url }}"
-      alt="{{ component.hero_image.description }}"
-      class="workflow__image"
-    />
+    {{
+      render_contentful_image.render_contentful_image(component.hero_image, {
+        'css_class': 'workflow__image'
+      })
+    }}
   </div>
   <div class="right">
     <h1 class="workflow__header">Workflow</h1>

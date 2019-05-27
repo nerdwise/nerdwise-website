@@ -1,3 +1,6 @@
+{%- import "/global/jinja-macros/render-contentful-image.html" as
+render_contentful_image with context -%}
+
 <section
   class="projects section"
   id="projects"
@@ -7,11 +10,11 @@
   {%- for project in component.projects -%}
   <div class="project">
     <div class="project__frame">
-      <img
-        data-src="{{ project.image.file.url }}"
-        alt="{{ project.image.description }}"
-        class="project__image lazy-load"
-      />
+      {{
+        render_contentful_image.render_contentful_image(project.image, {
+          'css_class': 'project__image'
+        })
+      }}
     </div>
     <div class="{{ project.info_css_class }}">
       <h2 class="project__name">{{ project.name }}</h2>
