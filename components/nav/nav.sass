@@ -93,28 +93,29 @@
   display: none
   margin-right: 1rem
   z-index: 4
+  margin-top: 0.5vh
   +media(tablet-portrait)
     display: block
   +media(mobile)
     transform: scale(0.8)
 
 .nav__bar
-  width: 2rem
-  height: .3rem
+  width: 3.8vh
+  height: 0.5vh
   background-color: $nav-menu-color
-  margin: .4rem
+  margin: 0.8vh
   transition-property: transform, opacity
   transition-duration: .3s
 
 .x
   .nav__bar--1
-    transform: rotate(-135deg) translate(-.35rem, -.64rem)
+    transform: rotate(-135deg) translate(-0.85vh, -1vh)
 
   .nav__bar--2
     opacity: 0
 
   .nav__bar--3
-    transform: rotate(135deg) translate(-.35rem, .6rem)
+    transform: rotate(135deg) translate(-0.8vh, 1vh)
 
 // Mobile
 .nav__content--mobile
