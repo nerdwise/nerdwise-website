@@ -9,11 +9,14 @@
   display: flex
   min-height: 100vh
   padding: 5vw 0
+  +media(tablet-landscape)
+    padding: 10vw 0
   +media(mobile)
     padding: 15vw 0
 
 .workflow__header
   +sub-header($workflow-header-start-color, $workflow-header-end-color)
+  margin: 2rem 0
 
 .left,
 .right
