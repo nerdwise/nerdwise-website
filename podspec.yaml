@@ -25,7 +25,7 @@ preprocessors:
   kind: gulp
   build_task: grow-build
 - kind: contentful
-  autorun: true
+  autorun: false
   inject: true
   space: u4z8be9d4a38
   access_token: I-LKjMCg9XN7_asyj-oDfWDOVx5EbbtTWEtBgSRhbHc
