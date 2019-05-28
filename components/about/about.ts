@@ -38,7 +38,7 @@ class About {
   private blockReveal_(): void {
     map(this.profiles_, profile => {
       const info: HTMLElement = profile.querySelector('.profile__info');
-      const block: HTMLElement = profile.querySelector('.profile__block');
+      const block: HTMLElement = profile.querySelector('.profile__block--1');
       const frame: HTMLElement = profile.querySelector('.profile__frame');
 
       this.scrollEffect_ = new ScrollEffect(profile, {

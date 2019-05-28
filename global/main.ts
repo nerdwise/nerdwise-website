@@ -20,7 +20,12 @@ const whyUs = new WhyUs();
 forEach(document.querySelectorAll('.lazy-load'), image => {
   LazyLoadedBackgroundImage.fireAndForget(
     <HTMLImageElement>image,
-    generateContentfulImageUrl((<HTMLImageElement>image).dataset.src)
+    generateContentfulImageUrl((<HTMLImageElement>image).dataset.src),
+    {
+      getLoadedCssClass: image => {
+        return `${image.classList[0]}--reveal`;
+      }
+    }
   );
 });
 

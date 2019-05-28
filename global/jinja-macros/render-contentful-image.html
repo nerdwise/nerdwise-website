@@ -4,6 +4,10 @@
   aria-label="{{ image.description }}"
   class="{{ options.css_class or '' }} lazy-load"
 >
+  {%- if options.css_class == 'profile__image' -%}
+    <div class="profile__block profile__block--1"></div>
+    <div class="profile__block profile__block--2"></div>
+  {%- endif -%}
   {%- set dimensions = image.file.details.image -%}
   <svg
     viewBox="0 0 {{ dimensions.width }} {{ dimensions.height }}"
