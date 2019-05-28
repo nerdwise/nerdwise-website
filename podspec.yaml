@@ -25,7 +25,7 @@ preprocessors:
   kind: gulp
   build_task: grow-build
 - kind: contentful
-  autorun: true
+  autorun: false
   inject: true
   space: u4z8be9d4a38
   access_token: I-LKjMCg9XN7_asyj-oDfWDOVx5EbbtTWEtBgSRhbHc
@@ -41,14 +41,12 @@ preprocessors:
     content_type: why_us
   - collection: /content/topic/
     content_type: topic
-  - collection: /content/form/
-    content_type: form
-  - collection: /content/section/
-    content_type: section
   - collection: /content/workflow/
     content_type: workflow
   - collection: /content/hero/
     content_type: hero
+  - collection: /content/strings/
+    content_type: strings
 
 static_dirs:
 - static_dir: /static/

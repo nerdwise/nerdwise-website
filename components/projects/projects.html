@@ -11,15 +11,15 @@ render_contentful_image with context -%}
   <div class="project">
     <div class="project__frame">
       {{
-        render_contentful_image.render_contentful_image(project.image, {
+        render_contentful_image.render_contentful_image(project.project.image, {
           'css_class': 'project__image'
         })
       }}
     </div>
     <div class="{{ project.info_css_class }}">
-      <h2 class="project__name">{{ project.name }}</h2>
+      <h2 class="project__name">{{ project.project.name }}</h2>
       <div class="project__about">
-        {{ project.about | markdown | safe }}
+        {{ project.project.about | markdown | safe }}
       </div>
     </div>
   </div>

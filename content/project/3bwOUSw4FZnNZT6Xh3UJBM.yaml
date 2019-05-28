@@ -2,4 +2,16 @@ about: 'We''re not going to beat around the bush, though our developers have ple
 
 
   We''d love to work with you to deliver something awesome to expand our portfolio. If you''re looking for a highly motivated team eager to build something incredible, then I have some good news for you, I think you just found it.'
+image:
+  description: Your next project
+  file:
+    contentType: image/png
+    details:
+      image:
+        height: 900
+        width: 1600
+      size: 5998
+    fileName: 1600x900.png
+    url: //images.ctfassets.net/u4z8be9d4a38/7cTavC9aNerE4nAiCF9Vee/bc0bd29ae7c2ed786e606c890a3b7cf8/1600x900.png
+  title: your-project-here
 name: Your Project Here!

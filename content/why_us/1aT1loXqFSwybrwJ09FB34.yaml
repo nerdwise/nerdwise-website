@@ -1,5 +1,4 @@
 button: What?
-component: why-us
 header: Why Us?
 modal_copy: '
 
@@ -142,4 +141,3 @@ modal_questions:
   question: How is 3rd party code handled?
 modal_title: Sifting through developer bullshit
 tagline: Stupid good talent without the bullshit.
-wrap_with_skewed_section: false

@@ -8,14 +8,14 @@ render_contentful_image with context -%}
 >
   <div class="left">
     {{
-      render_contentful_image.render_contentful_image(component.hero_image, {
+      render_contentful_image.render_contentful_image(component.contentful.hero_image, {
         'css_class': 'workflow__image'
       })
     }}
   </div>
   <div class="right">
-    <h1 class="workflow__header">{{ component.header }}</h1>
-    {% for section in component.sections %}
+    <h1 class="workflow__header">{{ component.contentful.header }}</h1>
+    {% for section in component.contentful.sections %}
     <h2 class="workflow__title">{{ section.header }}</h2>
     <div class="workflow__paragraph">
       {{ section.body | markdown | safe }}

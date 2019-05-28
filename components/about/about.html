@@ -9,17 +9,17 @@ render_contentful_image with context -%}
   <div class="{{ person.css_class }}">
     <div class="profile__frame">
       {{
-        render_contentful_image.render_contentful_image(person.image, {
+        render_contentful_image.render_contentful_image(person.person.image, {
           'css_class': 'profile__image'
         })
       }}
       <div class="profile__block"></div>
     </div>
     <div class="profile__info">
-      <h2 class="profile__name">{{ person.name }}</h2>
-      <h4 class="profile__position">{{ person.position }}</h4>
+      <h2 class="profile__name">{{ person.person.name }}</h2>
+      <h4 class="profile__position">{{ person.person.position }}</h4>
       <div class="profile__about">
-        {{ person.about | markdown | safe }}
+        {{ person.person.about | markdown | safe }}
       </div>
     </div>
   </div>

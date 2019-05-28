@@ -7,33 +7,62 @@ description: Creating bespoke interactive media.
 ng_controller: BaseController
 
 components:
-- !g.yaml /content/hero/4REsFfzN8nw8zRzHJnupw3.yaml
-- !g.yaml /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
-- !g.yaml /content/workflow/2W7HGINb10azCeB0KrFUif.yaml
+- component: hero
+  contentful:
+    !g.yaml /content/hero/4REsFfzN8nw8zRzHJnupw3.yaml
+  wrap_with_skewed_section: False
+- component: why-us
+  contentful:
+    !g.yaml /content/why_us/1aT1loXqFSwybrwJ09FB34.yaml
+  wrap_with_skewed_section: False
+- component: workflow
+  contentful:
+    !g.yaml /content/workflow/2W7HGINb10azCeB0KrFUif.yaml
+  block_css_classes:
+    - block--pink
+    - block--reverse
 - component: projects
   block_css_classes:
     - block--orange
   projects:
-    - !g.doc /content/project/2TGvuGBc0AOAV6oJnfsn2.yaml
-    - !g.doc /content/project/5Dc7L1BJRocnXwodze4LSf.yaml
+    - project:
+        !g.yaml /content/project/2TGvuGBc0AOAV6oJnfsn2.yaml
+      info_css_class: project__info project__info--1
+    - project:
+        !g.doc /content/project/5Dc7L1BJRocnXwodze4LSf.yaml
+      info_css_class: project__info project__info--2
+    - project: 
+        !g.doc /content/project/3bwOUSw4FZnNZT6Xh3UJBM.yaml
+      info_css_class: project__info project__info--3
 - component: about
   block_css_classes:
     - block--yellow
     - block--reverse
-  title: About
   staff:
-    - !g.doc /content/person/3UNp9MEanX65anIEd4r7rH.yaml
-    - !g.doc /content/person/70Aua1MoBohsAYiMkfUWo8.yaml
-    - !g.doc /content/person/1Q0hdZPsPznSL7uzwYh2k3.yaml
+    - person: 
+        !g.doc /content/person/3UNp9MEanX65anIEd4r7rH.yaml
+      css_class: profile profile--1
+    - person:
+        !g.doc /content/person/70Aua1MoBohsAYiMkfUWo8.yaml
+      css_class: profile profile--2
+    - person: 
+        !g.doc /content/person/1Q0hdZPsPznSL7uzwYh2k3.yaml
+      css_class: profile profile--3
 - component: contact
   block_css_classes:
     - block--cyan
-  email: projects@nerdwise.ca
-  success_message: Message sent!
+  strings:
+    !g.yaml /content/strings/6U4iol8nzxWmEi6V1co99N.yaml
   topics:
-    - !g.doc /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml
-    - !g.doc /content/topic/1eA77p04SD1pUQAPM24rWk.yaml
-    - !g.doc /content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml
+    - name:
+        !g.yaml /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml?name
+      css_class: contact__topic contact__topic--1 contact__topic--active
+    - name:
+        !g.yaml /content/topic/1eA77p04SD1pUQAPM24rWk.yaml?name
+      css_class: contact__topic contact__topic--2
+    - name: 
+        !g.yaml /content/topic/4gdtjJuf8xXOkS8rPgxcuK.yaml?name
+      css_class: contact__topic contact__topic--3
   forms:
     - !g.yaml /content/form/6Ya9OrzRhLexRNO35A92DQ.yaml
     - !g.yaml /content/form/2258q05YiYO64pys3V9Kw0.yaml
