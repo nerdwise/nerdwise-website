@@ -22,6 +22,7 @@
   align-items: flex-start
   justify-content: center
   margin: $spacing-50 0
+  max-width: 100vw
   +media(tablet-portrait)
     flex-direction: column-reverse
     align-items: center
@@ -42,6 +43,7 @@
   max-width: 40%
   +media(tablet-landscape)
     margin: 0 $spacing-40
+    max-width: 50%
   +media(tablet-portrait)
     max-width: 90vw
     text-align: center
@@ -54,7 +56,6 @@
   width: 60rem
   background: linear-gradient(to top right, $project-frame-gradient-start-color, $project-frame-gradient-end-color)
   +media(tablet-landscape)
-    max-width: 40%
     width: 25rem
   +media(tablet-portrait)
     max-width: 90%
