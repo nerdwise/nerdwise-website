@@ -112,15 +112,14 @@
 .project__about p a:before
   content: " "
   position: absolute
-  width: 100%
+  width: 0%
   height: 2px
   bottom: -2px
   left: 0
   background-color: $project-about-font-color
   visibility: hidden
-  transform: scaleX(0)
-  transition: transform 0.3s, visibility 0.3s
+  transition: width 0.3s, visibility 0.3s
 
 .project__about p a:hover:before
   visibility: visible
-  transform: scaleX(1)
+  width: 100%
