@@ -101,15 +101,22 @@
     padding: 1rem
 
 .modal__x
-  position: absolute
+  position: sticky
   font-size: $font-size-60
   color: $modal-x-color
   cursor: pointer
-  top: 1rem
-  right: 2rem
+  top: 0rem
+  width: 3rem
+  margin-left: auto
+  margin-right: -3rem
+  margin-top: -4rem
   z-index: 4
+  +media(tablet-landscape)
+    top: 0rem
+    transform: translate(50%, -50%)
   +media(mobile)
-    right: 1rem
+    margin-right: 0
+    transform: translate(75%, -50%)
 
 .modal__header
   +sub-header($modal-title-start-color, $modal-title-end-color)
