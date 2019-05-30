@@ -4,6 +4,7 @@ class Contact {
   private readonly buttons_: HTMLElement[];
   private readonly formFields_: HTMLInputElement[];
   private readonly message_: HTMLElement;
+  private submitted_: boolean;
 
   constructor() {
     this.contactTopics_ = Array.from(
@@ -17,6 +18,7 @@ class Contact {
       document.querySelectorAll('.form__field__control')
     );
     this.message_ = document.querySelector('.message');
+    this.submitted_ = false;
   }
 
   public init(): void {
@@ -36,12 +38,14 @@ class Contact {
   private onClick_(): void {
     this.contactTopics_.forEach((topic, topicIndex) => {
       topic.addEventListener('click', () => {
-        this.removeRevealClasses_();
-        const form = document.querySelector(
-          `.contact__form--${topicIndex + 1}`
-        );
-        form.classList.add(`contact__form--reveal`);
-        topic.classList.add('contact__topic--active');
+        if (this.submitted_ === false) {
+          this.removeRevealClasses_();
+          const form = document.querySelector(
+            `.contact__form--${topicIndex + 1}`
+          );
+          form.classList.add(`contact__form--reveal`);
+          topic.classList.add('contact__topic--active');
+        }
       });
     });
   }
@@ -76,6 +80,11 @@ class Contact {
             this.message_.classList.add(
               `${this.message_.classList[0]}--reveal`
             );
+            this.submitted_ = true;
+            this.contactTopics_.forEach(topic => {
+              topic.classList.add(`${topic.classList[0]}--disabled`);
+              topic.classList.remove('contact__topic--active');
+            });
           }
         };
 

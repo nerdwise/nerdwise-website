@@ -69,15 +69,18 @@
   transition: margin-right 0.3s
   +font-weight-light
   margin-right: 1rem
+  transition: color 0.2s
 
-.contact__topic:hover:not(.contact__topic--active)
-  // transform: translateX(0.5rem)
+.contact__topic:hover:not(.contact__topic--active, .contact__topic--disabled)
   margin-right: 0.5rem
 
 .contact__topic--active
-  // transform: translateX(1rem)
   margin-right: 0
   +font-weight-bold
+
+.contact__topic--disabled
+  cursor: auto
+  color: $contact-topic-color--disabled
 
 .contact__right
   height: 65vh
