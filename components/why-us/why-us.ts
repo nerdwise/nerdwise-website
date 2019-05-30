@@ -9,7 +9,7 @@ class WhyUs {
 
   constructor() {
     this.modal_ = document.querySelector('.modal');
-    this.button_ = document.querySelector('.why-us__button');
+    this.button_ = document.querySelector('.workflow__button');
     this.whyUsContent_ = document.querySelector('.why-us__content');
     this.modalContent_ = document.querySelector('.modal__content');
   }

@@ -8,9 +8,12 @@ render_contentful_image with context -%}
 >
   <div class="left">
     {{
-      render_contentful_image.render_contentful_image(component.contentful.hero_image, {
-        'css_class': 'workflow__image'
-      })
+      render_contentful_image.render_contentful_image(
+        component.contentful.hero_image,
+        {
+          'css_class': 'workflow__image'
+        }
+      )
     }}
   </div>
   <div class="right">
@@ -21,5 +24,8 @@ render_contentful_image with context -%}
       {{ section.body | markdown | safe }}
     </div>
     {%- endfor -%}
+    <button class="workflow__button">
+      Click Here
+    </button>
   </div>
 </section>

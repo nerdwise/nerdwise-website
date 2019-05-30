@@ -69,3 +69,18 @@
   width: 100%
   background-size: cover
   background-position: center
+
+.workflow__button
+  font-size: $font-size-50
+  +font-weight-light
+  color: $workflow-button-color
+  border: 3px solid $workflow-button-color
+  padding: $spacing-20 $spacing-60
+  cursor: pointer
+  transition: color 0.2s, background 0.2s
+  +media(mobile) 
+    font-size: $font-size-40
+
+.workflow__button:hover
+  color: $workflow-button-color--dark
+  background: $workflow-button-color
