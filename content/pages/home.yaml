@@ -21,6 +21,7 @@ components:
   block_css_classes:
     - block--pink
     - block--reverse
+  button: !g.yaml /content/strings/6U4iol8nzxWmEi6V1co99N.yaml?modal_button
 - component: projects
   block_css_classes:
     - block--orange
@@ -52,7 +53,8 @@ components:
   block_css_classes:
     - block--cyan
   strings:
-    !g.yaml /content/strings/6U4iol8nzxWmEi6V1co99N.yaml
+    - !g.yaml /content/strings/6U4iol8nzxWmEi6V1co99N.yaml?email
+    - !g.yaml /content/strings/6U4iol8nzxWmEi6V1co99N.yaml?success_message
   topics:
     - name:
         !g.yaml /content/topic/5RG6x4vbzeUBqCnlxjRXXK.yaml?name
