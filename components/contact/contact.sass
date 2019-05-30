@@ -145,9 +145,27 @@ textarea.form__field__control
   color: $contact-button-hover-font-color
   cursor: pointer
 
-.form__button--success
-  background-color: $contact-button-hover-background-color
-  color: $contact-button-hover-font-color
-
 .contact__form--reveal
   display: flex
+
+.message
+  color: $success-font-color
+  height: 100%
+  width: 80%
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  transform: translateY(100%)
+  visibility: hidden
+  transition: visibility 0.3s, transform 0.3s
+
+.message--reveal
+  transform: translateY(0)
+  visibility: visible
+
+.message__content
+  font-size: $font-size-40
+  border: 1px solid $success-border-color
+  padding: 2rem 8rem
+  margin-left: 2rem
+  font-weight: 300

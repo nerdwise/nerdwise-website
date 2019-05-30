@@ -3,6 +3,7 @@ class Contact {
   private readonly contactForms_: HTMLFormElement[];
   private readonly buttons_: HTMLElement[];
   private readonly formFields_: HTMLInputElement[];
+  private readonly message_: HTMLElement;
 
   constructor() {
     this.contactTopics_ = Array.from(
@@ -15,6 +16,7 @@ class Contact {
     this.formFields_ = Array.from(
       document.querySelectorAll('.form__field__control')
     );
+    this.message_ = document.querySelector('.message');
   }
 
   public init(): void {
@@ -70,16 +72,10 @@ class Contact {
 
         xhr.onreadystatechange = () => {
           if (xhr.readyState == 4) {
-            this.buttons_.forEach(button => {
-              const cssClass = button.classList;
-              const modifiedCssClass = `${cssClass}--success`;
-              button.classList.add(modifiedCssClass);
-              button.innerHTML = 'Message Sent';
-            });
-
-            this.formFields_.forEach(field => {
-              field.value = '';
-            });
+            form.classList.remove('contact__form--reveal');
+            this.message_.classList.add(
+              `${this.message_.classList[0]}--reveal`
+            );
           }
         };
 
