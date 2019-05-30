@@ -23,6 +23,7 @@ class Nav {
   private readonly mobileNav_: HTMLElement;
   private readonly mobileNavLink_: HTMLElement[];
   private readonly nav_: HTMLElement;
+  private readonly navBars_: HTMLElement[];
 
   constructor(sectionLinkMap: Map<Element, Element>) {
     this.sectionToNavLink_ = sectionLinkMap;
@@ -35,6 +36,7 @@ class Nav {
       document.querySelectorAll('.nav__link--mobile')
     );
     this.nav_ = document.querySelector('.nav');
+    this.navBars_ = Array.from(this.navMenu_.querySelectorAll('.nav__bar'));
   }
 
   public init(): void {
@@ -64,20 +66,30 @@ class Nav {
           {
             styleTarget: this.navContent_
           }
-        ),
-        new Tween(
-          [
-            [0, 'opacity: 0; transform: translateY(-100%)'],
-            [1, 'opacity: 1; transform: translateY(0)']
-          ],
-          {
-            styleTarget: this.navMenu_
-          }
         )
       ],
       getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
       startDistance: -100,
       endDistance: 0
+    });
+
+    this.navBars_.forEach(bar => {
+      new ScrollEffect(this.firstBlock_, {
+        effects: [
+          new Tween(
+            [
+              [0, 'background-color: #EBEBFF'],
+              [1, 'background-color: #000008']
+            ],
+            {
+              styleTarget: bar
+            }
+          )
+        ],
+        getDistanceFunction: DistanceFunction.DISTANCE_FROM_DOCUMENT_TOP,
+        startDistance: -100,
+        endDistance: 0
+      });
     });
   }
 
