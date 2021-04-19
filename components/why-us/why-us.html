@@ -3,7 +3,7 @@
     <h1 class="why-us__header">
       {{ component.contentful.header }}
     </h1>
-    <h4 class="why-us__tagline">{{ component.contentful.tagline }}</h4>
+    <h4 class="why-us__tagline">{{ component.contentful.tagline|safe }}</h4>
   </div>
   <div class="modal">
     <div class="modal__content">
